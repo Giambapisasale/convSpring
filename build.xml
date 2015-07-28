@@ -1,0 +1,100 @@
+<project name="convSpring" default="dist" basedir=".">
+	<description>
+    simple example build file
+  </description>
+	<!-- set global properties for this build -->
+	<property name="src" location="src" />
+	<property name="lib.dir" location="lib" />
+	<property name="build" location="build" />
+	<property name="dist" location="dist" />
+	<property name="dist.lib" location="dist/lib" />
+	<property name="projectName" value="convSpring" />
+	<property name="resources" value="src/main/resources" />
+
+<!-- compilazione seconda modalità con spring boot -->
+	<target name="compile2" depends="init" description="compile the source">
+		<mkdir dir="target/classes" />
+		<javac srcdir="${src}" destdir="target/classes">
+			<classpath>
+				<pathelement path="lib/" />
+				<fileset dir="lib">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+		<copy todir="target/classes">
+			<fileset dir="${resources}" excludes="**/*.java" />
+		</copy>
+	</target>
+
+	<target name="build" depends="compile2">
+		<copy todir="target/classes/lib">
+			<fileset dir="lib/" />
+		</copy>
+		<jar destfile="target/spring-boot-sample-actuator.jar" compress="false">
+			<fileset dir="target/classes" />
+			<fileset dir="src/main/resources" />
+			<zipfileset src="lib/spring-boot-cli.jar" />
+			<manifest>
+				<attribute name="Main-Class" value="org.springframework.boot.loader.JarLauncher" />
+				<attribute name="Start-Class" value="hello.Application" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- compilazione prima  modalità standard -->
+	<target name="copy-dependencies">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}" />
+
+		<mkdir dir="${dist.lib}" />
+
+		<jar jarfile="${dist.lib}/dependencies-all.jar">
+			<zipgroupfileset dir="${lib.dir}">
+				<include name="**/*.jar" />
+			</zipgroupfileset>
+		</jar>
+
+	</target>
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build}" />
+	</target>
+
+	<target name="compile" depends="init" description="compile the source">
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src}" destdir="${build}">
+			<classpath>
+				<pathelement path="lib/" />
+				<fileset dir="lib">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+		<copy todir="${build}">
+			<fileset dir="${resources}" excludes="**/*.java" />
+		</copy>
+	</target>
+
+	<target name="dist" depends="compile, copy-dependencies" description="generate the distribution">
+
+
+		<jar jarfile="${dist}/${projectName}.jar" basedir="${build}">
+			<manifest>
+				<attribute name="Main-Class" value="hello.Application" />
+			</manifest>
+			<zipfileset src="${dist.lib}/dependencies-all.jar" excludes="META-INF/*.SF" />
+		</jar>
+	</target>
+
+	<target name="clean" description="clean up">
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build}" />
+		<delete dir="${dist}" />
+		<delete dir="target/classes" />
+				
+	</target>
+</project>
