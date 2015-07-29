@@ -34,11 +34,11 @@
 	<classpathentry kind="lib" path="lib/spring-batch-core-3.0.4.RELEASE.jar" sourcepath="/home/giambattista/.m2/repository/org/springframework/batch/spring-batch-core/3.0.4.RELEASE/spring-batch-core-3.0.4.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="lib/spring-batch-infrastructure-3.0.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-beans-4.1.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-boot-1.2.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-boot-1.2.5.RELEASE.jar" sourcepath="/home/giambattista/.m2/repository/org/springframework/boot/spring-boot/1.2.5.RELEASE/spring-boot-1.2.5.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="lib/spring-boot-autoconfigure-1.2.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-boot-starter-1.2.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-boot-starter-batch-1.2.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-context-4.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-4.1.7.RELEASE.jar" sourcepath="/home/giambattista/.m2/repository/org/springframework/spring-context/4.1.7.RELEASE/spring-context-4.1.7.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="lib/spring-core-4.1.7.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-expression-4.1.7.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-jdbc-4.1.7.RELEASE.jar"/>

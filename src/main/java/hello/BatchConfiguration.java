@@ -6,10 +6,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.transaction.PlatformTransactionManager;
 
+
+
 @Configuration
 @EnableBatchProcessing
-@ImportResource({ "classpath*:job-read-files.xml" })
+@ImportResource({ "file:${job_file_name}" })
 public class BatchConfiguration {
+	
 	@Autowired
 	private PlatformTransactionManager transactionManager;
 }

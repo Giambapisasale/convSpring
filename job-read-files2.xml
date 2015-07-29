@@ -9,25 +9,25 @@
 
     <!-- import resource="context.xml"/ -->
     
-    <bean id="domain" class="com.trim.Domain" />
+    <bean id="domain2" class="com.trim.Domain" />
     
-	<job id="readMultiFileJob" xmlns="http://www.springframework.org/schema/batch">
+	<job id="readMultiFileJob2" xmlns="http://www.springframework.org/schema/batch">
 
-		<step id="step1">
+		<step id="step2">
 			<tasklet>
-				<chunk reader="multiResourceReader" writer="flatFileItemWriter" commit-interval="1" />
+				<chunk reader="multiResourceReader2" writer="flatFileItemWriter2" commit-interval="1" />
 			</tasklet>
 		</step>
 
 	</job>
 
-	<bean id="multiResourceReader"
+	<bean id="multiResourceReader2"
 		class=" org.springframework.batch.item.file.MultiResourceItemReader">
 		<property name="resources" value="file:csv/inputs/domain-*.csv" />
-		<property name="delegate" ref="flatFileItemReader" />
+		<property name="delegate" ref="flatFileItemReader2" />
 	</bean>
 
-	<bean id="flatFileItemReader" class="org.springframework.batch.item.file.FlatFileItemReader">
+	<bean id="flatFileItemReader2" class="org.springframework.batch.item.file.FlatFileItemReader">
 
 		<property name="lineMapper">
 			<bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
@@ -41,7 +41,7 @@
 				<property name="fieldSetMapper">
 					<bean
 						class="org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper">
-						<property name="prototypeBeanName" value="domain" />
+						<property name="prototypeBeanName" value="domain2" />
 					</bean>
 				</property>
 			</bean>
@@ -49,9 +49,9 @@
 
 	</bean>
 
-	<bean id="flatFileItemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" >
+	<bean id="flatFileItemWriter2" class="org.springframework.batch.item.file.FlatFileItemWriter" >
 
-		<property name="resource" value="file:csv/outputs/domain.all._external.csv" />
+		<property name="resource" value="file:csv/outputs/domain.all._external2.csv" />
 		<property name="appendAllowed" value="true" />
 		<property name="lineAggregator">
 			<bean

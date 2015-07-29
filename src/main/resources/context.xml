@@ -4,7 +4,7 @@
 		http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-	<!-- stored job-meta in memory -->
+	<!-- spring boot NON usa questo file -->
 	<bean id="jobRepository"
 		class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean">
 		<property name="transactionManager" ref="transactionManager" />
