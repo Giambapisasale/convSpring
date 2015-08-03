@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 (http://www.altova.com) by Ivana Gargiulo (CONSORZIO CUSTOMER TO BUSINESS INTERACTION - CBI) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:BODY="urn:CBI:xsd:CBIBdyBkToCstmrStmtReq.00.01.02" xmlns:HTRT="urn:CBI:xsd:CBIHdrTrt.001.07" xmlns:HE2E="urn:CBI:xsd:CBIHdrSrv.001.07" xmlns="urn:CBI:xsd:CBIBkToCstmrStmtReqPhyMsg.00.01.02" targetNamespace="urn:CBI:xsd:CBIBkToCstmrStmtReqPhyMsg.00.01.02" elementFormDefault="qualified">
+	<xs:import namespace="urn:CBI:xsd:CBIHdrTrt.001.07" schemaLocation="CBIHdrTrt.001.07.xsd"/>
+	<xs:import namespace="urn:CBI:xsd:CBIHdrSrv.001.07" schemaLocation="CBIHdrSrv.001.07.xsd"/>
+	<xs:import namespace="urn:CBI:xsd:CBIBdyBkToCstmrStmtReq.00.01.02" schemaLocation="CBIBdyBkToCstmrStmtReq.00.01.02.xsd"/>
+	<xs:element name="CBIBkToCstmrStmtReqPhyMsg" type="CBIBkToCstmrStmtReqPhyMsg.00.01.02">
+		<xs:annotation>
+			<xs:documentation>1.
+Tag root del messaggio fisico CBI</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="CBIBkToCstmrStmtReqPhyMsg.00.01.02">
+		<xs:sequence>
+			<xs:element name="CBIHdrTrt" type="HTRT:CBIHdrTrt.001.07">
+				<xs:annotation>
+					<xs:documentation>1.1.
+Header di tratta CBI</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CBIHdrSrv" type="HE2E:CBIHdrSrv.001.07">
+				<xs:annotation>
+					<xs:documentation>1.2.
+Header di servizio CBI</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CBIBdyBkToCstmrStmtReq" type="BODY:CBIBdyBkToCstmrStmtReq.00.01.02">
+				<xs:annotation>
+					<xs:documentation>1.3.
+Body di servizio, viene veicolato nel file qualora la dimensione totale del msg fisico superi 1MB</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

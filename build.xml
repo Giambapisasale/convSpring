@@ -11,7 +11,13 @@
 	<property name="projectName" value="convSpring" />
 	<property name="resources" value="src/main/resources" />
 
-<!-- compilazione seconda modalità con spring boot -->
+	
+	
+<!-- compilazione seconda modalità con spring boot 
+
+java -jar target/spring-boot-sample-actuator.jar 
+
+-->
 	<target name="compile2" depends="init" description="compile the source">
 		<mkdir dir="target/classes" />
 		<javac srcdir="${src}" destdir="target/classes">

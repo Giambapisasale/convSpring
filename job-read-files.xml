@@ -7,15 +7,116 @@
 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
 		">
 
-    <!-- import resource="context.xml"/ -->
-    
-    <bean id="domain" class="com.trim.Domain" />
-    
+	<!-- import resource="context.xml"/ -->
+
+	<job id="readMultiLineJobRH" xmlns="http://www.springframework.org/schema/batch">
+
+		<step id="stepRH">
+			<tasklet>
+				<chunk reader="multiLineReader" writer="flatFileItemWriter2"
+					commit-interval="1" />
+			</tasklet>
+		</step>
+
+	</job>
+	
+	<bean id="flatFileItemWriter2" class="org.springframework.batch.item.file.FlatFileItemWriter">
+
+		<property name="resource" value="file:csv/outputs/domain.all._external3.csv" />
+		<property name="appendAllowed" value="true" />
+		<property name="lineAggregator">
+			<bean
+				class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
+				<property name="delimiter" value="," />
+				<property name="fieldExtractor">
+					<bean
+						class="org.springframework.batch.item.file.transform.PassThroughFieldExtractor">
+						<!--  property name="names" value="type, content" / -->
+					</bean>
+				</property>
+			</bean>
+		</property>
+
+	</bean>
+
+	<bean id="multiLineReader" class="com.trim.MultiLineTradeItemReader">
+		<property name="delegate">
+			<bean class="org.springframework.batch.item.file.FlatFileItemReader">
+				<property name="resource" value="file:csv/inputs/testRH.csv" />
+				<property name="lineMapper">
+					<bean
+						class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+						<property name="lineTokenizer" ref="RHFileTokenizer" />
+						<property name="fieldSetMapper">
+							<bean
+								class="org.springframework.batch.item.file.mapping.PassThroughFieldSetMapper" />
+						</property>
+					</bean>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="RHFileTokenizer"
+		class="org.springframework.batch.item.file.transform.PatternMatchingCompositeLineTokenizer">
+		<property name="tokenizers">
+			<map>
+				<entry key=" RH*" value-ref="headerRHTokenizer" />
+				<entry key=" EF*" value-ref="footerRHTokenizer" />
+				<entry key=" 62*" value-ref="line62Tokenizer" />
+				<entry key=" 61*" value-ref="line61Tokenizer" />
+				<entry key=" 63*" value-ref="line63Tokenizer" />
+				<entry key=" 64*" value-ref="line63Tokenizer" />
+				<entry key=" 65*" value-ref="line63Tokenizer" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="headerRHTokenizer"
+		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
+		<property name="names" value="type, content" />
+		<property name="columns" value="2-3, 4-120" />
+	</bean>
+	<bean id="footerRHTokenizer"
+		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
+		<property name="names" value="type, content" />
+		<property name="columns" value="2-3, 4-120" />
+	</bean>
+	<bean id="line62Tokenizer"
+		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
+		<property name="names" value="type, content" />
+		<property name="columns" value="2-3, 4-120" />
+	</bean>
+	<bean id="line61Tokenizer"
+		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
+		<property name="names" value="type, content" />
+		<property name="columns" value="2-3, 4-120" />
+	</bean>
+	<bean id="line63Tokenizer"
+		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
+		<property name="names" value="type, content" />
+		<property name="columns" value="2-3, 4-120" />
+	</bean>
+	<bean id="line64Tokenizer"
+		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
+		<property name="names" value="type, content" />
+		<property name="columns" value="2-3, 4-120" />
+	</bean>
+	<bean id="line65Tokenizer"
+		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
+		<property name="names" value="type, content" />
+		<property name="columns" value="2-3, 4-120" />
+	</bean>
+
+
+	<bean id="domain" class="com.trim.Domain" />
+
 	<job id="readMultiFileJob" xmlns="http://www.springframework.org/schema/batch">
 
 		<step id="step1">
 			<tasklet>
-				<chunk reader="multiResourceReader" writer="flatFileItemWriter" commit-interval="1" />
+				<chunk reader="multiResourceReader" writer="flatFileItemWriter"
+					commit-interval="1" />
 			</tasklet>
 		</step>
 
@@ -49,7 +150,7 @@
 
 	</bean>
 
-	<bean id="flatFileItemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" >
+	<bean id="flatFileItemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter">
 
 		<property name="resource" value="file:csv/outputs/domain.all._external.csv" />
 		<property name="appendAllowed" value="true" />
