@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+	<mapping type="one-way">
+		<class-a>java.util.Map</class-a>
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">
+			com.trim.schema.CBIGroupHeader42
+		</class-b>
+
+		<field>
+			<a key="RH">this</a>
+			<b>msgId</b>
+		</field>
+
+		<field>
+			<a key="RH">this</a>
+			<b>addtlInf</b>
+		</field>
+
+	</mapping>
+</mappings>

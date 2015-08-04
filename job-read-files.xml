@@ -1,25 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:batch="http://www.springframework.org/schema/batch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/batch 
 		http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
 		http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
 		">
 
 	<!-- import resource="context.xml"/ -->
 
+	<!-- START xml Writer -->
+	<bean id="xmlWriter" class="org.springframework.batch.item.xml.StaxEventItemWriter">
+		<property name="resource" ref="outputResource" />
+		<property name="marshaller" ref="headerMarshaller" />
+		<property name="rootTagName" value="CBIRH_output" />
+		<property name="overwriteOutput" value="true" />
+	</bean>
+
+	<bean id="headerMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+		<property name="aliases">
+			<util:map id="aliases">
+				<entry key="header" value="com.trim.schema.CBIGroupHeader42" />
+			</util:map>
+		</property>
+	</bean>
+
+	<bean id="outputResource" class="org.springframework.core.io.FileSystemResource">
+		<constructor-arg value="csv/outputs/domain.all._external3.xml" />
+	</bean>
+
+	<!-- END xml writer -->
+
+	<!-- START job RH -->
 	<job id="readMultiLineJobRH" xmlns="http://www.springframework.org/schema/batch">
 
 		<step id="stepRH">
 			<tasklet>
-				<chunk reader="multiLineReader" writer="flatFileItemWriter2"
+				<chunk reader="multiLineReader" writer="xmlWriter"
+				processor="RHProcessor"
 					commit-interval="1" />
 			</tasklet>
 		</step>
 
 	</job>
 	
+	<bean id="RHProcessor" class="com.trim.CBI_RH_Processor" />
+
 	<bean id="flatFileItemWriter2" class="org.springframework.batch.item.file.FlatFileItemWriter">
 
 		<property name="resource" value="file:csv/outputs/domain.all._external3.csv" />
@@ -31,7 +59,7 @@
 				<property name="fieldExtractor">
 					<bean
 						class="org.springframework.batch.item.file.transform.PassThroughFieldExtractor">
-						<!--  property name="names" value="type, content" / -->
+						<!-- property name="names" value="type, content" / -->
 					</bean>
 				</property>
 			</bean>
@@ -39,7 +67,7 @@
 
 	</bean>
 
-	<bean id="multiLineReader" class="com.trim.MultiLineTradeItemReader">
+	<bean id="multiLineReader" class="com.trim.CBI_RH_MultiLineItemReader">
 		<property name="delegate">
 			<bean class="org.springframework.batch.item.file.FlatFileItemReader">
 				<property name="resource" value="file:csv/inputs/testRH.csv" />
@@ -106,67 +134,6 @@
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
 		<property name="names" value="type, content" />
 		<property name="columns" value="2-3, 4-120" />
-	</bean>
-
-
-	<bean id="domain" class="com.trim.Domain" />
-
-	<job id="readMultiFileJob" xmlns="http://www.springframework.org/schema/batch">
-
-		<step id="step1">
-			<tasklet>
-				<chunk reader="multiResourceReader" writer="flatFileItemWriter"
-					commit-interval="1" />
-			</tasklet>
-		</step>
-
-	</job>
-
-	<bean id="multiResourceReader"
-		class=" org.springframework.batch.item.file.MultiResourceItemReader">
-		<property name="resources" value="file:csv/inputs/domain-*.csv" />
-		<property name="delegate" ref="flatFileItemReader" />
-	</bean>
-
-	<bean id="flatFileItemReader" class="org.springframework.batch.item.file.FlatFileItemReader">
-
-		<property name="lineMapper">
-			<bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
-
-				<property name="lineTokenizer">
-					<bean
-						class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
-						<property name="names" value="id, domain" />
-					</bean>
-				</property>
-				<property name="fieldSetMapper">
-					<bean
-						class="org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper">
-						<property name="prototypeBeanName" value="domain" />
-					</bean>
-				</property>
-			</bean>
-		</property>
-
-	</bean>
-
-	<bean id="flatFileItemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter">
-
-		<property name="resource" value="file:csv/outputs/domain.all._external.csv" />
-		<property name="appendAllowed" value="true" />
-		<property name="lineAggregator">
-			<bean
-				class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
-				<property name="delimiter" value="," />
-				<property name="fieldExtractor">
-					<bean
-						class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
-						<property name="names" value="id, domain" />
-					</bean>
-				</property>
-			</bean>
-		</property>
-
 	</bean>
 
 </beans>

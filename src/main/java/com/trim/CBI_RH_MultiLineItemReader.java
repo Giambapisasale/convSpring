@@ -9,7 +9,7 @@ import org.springframework.batch.item.ItemStreamException;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.transform.FieldSet;
 
-public class MultiLineTradeItemReader<T> implements ItemReader<HashMap<String,String>>, ItemStream  {
+public class CBI_RH_MultiLineItemReader<T> implements ItemReader<HashMap<String,String>>, ItemStream  {
 	
 	private FlatFileItemReader<FieldSet> delegate;
 
@@ -45,6 +45,7 @@ public class MultiLineTradeItemReader<T> implements ItemReader<HashMap<String,St
 	        
 	        if (prefix.equals("RH")) {
 	            t = new HashMap<String,String>(); // Record must start with header
+	            t.put(prefix, value);
 	        }
 	        else if (prefix.equals("EF")) {
 	            return t; // Record must end with footer
