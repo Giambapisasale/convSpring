@@ -4,6 +4,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.PlatformTransactionManager;
 
 
@@ -15,4 +16,5 @@ public class BatchConfiguration {
 	
 	@Autowired
 	private PlatformTransactionManager transactionManager;
+
 }

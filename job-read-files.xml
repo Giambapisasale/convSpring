@@ -9,23 +9,36 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
 		">
 
-	<!-- import resource="context.xml"/ -->
+	<!-- <bean id="rulesDS" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" 
+		/> <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/> <property 
+		name="username" value="conv"/> <property name="password" value="conv"/> </bean> -->
 
 	<!-- START xml Writer -->
 	<bean id="xmlWriter" class="org.springframework.batch.item.xml.StaxEventItemWriter">
 		<property name="resource" ref="outputResource" />
 		<property name="marshaller" ref="headerMarshaller" />
-		<property name="rootTagName" value="CBIRH_output" />
+		<property name="rootTagName" value="CBIBkToCstmrStmtReqPhyMsg" />
 		<property name="overwriteOutput" value="true" />
 	</bean>
 
 	<bean id="headerMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
 		<property name="aliases">
 			<util:map id="aliases">
-				<entry key="header" value="com.trim.schema.CBIGroupHeader42" />
+				<entry key="CBIIdyStmtReqLogMsg" value="com.trim.schema.CBIDlyStmtReqLogMsg000102" />
 			</util:map>
 		</property>
+		<property name="converters">
+			<array>
+				<ref bean="dateConverter" />
+			</array>
+		</property>
 	</bean>
+	
+	<bean id="dateConverter" class="com.trim.jaxb.DateConverter">
+	 	<constructor-arg value="ddMMyy" index="0" />
+	</bean>
+	
 
 	<bean id="outputResource" class="org.springframework.core.io.FileSystemResource">
 		<constructor-arg value="csv/outputs/domain.all._external3.xml" />
@@ -38,14 +51,13 @@
 
 		<step id="stepRH">
 			<tasklet>
-				<chunk reader="multiLineReader" writer="xmlWriter"
-				processor="RHProcessor"
+				<chunk reader="multiLineReader" writer="xmlWriter" processor="RHProcessor"
 					commit-interval="1" />
 			</tasklet>
 		</step>
 
 	</job>
-	
+
 	<bean id="RHProcessor" class="com.trim.CBI_RH_Processor" />
 
 	<bean id="flatFileItemWriter2" class="org.springframework.batch.item.file.FlatFileItemWriter">
@@ -102,8 +114,9 @@
 
 	<bean id="headerRHTokenizer"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
-		<property name="names" value="type, content" />
-		<property name="columns" value="2-3, 4-120" />
+		<property name="names"
+			value="type, sender, recipient, creation_date, support_name, filler" />
+		<property name="columns" value="2-3, 4-8, 9-13, 14-19, 20-39, 40-120" />
 	</bean>
 	<bean id="footerRHTokenizer"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">

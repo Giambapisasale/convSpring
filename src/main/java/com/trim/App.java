@@ -1,5 +1,10 @@
 package com.trim;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.JobParameters;
@@ -10,10 +15,21 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 
-		App obj = new App();
-		obj.run();
+		SimpleDateFormat df = new SimpleDateFormat("ddMMyy");
+		Date date = df.parse("300881");
+		
+		Calendar c = Calendar.getInstance();
+		
+		c.setTime(date);
+		
+		System.out.println(date);
+		System.out.println(df.format(date));
+
+		System.out.println(df.getTimeZone());
+//		App obj = new App();
+//		obj.run();
 
 	}
 

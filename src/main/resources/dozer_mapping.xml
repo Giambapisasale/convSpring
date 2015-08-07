@@ -2,21 +2,45 @@
 <mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://dozer.sourceforge.net
           http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+	<configuration>
+		<date-format>ddMMyy</date-format>
+	</configuration>
 	<mapping type="one-way">
-		<class-a>java.util.Map</class-a>
+		<class-a>java.util.HashMap</class-a>
 		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">
-			com.trim.schema.CBIGroupHeader42
+			com.trim.schema.CBIDlyStmtReqLogMsg000102
 		</class-b>
 
 		<field>
 			<a key="RH">this</a>
-			<b>msgId</b>
+			<b>grpHdr</b>
+			<a-hint>org.springframework.batch.item.file.transform.FieldSet</a-hint>
 		</field>
 
-		<field>
-			<a key="RH">this</a>
-			<b>addtlInf</b>
-		</field>
+
+		<field-exclude type="one-way">
+			<a>this</a>
+			<b>stmt</b>
+		</field-exclude>
 
 	</mapping>
+
+	<mapping type="one-way">
+		<class-a>java.util.Properties</class-a>
+		<class-b>com.trim.schema.CBIGroupHeader42</class-b>
+		<field>
+			<a map-get-method="getProperty" key="sender">this</a>
+			<b>addtlInf</b>
+		</field>
+		<field>
+			<a map-get-method="getProperty" key="support_name">this</a>
+			<b>msgId</b>
+		</field>
+		<field>
+			<a date-format="ddMMyy" map-get-method="getProperty" key="creation_date">this</a>
+			<b>creDtTm</b>
+		</field>
+	</mapping>
+
 </mappings>

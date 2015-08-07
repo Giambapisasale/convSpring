@@ -10,20 +10,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 
-import com.trim.schema.CBIGroupHeader42;
+import com.trim.schema.CBIDlyStmtReqLogMsg000102;
 
-public class CBI_RH_Processor implements ItemProcessor<HashMap<String, String>, CBIGroupHeader42> {
+public class CBI_RH_Processor implements ItemProcessor<HashMap<String, String>, CBIDlyStmtReqLogMsg000102> {
 
 	private static Logger logger = LoggerFactory.getLogger(CBI_RH_Processor.class);
 
 	private static DozerBeanMapper mapper = getMapper();
 
 	@Override
-	public CBIGroupHeader42 process(HashMap<String, String> item) throws Exception {
+	public CBIDlyStmtReqLogMsg000102 process(HashMap<String, String> item) throws Exception {
 
-		CBIGroupHeader42 header = mapper.map(item, CBIGroupHeader42.class);
+		CBIDlyStmtReqLogMsg000102 header = mapper.map(item, CBIDlyStmtReqLogMsg000102.class);
 
-		header.setCreDtTm(new Date());
+		//header.getGrpHdr().setCreDtTm(new Date());
 
 		return header;
 	}
