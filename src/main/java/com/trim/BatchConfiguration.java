@@ -1,4 +1,4 @@
-package hello;
+package com.trim;
 
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.beans.factory.annotation.Autowired;

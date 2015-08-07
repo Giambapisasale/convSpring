@@ -43,7 +43,7 @@ java -jar target/spring-boot-sample-actuator.jar
 			<zipfileset src="lib/spring-boot-cli.jar" />
 			<manifest>
 				<attribute name="Main-Class" value="org.springframework.boot.loader.JarLauncher" />
-				<attribute name="Start-Class" value="hello.Application" />
+				<attribute name="Start-Class" value="com.trim.Application" />
 			</manifest>
 		</jar>
 	</target>
@@ -90,7 +90,7 @@ java -jar target/spring-boot-sample-actuator.jar
 
 		<jar jarfile="${dist}/${projectName}.jar" basedir="${build}">
 			<manifest>
-				<attribute name="Main-Class" value="hello.Application" />
+				<attribute name="Main-Class" value="com.trim.Application" />
 			</manifest>
 			<zipfileset src="${dist.lib}/dependencies-all.jar" excludes="META-INF/*.SF" />
 		</jar>
