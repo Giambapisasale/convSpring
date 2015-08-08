@@ -1,1 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?><CBIBkToCstmrStmtReqPhyMsg><CBIIdyStmtReqLogMsg><grpHdr><msgId>NameNameNameNameName</msgId><creDtTm>300881</creDtTm><addtlInf>14270</addtlInf></grpHdr></CBIIdyStmtReqLogMsg><CBIIdyStmtReqLogMsg><grpHdr><msgId>NameNameNameNameName</msgId><creDtTm>300881</creDtTm><addtlInf>24270</addtlInf></grpHdr></CBIIdyStmtReqLogMsg><CBIIdyStmtReqLogMsg><grpHdr><msgId>NameNameNameNameName</msgId><creDtTm>300881</creDtTm><addtlInf>14270</addtlInf></grpHdr></CBIIdyStmtReqLogMsg><CBIIdyStmtReqLogMsg><grpHdr><msgId>NameNameNameNameName</msgId><creDtTm>300881</creDtTm><addtlInf>24270</addtlInf></grpHdr></CBIIdyStmtReqLogMsg></CBIBkToCstmrStmtReqPhyMsg>
+<?xml version="1.0" encoding="UTF-8"?>
+<CBIBkToCstmrStmtReqPhyMsg>
+	<CBIIdyStmtReqLogMsg>
+		<grpHdr>
+			<msgId>NameNameNameNameName</msgId>
+			<creDtTm>300881</creDtTm>
+			<addtlInf>14270</addtlInf>
+		</grpHdr>
+		<Stmt>
+			<elctrncSeqNb>1</elctrncSeqNb>
+		</Stmt>
+		<Stmt>
+			<elctrncSeqNb>1</elctrncSeqNb>
+		</Stmt>
+	</CBIIdyStmtReqLogMsg>
+	<CBIIdyStmtReqLogMsg>
+		<grpHdr>
+			<msgId>NameNameNameNameName</msgId>
+			<creDtTm>300881</creDtTm>
+			<addtlInf>24270</addtlInf>
+		</grpHdr>
+		<Stmt>
+			<elctrncSeqNb>1</elctrncSeqNb>
+		</Stmt>
+	</CBIIdyStmtReqLogMsg>
+	<CBIIdyStmtReqLogMsg>
+		<grpHdr>
+			<msgId>NameNameNameNameName</msgId>
+			<creDtTm>300881</creDtTm>
+			<addtlInf>14270</addtlInf>
+		</grpHdr>
+		<Stmt>
+			<elctrncSeqNb>1</elctrncSeqNb>
+		</Stmt>
+	</CBIIdyStmtReqLogMsg>
+	<CBIIdyStmtReqLogMsg>
+		<grpHdr>
+			<msgId>NameNameNameNameName</msgId>
+			<creDtTm>300881</creDtTm>
+			<addtlInf>24270</addtlInf>
+		</grpHdr>
+		<Stmt>
+			<elctrncSeqNb>1</elctrncSeqNb>
+		</Stmt>
+	</CBIIdyStmtReqLogMsg>
+</CBIBkToCstmrStmtReqPhyMsg>

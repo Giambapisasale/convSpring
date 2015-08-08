@@ -8,24 +8,69 @@
 	</configuration>
 	<mapping type="one-way">
 		<class-a>java.util.HashMap</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory" >
 			com.trim.schema.CBIDlyStmtReqLogMsg000102
 		</class-b>
 
 		<field>
 			<a key="RH">this</a>
-			<b>grpHdr</b>
-			<a-hint>org.springframework.batch.item.file.transform.FieldSet</a-hint>
+			<b>GrpHdr</b>
 		</field>
 
 
-		<field-exclude type="one-way">
-			<a>this</a>
+		<field>
+			<a key="61">this</a>
 			<b>stmt</b>
+			<b-hint>com.trim.schema.CBIAccountStatement21</b-hint>
+		</field>
+
+
+	</mapping>
+
+	<!-- com.trim.schema.CBIAccountStatement21 -->
+	<mapping type="one-way">
+		<class-a>java.util.Properties</class-a>
+		<class-b>com.trim.schema.CBIAccountStatement21</class-b>
+		<field>
+			<a map-get-method="getProperty" key="number">this</a>
+			<b>elctrncSeqNb</b>
+		</field>
+		<field-exclude>
+			<a>this</a>
+			<b>bal</b>
+		</field-exclude>
+		<field-exclude>
+			<a>this</a>
+			<b>id</b>
+		</field-exclude>
+		<field-exclude>
+			<a>this</a>
+			<b>creDtTm</b>
+		</field-exclude>
+		<field-exclude>
+			<a>this</a>
+			<b>acct</b>
+		</field-exclude>
+		<field-exclude>
+			<a>this</a>
+			<b>cpyDplctInd</b>
+		</field-exclude>
+		<field-exclude>
+			<a>this</a>
+			<b>txsSummry</b>
+		</field-exclude>
+		<field-exclude>
+			<a>this</a>
+			<b>ntry</b>
+		</field-exclude>
+		<field-exclude>
+			<a>this</a>
+			<b>addtlStmtInf</b>
 		</field-exclude>
 
 	</mapping>
 
+	<!-- CBIGroupHeader42 -->
 	<mapping type="one-way">
 		<class-a>java.util.Properties</class-a>
 		<class-b>com.trim.schema.CBIGroupHeader42</class-b>
