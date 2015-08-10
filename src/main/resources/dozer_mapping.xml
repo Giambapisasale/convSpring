@@ -7,25 +7,39 @@
 		<date-format>ddMMyy</date-format>
 	</configuration>
 	<mapping type="one-way">
-		<class-a>java.util.HashMap</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory" >
-			com.trim.schema.CBIDlyStmtReqLogMsg000102
+		<class-a>com.trim.vo.RH_vo</class-a>
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.trim.schema.CBIDlyStmtReqLogMsg000102
 		</class-b>
 
 		<field>
-			<a key="RH">this</a>
-			<b>GrpHdr</b>
+			<a map-get-method="getProperty" key="sender">rh</a>
+			<b>GrpHdr.addtlInf</b>
 		</field>
-
-
 		<field>
-			<a key="61">this</a>
+			<a map-get-method="getProperty" key="support_name">rh</a>
+			<b>GrpHdr.msgId</b>
+		</field>
+		<field>
+			<a date-format="ddMMyy" map-get-method="getProperty" key="creation_date">rh</a>
+			<b>GrpHdr.creDtTm</b>
+		</field>
+		
+		<field>
+			<a>r61</a>
 			<b>stmt</b>
 			<b-hint>com.trim.schema.CBIAccountStatement21</b-hint>
+		</field>
+		
+		<!--  errore imposta solo il primo elemento della lista -->
+		<field custom-converter=
+         "com.trim.utils.Converter_propToList" custom-converter-param="creDtTm">
+			<a date-format="ddMMyy" map-get-method="getProperty" key="creation_date">rh</a>
+			<b>stmt</b>
 		</field>
 
 
 	</mapping>
+
 
 	<!-- com.trim.schema.CBIAccountStatement21 -->
 	<mapping type="one-way">
@@ -68,24 +82,6 @@
 			<b>addtlStmtInf</b>
 		</field-exclude>
 
-	</mapping>
-
-	<!-- CBIGroupHeader42 -->
-	<mapping type="one-way">
-		<class-a>java.util.Properties</class-a>
-		<class-b>com.trim.schema.CBIGroupHeader42</class-b>
-		<field>
-			<a map-get-method="getProperty" key="sender">this</a>
-			<b>addtlInf</b>
-		</field>
-		<field>
-			<a map-get-method="getProperty" key="support_name">this</a>
-			<b>msgId</b>
-		</field>
-		<field>
-			<a date-format="ddMMyy" map-get-method="getProperty" key="creation_date">this</a>
-			<b>creDtTm</b>
-		</field>
 	</mapping>
 
 </mappings>

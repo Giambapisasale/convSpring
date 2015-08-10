@@ -8,9 +8,11 @@
 		</grpHdr>
 		<Stmt>
 			<elctrncSeqNb>1</elctrncSeqNb>
+			<creDtTm>300881</creDtTm>
 		</Stmt>
 		<Stmt>
 			<elctrncSeqNb>1</elctrncSeqNb>
+			<creDtTm>300881</creDtTm>
 		</Stmt>
 	</CBIIdyStmtReqLogMsg>
 	<CBIIdyStmtReqLogMsg>
@@ -21,6 +23,7 @@
 		</grpHdr>
 		<Stmt>
 			<elctrncSeqNb>1</elctrncSeqNb>
+			<creDtTm>300881</creDtTm>
 		</Stmt>
 	</CBIIdyStmtReqLogMsg>
 	<CBIIdyStmtReqLogMsg>
@@ -31,6 +34,7 @@
 		</grpHdr>
 		<Stmt>
 			<elctrncSeqNb>1</elctrncSeqNb>
+			<creDtTm>300881</creDtTm>
 		</Stmt>
 	</CBIIdyStmtReqLogMsg>
 	<CBIIdyStmtReqLogMsg>
@@ -41,6 +45,7 @@
 		</grpHdr>
 		<Stmt>
 			<elctrncSeqNb>1</elctrncSeqNb>
+			<creDtTm>300881</creDtTm>
 		</Stmt>
 	</CBIIdyStmtReqLogMsg>
 </CBIBkToCstmrStmtReqPhyMsg>
