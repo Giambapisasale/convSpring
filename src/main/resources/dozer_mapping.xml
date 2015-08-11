@@ -23,16 +23,16 @@
 			<a date-format="ddMMyy" map-get-method="getProperty" key="creation_date">rh</a>
 			<b>GrpHdr.creDtTm</b>
 		</field>
-		
+
 		<field>
 			<a>r61</a>
 			<b>stmt</b>
 			<b-hint>com.trim.schema.CBIAccountStatement21</b-hint>
 		</field>
-		
-		<!--  errore imposta solo il primo elemento della lista -->
-		<field custom-converter=
-         "com.trim.utils.Converter_propToList" custom-converter-param="creDtTm">
+
+		<!-- errore imposta solo il primo elemento della lista -->
+		<field custom-converter="com.trim.utils.Converter_DatePropToListProp"
+			custom-converter-param="creDtTm">
 			<a date-format="ddMMyy" map-get-method="getProperty" key="creation_date">rh</a>
 			<b>stmt</b>
 		</field>
@@ -41,6 +41,7 @@
 	</mapping>
 
 
+	
 	<!-- com.trim.schema.CBIAccountStatement21 -->
 	<mapping type="one-way">
 		<class-a>java.util.Properties</class-a>
@@ -48,6 +49,10 @@
 		<field>
 			<a map-get-method="getProperty" key="number">this</a>
 			<b>elctrncSeqNb</b>
+		</field>
+		<field custom-converter="com.trim.utils.Converter_reasonToCpyDplctInd">
+			<a map-get-method="getProperty" key="reason">this</a>
+			<b>cpyDplctInd</b>
 		</field>
 		<field-exclude>
 			<a>this</a>
@@ -64,10 +69,6 @@
 		<field-exclude>
 			<a>this</a>
 			<b>acct</b>
-		</field-exclude>
-		<field-exclude>
-			<a>this</a>
-			<b>cpyDplctInd</b>
 		</field-exclude>
 		<field-exclude>
 			<a>this</a>

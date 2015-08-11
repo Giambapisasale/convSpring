@@ -9,7 +9,7 @@ import org.dozer.ConfigurableCustomConverter;
 
 import com.trim.jaxb.DateConverter;
 
-public class Converter_propToList implements ConfigurableCustomConverter {
+public class Converter_DatePropToListProp implements ConfigurableCustomConverter {
 
 	String parameter;
 
