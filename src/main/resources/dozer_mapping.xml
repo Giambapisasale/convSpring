@@ -23,6 +23,10 @@
 			<a date-format="ddMMyy" map-get-method="getProperty" key="creation_date">rh</a>
 			<b>GrpHdr.creDtTm</b>
 		</field>
+		<field>
+			<a map-get-method="getProperty" key="recipient">rh</a>
+			<b>GrpHdr.MsgRcpt.Id.OrgId.Othr.Id</b>
+		</field>
 
 		<field>
 			<a>r61</a>
@@ -30,30 +34,99 @@
 			<b-hint>com.trim.schema.CBIAccountStatement21</b-hint>
 		</field>
 
-		<!-- errore imposta solo il primo elemento della lista -->
-		<field custom-converter="com.trim.utils.Converter_DatePropToListProp"
-			custom-converter-param="creDtTm">
-			<a date-format="ddMMyy" map-get-method="getProperty" key="creation_date">rh</a>
-			<b>stmt</b>
-		</field>
-
-
 	</mapping>
 
 
-	
+	<!-- com.trim.schema.CBIReportEntry21 -->
+	<mapping type="one-way">
+		<class-a>com.trim.vo.RH_vo62</class-a>
+		<class-b>com.trim.schema.CBIReportEntry21</class-b>
+		<field>
+			<a map-get-method="getProperty" key="number">data</a>
+			<b>NtryRef</b>
+		</field>
+
+		<field>
+			<a map-get-method="getProperty" key="amount">data</a>
+			<b>amt.value</b>
+		</field>
+		<field custom-converter="com.trim.utils.Converter_signToCreditDebitCode">
+			<a  map-get-method="getProperty" key="sign">data</a>
+			<b>cdtDbtInd</b>
+		</field>
+		
+		<field>
+			<a map-get-method="getProperty" key="account_date">data</a>
+			<b>BookgDt.dt</b>
+		</field>
+		<field>
+			<a map-get-method="getProperty" key="date">data</a>
+			<b>ValDt.dt</b>
+		</field>
+		<field>
+			<a map-get-method="getProperty" key="bank_reference">data</a>
+			<b>AcctSvcrRef</b>
+		</field>
+		
+		<field>
+			<a map-get-method="getProperty" key="reason_internal_reason">data</a>
+			<b>BkTxCd.Prtry.Cd</b>
+		</field>
+		
+
+	</mapping>
+
 	<!-- com.trim.schema.CBIAccountStatement21 -->
 	<mapping type="one-way">
-		<class-a>java.util.Properties</class-a>
+		<class-a>com.trim.vo.RH_vo61</class-a>
 		<class-b>com.trim.schema.CBIAccountStatement21</class-b>
+
 		<field>
-			<a map-get-method="getProperty" key="number">this</a>
+			<a map-get-method="getProperty" key="creation_date" date-format="ddMMyy">rh
+			</a>
+			<b>creDtTm</b>
+		</field>
+
+		<field>
+			<a map-get-method="getProperty" key="stmt_id">rh</a>
+			<b>id</b>
+		</field>
+
+		<field>
+			<a map-get-method="getProperty" key="number">data</a>
 			<b>elctrncSeqNb</b>
 		</field>
 		<field custom-converter="com.trim.utils.Converter_reasonToCpyDplctInd">
-			<a map-get-method="getProperty" key="reason">this</a>
+			<a map-get-method="getProperty" key="reason">data</a>
 			<b>cpyDplctInd</b>
 		</field>
+		<field>
+			<a map-get-method="getProperty" key="iban">data</a>
+			<b>acct.id.iban</b>
+		</field>
+		<field>
+			<a map-get-method="getProperty" key="account_type">data</a>
+			<b>acct.tp.prtry</b>
+		</field>
+		<field>
+			<a map-get-method="getProperty" key="currency_code">data</a>
+			<b>acct.ccy</b>
+		</field>
+		<field>
+			<a map-get-method="getProperty" key="description">data</a>
+			<b>acct.nm</b>
+		</field>
+		<field>
+			<a map-get-method="getProperty" key="abi">data</a>
+			<b>acct.Svcr.FinInstnId.ClrSysMmbId.MmbId</b>
+		</field>
+
+		<field>
+			<a>r62</a>
+			<b>ntry</b>
+			<b-hint>com.trim.schema.CBIReportEntry21</b-hint>
+		</field>
+
 		<field-exclude>
 			<a>this</a>
 			<b>bal</b>
@@ -66,18 +139,12 @@
 			<a>this</a>
 			<b>creDtTm</b>
 		</field-exclude>
-		<field-exclude>
-			<a>this</a>
-			<b>acct</b>
-		</field-exclude>
+
 		<field-exclude>
 			<a>this</a>
 			<b>txsSummry</b>
 		</field-exclude>
-		<field-exclude>
-			<a>this</a>
-			<b>ntry</b>
-		</field-exclude>
+
 		<field-exclude>
 			<a>this</a>
 			<b>addtlStmtInf</b>

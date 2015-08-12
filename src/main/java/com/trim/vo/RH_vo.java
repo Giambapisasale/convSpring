@@ -6,13 +6,21 @@ import java.util.Properties;
 
 public class RH_vo {
 	private Properties rh;
-	private Properties ef;
+	private Properties r64;
+	private Properties r65;
 
-	private List<Properties> r61;
-	private List<Properties> r62;
-	private List<Properties> r63;
-	private List<Properties> r64;
-	private List<Properties> r65;
+	private List<RH_vo61> r61;
+
+	public List<RH_vo61> getR61() {
+		if (r61 == null) {
+			r61 = new ArrayList<RH_vo61>();
+		}
+		return r61;
+	}
+
+	public void setR61(List<RH_vo61> r61) {
+		this.r61 = r61;
+	}
 
 	public Properties getRh() {
 		return rh;
@@ -22,46 +30,19 @@ public class RH_vo {
 		this.rh = rh;
 	}
 
-	public List<Properties> getR61() {
-		if (r61 == null) {
-			r61 = new ArrayList<Properties>();
-		}
-		return r61;
-	}
-
-	public void setR61(List<Properties> r61) {
-		this.r61 = r61;
-	}
-
-	public List<Properties> getR62() {
-		return r62;
-	}
-
-	public void setR62(List<Properties> r62) {
-		this.r62 = r62;
-	}
-
-	public List<Properties> getR63() {
-		return r63;
-	}
-
-	public void setR63(List<Properties> r63) {
-		this.r63 = r63;
-	}
-
-	public List<Properties> getR64() {
+	public Properties getR64() {
 		return r64;
 	}
 
-	public void setR64(List<Properties> r64) {
+	public void setR64(Properties r64) {
 		this.r64 = r64;
 	}
 
-	public List<Properties> getR65() {
+	public Properties getR65() {
 		return r65;
 	}
 
-	public void setR65(List<Properties> r65) {
+	public void setR65(Properties r65) {
 		this.r65 = r65;
 	}
 
@@ -72,5 +53,7 @@ public class RH_vo {
 	public void setEf(Properties ef) {
 		this.ef = ef;
 	}
+
+	private Properties ef;
 
 }

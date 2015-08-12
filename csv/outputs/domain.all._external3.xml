@@ -4,52 +4,361 @@
 		<grpHdr>
 			<msgId>NameNameNameNameName</msgId>
 			<creDtTm>300881</creDtTm>
+			<msgRcpt>
+				<id>
+					<orgId>
+						<othr>
+							<id>90123</id>
+						</othr>
+					</orgId>
+				</id>
+			</msgRcpt>
 			<addtlInf>14270</addtlInf>
 		</grpHdr>
 		<Stmt>
 			<elctrncSeqNb>1</elctrncSeqNb>
-			<creDtTm>300881</creDtTm>
 			<cpyDplctInd>DUPL</cpyDplctInd>
-		</Stmt>
-		<Stmt>
-			<elctrncSeqNb>1</elctrncSeqNb>
-			<creDtTm>300881</creDtTm>
+			<acct>
+				<id>
+					<iban>IT01C8427005036010101010101</iban>
+				</id>
+				<tp>
+					<prtry>TY</prtry>
+				</tp>
+				<ccy>EUR</ccy>
+				<nm>descriptiondescr</nm>
+				<svcr>
+					<finInstnId>
+						<clrSysMmbId>
+							<mmbId>84270</mmbId>
+						</clrSysMmbId>
+					</finInstnId>
+				</svcr>
+			</acct>
+			<Ntry>
+				<ntryRef>012</ntryRef>
+				<amt>
+					<value>12300881100815</value>
+				</amt>
+				<bookgDt>
+					<dt>100815</dt>
+				</bookgDt>
+				<valDt>
+					<dt>300881</dt>
+				</valDt>
+				<acctSvcrRef>300881100815n012</acctSvcrRef>
+				<bkTxCd>
+					<prtry>
+						<cd>n012</cd>
+					</prtry>
+				</bkTxCd>
+			</Ntry>
+			<Ntry>
+				<ntryRef>012</ntryRef>
+				<amt>
+					<value>12300881100815</value>
+				</amt>
+				<bookgDt>
+					<dt>100815</dt>
+				</bookgDt>
+				<valDt>
+					<dt>300881</dt>
+				</valDt>
+				<acctSvcrRef>300881100815n012</acctSvcrRef>
+				<bkTxCd>
+					<prtry>
+						<cd>n012</cd>
+					</prtry>
+				</bkTxCd>
+			</Ntry>
+			<Ntry>
+				<ntryRef>012</ntryRef>
+				<amt>
+					<value>12300881100815</value>
+				</amt>
+				<bookgDt>
+					<dt>100815</dt>
+				</bookgDt>
+				<valDt>
+					<dt>300881</dt>
+				</valDt>
+				<acctSvcrRef>300881100815n012</acctSvcrRef>
+				<bkTxCd>
+					<prtry>
+						<cd>n012</cd>
+					</prtry>
+				</bkTxCd>
+			</Ntry>
 		</Stmt>
 	</CBIIdyStmtReqLogMsg>
 	<CBIIdyStmtReqLogMsg>
 		<grpHdr>
 			<msgId>NameNameNameNameName</msgId>
 			<creDtTm>300881</creDtTm>
+			<msgRcpt>
+				<id>
+					<orgId>
+						<othr>
+							<id>90123</id>
+						</othr>
+					</orgId>
+				</id>
+			</msgRcpt>
 			<addtlInf>24270</addtlInf>
 		</grpHdr>
 		<Stmt>
 			<elctrncSeqNb>1</elctrncSeqNb>
-			<creDtTm>300881</creDtTm>
-			<cpyDplctInd>DUPL</cpyDplctInd>
+			<acct>
+				<id>
+					<iban>IT01C8427005036010101010101</iban>
+				</id>
+				<tp>
+					<prtry>TY</prtry>
+				</tp>
+				<ccy>EUR</ccy>
+				<nm>descriptiondescr</nm>
+				<svcr>
+					<finInstnId>
+						<clrSysMmbId>
+							<mmbId>84270</mmbId>
+						</clrSysMmbId>
+					</finInstnId>
+				</svcr>
+			</acct>
+			<Ntry>
+				<ntryRef>012</ntryRef>
+				<amt>
+					<value>12300881100815</value>
+				</amt>
+				<bookgDt>
+					<dt>100815</dt>
+				</bookgDt>
+				<valDt>
+					<dt>300881</dt>
+				</valDt>
+				<acctSvcrRef>300881100815n012</acctSvcrRef>
+				<bkTxCd>
+					<prtry>
+						<cd>n012</cd>
+					</prtry>
+				</bkTxCd>
+			</Ntry>
+			<Ntry>
+				<ntryRef>012</ntryRef>
+				<amt>
+					<value>12300881100815</value>
+				</amt>
+				<bookgDt>
+					<dt>100815</dt>
+				</bookgDt>
+				<valDt>
+					<dt>300881</dt>
+				</valDt>
+				<acctSvcrRef>300881100815n012</acctSvcrRef>
+				<bkTxCd>
+					<prtry>
+						<cd>n012</cd>
+					</prtry>
+				</bkTxCd>
+			</Ntry>
+			<Ntry>
+				<ntryRef>012</ntryRef>
+				<amt>
+					<value>12300881100815</value>
+				</amt>
+				<bookgDt>
+					<dt>100815</dt>
+				</bookgDt>
+				<valDt>
+					<dt>300881</dt>
+				</valDt>
+				<acctSvcrRef>300881100815n012</acctSvcrRef>
+				<bkTxCd>
+					<prtry>
+						<cd>n012</cd>
+					</prtry>
+				</bkTxCd>
+			</Ntry>
 		</Stmt>
 	</CBIIdyStmtReqLogMsg>
 	<CBIIdyStmtReqLogMsg>
 		<grpHdr>
 			<msgId>NameNameNameNameName</msgId>
 			<creDtTm>300881</creDtTm>
+			<msgRcpt>
+				<id>
+					<orgId>
+						<othr>
+							<id>90123</id>
+						</othr>
+					</orgId>
+				</id>
+			</msgRcpt>
 			<addtlInf>14270</addtlInf>
 		</grpHdr>
 		<Stmt>
 			<elctrncSeqNb>1</elctrncSeqNb>
-			<creDtTm>300881</creDtTm>
-			<cpyDplctInd>DUPL</cpyDplctInd>
+			<acct>
+				<id>
+					<iban>IT01C8427005036010101010101</iban>
+				</id>
+				<tp>
+					<prtry>TY</prtry>
+				</tp>
+				<ccy>EUR</ccy>
+				<nm>descriptiondescr</nm>
+				<svcr>
+					<finInstnId>
+						<clrSysMmbId>
+							<mmbId>84270</mmbId>
+						</clrSysMmbId>
+					</finInstnId>
+				</svcr>
+			</acct>
+			<Ntry>
+				<ntryRef>012</ntryRef>
+				<amt>
+					<value>12300881100815</value>
+				</amt>
+				<bookgDt>
+					<dt>100815</dt>
+				</bookgDt>
+				<valDt>
+					<dt>300881</dt>
+				</valDt>
+				<acctSvcrRef>300881100815n012</acctSvcrRef>
+				<bkTxCd>
+					<prtry>
+						<cd>n012</cd>
+					</prtry>
+				</bkTxCd>
+			</Ntry>
+			<Ntry>
+				<ntryRef>012</ntryRef>
+				<amt>
+					<value>12300881100815</value>
+				</amt>
+				<bookgDt>
+					<dt>100815</dt>
+				</bookgDt>
+				<valDt>
+					<dt>300881</dt>
+				</valDt>
+				<acctSvcrRef>300881100815n012</acctSvcrRef>
+				<bkTxCd>
+					<prtry>
+						<cd>n012</cd>
+					</prtry>
+				</bkTxCd>
+			</Ntry>
+			<Ntry>
+				<ntryRef>012</ntryRef>
+				<amt>
+					<value>12300881100815</value>
+				</amt>
+				<bookgDt>
+					<dt>100815</dt>
+				</bookgDt>
+				<valDt>
+					<dt>300881</dt>
+				</valDt>
+				<acctSvcrRef>300881100815n012</acctSvcrRef>
+				<bkTxCd>
+					<prtry>
+						<cd>n012</cd>
+					</prtry>
+				</bkTxCd>
+			</Ntry>
 		</Stmt>
 	</CBIIdyStmtReqLogMsg>
 	<CBIIdyStmtReqLogMsg>
 		<grpHdr>
 			<msgId>NameNameNameNameName</msgId>
 			<creDtTm>300881</creDtTm>
+			<msgRcpt>
+				<id>
+					<orgId>
+						<othr>
+							<id>90123</id>
+						</othr>
+					</orgId>
+				</id>
+			</msgRcpt>
 			<addtlInf>24270</addtlInf>
 		</grpHdr>
 		<Stmt>
 			<elctrncSeqNb>1</elctrncSeqNb>
-			<creDtTm>300881</creDtTm>
-			<cpyDplctInd>DUPL</cpyDplctInd>
+			<acct>
+				<id>
+					<iban>IT01C8427005036010101010101</iban>
+				</id>
+				<tp>
+					<prtry>TY</prtry>
+				</tp>
+				<ccy>EUR</ccy>
+				<nm>descriptiondescr</nm>
+				<svcr>
+					<finInstnId>
+						<clrSysMmbId>
+							<mmbId>84270</mmbId>
+						</clrSysMmbId>
+					</finInstnId>
+				</svcr>
+			</acct>
+			<Ntry>
+				<ntryRef>012</ntryRef>
+				<amt>
+					<value>12300881100815</value>
+				</amt>
+				<bookgDt>
+					<dt>100815</dt>
+				</bookgDt>
+				<valDt>
+					<dt>300881</dt>
+				</valDt>
+				<acctSvcrRef>300881100815n012</acctSvcrRef>
+				<bkTxCd>
+					<prtry>
+						<cd>n012</cd>
+					</prtry>
+				</bkTxCd>
+			</Ntry>
+			<Ntry>
+				<ntryRef>012</ntryRef>
+				<amt>
+					<value>12300881100815</value>
+				</amt>
+				<bookgDt>
+					<dt>100815</dt>
+				</bookgDt>
+				<valDt>
+					<dt>300881</dt>
+				</valDt>
+				<acctSvcrRef>300881100815n012</acctSvcrRef>
+				<bkTxCd>
+					<prtry>
+						<cd>n012</cd>
+					</prtry>
+				</bkTxCd>
+			</Ntry>
+			<Ntry>
+				<ntryRef>012</ntryRef>
+				<amt>
+					<value>12300881100815</value>
+				</amt>
+				<bookgDt>
+					<dt>100815</dt>
+				</bookgDt>
+				<valDt>
+					<dt>300881</dt>
+				</valDt>
+				<acctSvcrRef>300881100815n012</acctSvcrRef>
+				<bkTxCd>
+					<prtry>
+						<cd>n012</cd>
+					</prtry>
+				</bkTxCd>
+			</Ntry>
 		</Stmt>
 	</CBIIdyStmtReqLogMsg>
 </CBIBkToCstmrStmtReqPhyMsg>

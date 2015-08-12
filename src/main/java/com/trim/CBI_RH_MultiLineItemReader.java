@@ -1,9 +1,7 @@
 package com.trim;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Properties;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ExecutionContext;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemStream;
@@ -12,8 +10,14 @@ import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.transform.FieldSet;
 
 import com.trim.vo.RH_vo;
+import com.trim.vo.RH_vo61;
+import com.trim.vo.RH_vo62;
+
+import junit.framework.Assert;
 
 public class CBI_RH_MultiLineItemReader<T> implements ItemReader<RH_vo>, ItemStream {
+
+	private static Logger logger = LoggerFactory.getLogger(CBI_RH_MultiLineItemReader.class);
 
 	private FlatFileItemReader<FieldSet> delegate;
 
@@ -55,48 +59,56 @@ public class CBI_RH_MultiLineItemReader<T> implements ItemReader<RH_vo>, ItemStr
 			{
 				switch (new Integer(prefix)) {
 				case 61: {
-					if (t.getR61() == null) {
-						t.setR61(new ArrayList<Properties>());
-					}
-					t.getR61().add(line.getProperties());
+					Assert.assertNotNull("Invalid record position for 61, missing header", t.getRh());
+					RH_vo61 r61 = new RH_vo61();
+					r61.setData(line.getProperties());
+					t.getR61().add(r61);
 					break;
 				}
 				case 62: {
-					if (t.getR62() == null) {
-						t.setR62(new ArrayList<Properties>());
+					Assert.assertTrue("Invalid record position for 62, missing opening balance 61",
+							t.getR61().size() > 0);
+					Assert.assertNotNull("Invalid record position for 62, missing header", t.getRh());
+
+					try {
+						// associo il record 62 all'ultimo r61 inserito
+						RH_vo61 r61 = t.getR61().get(t.getR61().size() - 1);
+						RH_vo62 r62 = new RH_vo62();
+						r62.setData(line.getProperties());
+						// creo nuova riga 62 e collego r61 e rh (header)
+						r62.setR61(r61);
+						r62.setRh(t.getRh());
+						r61.getR62().add(r62);
+					} catch (Exception e) {
+						logger.error("Invalid record position for 63", e);
+						// TODO exit, in caso di errore occorre scartare tutto
+						// il file
 					}
-					t.getR62().add(line.getProperties());
 					break;
 				}
 				case 63: {
-					if (t.getR63() == null) {
-						t.setR63(new ArrayList<Properties>());
+					// associo il record 63 all'ultimo r62 inserito
+					try {
+						RH_vo61 r61 = t.getR61().get(t.getR61().size() - 1);						
+						RH_vo62 r62 = r61.getR62().get(r61.getR62().size() - 1);
+						r62.getR63().add(line.getProperties());
+					} catch (Exception e) {
+						logger.error("Invalid record position for 63", e);
+						// TODO exit, in caso di errore occorre scartare tutto
+						// il file
 					}
-					t.getR63().add(line.getProperties());
 					break;
 				}
 				case 64: {
-					if (t.getR64() == null) {
-						t.setR64(new ArrayList<Properties>());
-					}
-					t.getR64().add(line.getProperties());
+					t.setR64(line.getProperties());
 					break;
 				}
 				case 65: {
-					if (t.getR65() == null) {
-						t.setR65(new ArrayList<Properties>());
-					}
-					t.getR65().add(line.getProperties());
+					t.setR65(line.getProperties());
 					break;
 				}
 
 				}
-				// if (t.get(prefix) == null) {
-				// t.put(prefix, new ArrayList<Properties>());
-				// }
-				// ((ArrayList<Properties>)
-				// t.get(prefix)).add(line.getProperties());
-				// t.put(prefix, line.getProperties());
 			}
 		}
 		// Assert.isNull(t, "No 'END' was found.");

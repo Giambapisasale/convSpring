@@ -22,18 +22,12 @@
 		<property name="overwriteOutput" value="true" />
 	</bean>
 
-	<bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
-		<property name="contextPath" value="com.trim.schema" />
-		<property name="checkForXmlRootElement" value="false" />
-		<property name="supportJaxbElementClass" value="true" />
-
-	</bean>
-
 
 	<bean id="headerMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
 		<property name="implicitCollections">
 			<util:map id="implicitCollections">
 				<entry key="com.trim.schema.CBIDlyStmtReqLogMsg000102" value="stmt" />
+				<entry key="com.trim.schema.CBIAccountStatement21" value="ntry" />
 			</util:map>
 
 		</property>
@@ -41,6 +35,7 @@
 			<util:map id="aliases">
 				<entry key="CBIIdyStmtReqLogMsg" value="com.trim.schema.CBIDlyStmtReqLogMsg000102" />
 				<entry key="Stmt" value="com.trim.schema.CBIAccountStatement21" />
+				<entry key="Ntry" value="com.trim.schema.CBIReportEntry21" />
 
 			</util:map>
 		</property>
@@ -112,25 +107,37 @@
 	<bean id="headerRHTokenizer"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
 		<property name="names"
-			value="type, sender, recipient, creation_date, support_name, filler" />
-		<property name="columns" value="2-3, 4-8, 9-13, 14-19, 20-39, 40-120" />
+			value="type, sender, recipient, creation_date, support_name, filler, stmt_id" />
+		<property name="columns" value="2-3, 4-8, 9-13, 14-19, 20-39, 40-120, 2-39" />
 	</bean>
 	<bean id="footerRHTokenizer"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
 		<property name="names" value="type, content" />
 		<property name="columns" value="2-3, 4-120" />
 	</bean>
-	<bean id="line62Tokenizer"
-		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
-		<property name="names" value="type, content" />
-		<property name="columns" value="2-3, 4-120" />
+	<bean id="line62Tokenizer" class="com.trim.utils.FixedLengthTokenizerAggregator">
+		<property name="names"
+			value="type, balance_number, number, date, account_date, sign, amount, reason, internal_reason, cheque_number, bank_reference, customer_reference_type, customer_movement_description" />
+		<property name="columns"
+			value="2-3, 4-10, 11-13, 14-19, 20-25, 26-26, 27-41, 42-43, 44-45, 46-61, 62-77, 78-86, 87-120" />
+		<property name="aggregateFields">
+			<util:map id="aggregateFields">
+				<entry key="reason_internal_reason"
+					value="reason, internal_reason" />
+			</util:map>
+		</property>
 	</bean>
-	<bean id="line61Tokenizer"
-		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
+	<bean id="line61Tokenizer" class="com.trim.utils.FixedLengthTokenizerAggregator">
 		<property name="names"
 			value="type, number, filler1, original_abi, reason, description, account_type, cin, abi, cab, account_code, currency_code, accounting_date, sign, opening_balance, country_code, check_digit, filler2" />
 		<property name="columns"
 			value="2-3, 4-10, 11-23, 24-28, 29-33, 34-49, 50-51, 52-52, 53-57, 58-62, 63-74, 75-77, 78-83, 84-84, 85-99, 100-101, 102-103, 104-120" />
+		<property name="aggregateFields">
+			<util:map id="aggregateFields">
+				<entry key="iban"
+					value="country_code, check_digit, cin, abi, cab, account_code" />
+			</util:map>
+		</property>
 	</bean>
 	<bean id="line63Tokenizer"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">

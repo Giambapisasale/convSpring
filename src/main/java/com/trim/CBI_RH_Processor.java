@@ -20,9 +20,10 @@ public class CBI_RH_Processor implements ItemProcessor<RH_vo, CBIDlyStmtReqLogMs
 	@Override
 	public CBIDlyStmtReqLogMsg000102 process(RH_vo item) throws Exception {
 
-		CBIDlyStmtReqLogMsg000102 header = mapper.map(item, CBIDlyStmtReqLogMsg000102.class);
+		CBIDlyStmtReqLogMsg000102 header = mapper.map(item, CBIDlyStmtReqLogMsg000102.class);		
 
-		//header.getGrpHdr().setCreDtTm(new Date());
+
+		// header.getGrpHdr().setCreDtTm(new Date());
 
 		return header;
 	}

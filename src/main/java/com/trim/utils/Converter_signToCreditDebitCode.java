@@ -3,8 +3,9 @@ package com.trim.utils;
 import org.dozer.ConfigurableCustomConverter;
 
 import com.trim.schema.CBICopyDuplicate1Code;
+import com.trim.schema.CreditDebitCode;
 
-public class Converter_reasonToCpyDplctInd implements ConfigurableCustomConverter {
+public class Converter_signToCreditDebitCode implements ConfigurableCustomConverter {
 
 	String parameter;
 
@@ -17,8 +18,10 @@ public class Converter_reasonToCpyDplctInd implements ConfigurableCustomConverte
 		// DUPL
 		// TODO non e' chiara la transcodifica
 
-		if (sourceFieldValue != null && ((String) sourceFieldValue).trim().equals("93011")) {
-			return CBICopyDuplicate1Code.DUPL;
+		if (sourceFieldValue != null && ((String) sourceFieldValue).trim().equalsIgnoreCase("D")) {
+			return CreditDebitCode.DBIT;
+		} else if (sourceFieldValue != null && ((String) sourceFieldValue).trim().equalsIgnoreCase("C")) {
+			return CreditDebitCode.CRDT;
 		} else {
 			return null;
 		}
