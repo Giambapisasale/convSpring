@@ -1,4 +1,4 @@
-<project name="convSpring" default="dist" basedir=".">
+<project name="convSpring" default="build" basedir=".">
 	<description>
     simple example build file
   </description>
@@ -14,7 +14,7 @@
 	
 	
 <!-- compilazione seconda modalità con spring boot 
-
+ lanciare con
 java -jar target/spring-boot-sample-actuator.jar 
 
 -->
