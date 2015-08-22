@@ -1,5 +1,7 @@
 package com.trim;
 
+import java.util.Arrays;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ExecutionContext;
@@ -43,41 +45,42 @@ public class CBI_RH_MultiLineItemReader<T> implements ItemReader<RH_vo>, ItemStr
 	// TODO ottimizzare lettura e gestire errori
 	@Override
 	public RH_vo read() throws Exception {
-		RH_vo t = null;
+		RH_vo societa = null;
 
 		for (FieldSet line = null; (line = this.delegate.read()) != null;) {
 			String prefix = line.readString("type");
 
 			if (prefix.equals("RH")) {
-				t = new RH_vo(); // Record must start with header
+				societa = new RH_vo(); // Record must start with header
 				// t.put(prefix, line.getProperties());
-				t.setRh(line.getProperties());
+				societa.setRh(line.getProperties());
 			} else if (prefix.equals("EF")) {
-				t.setEf(line.getProperties());
-				return t; // Record must end with footer
+				societa.setEf(line.getProperties());
+				return societa; // Record must end with footer
 			} else // if other types
 			{
 				switch (new Integer(prefix)) {
 				case 61: {
-					Assert.assertNotNull("Invalid record position for 61, missing header", t.getRh());
+					Assert.assertNotNull("Invalid record position for 61, missing header", societa.getRh());
 					RH_vo61 r61 = new RH_vo61();
 					r61.setData(line.getProperties());
-					t.getR61().add(r61);
+					r61.getBalances().add(line.getProperties());
+					societa.getR61().add(r61);
 					break;
 				}
 				case 62: {
 					Assert.assertTrue("Invalid record position for 62, missing opening balance 61",
-							t.getR61().size() > 0);
-					Assert.assertNotNull("Invalid record position for 62, missing header", t.getRh());
+							societa.getR61().size() > 0);
+					Assert.assertNotNull("Invalid record position for 62, missing header", societa.getRh());
 
 					try {
 						// associo il record 62 all'ultimo r61 inserito
-						RH_vo61 r61 = t.getR61().get(t.getR61().size() - 1);
+						RH_vo61 r61 = societa.getR61().get(societa.getR61().size() - 1);
 						RH_vo62 r62 = new RH_vo62();
 						r62.setData(line.getProperties());
 						// creo nuova riga 62 e collego r61 e rh (header)
 						r62.setR61(r61);
-						r62.setRh(t.getRh());
+						r62.setRh(societa.getRh());
 						r61.getR62().add(r62);
 					} catch (Exception e) {
 						logger.error("Invalid record position for 63", e);
@@ -89,9 +92,33 @@ public class CBI_RH_MultiLineItemReader<T> implements ItemReader<RH_vo>, ItemStr
 				case 63: {
 					// associo il record 63 all'ultimo r62 inserito
 					try {
-						RH_vo61 r61 = t.getR61().get(t.getR61().size() - 1);						
+						RH_vo61 r61 = societa.getR61().get(societa.getR61().size() - 1);
 						RH_vo62 r62 = r61.getR62().get(r61.getR62().size() - 1);
-						r62.getR63().add(line.getProperties());
+
+						// salvo i tipi 63 specializzati
+						if (Arrays.asList(line.getNames()).contains("structure_flag")) {
+							String structureFlag = line.readString("structure_flag");
+							if (structureFlag.equalsIgnoreCase("ZZ1")) {
+								r62.setR63_ZZ1(line.getProperties());
+							} else if (structureFlag.equalsIgnoreCase("ZZ2")) {
+								r62.setR63_ZZ1(line.getProperties());
+							} else if (structureFlag.equalsIgnoreCase("ZZ3")) {
+								r62.setR63_ZZ1(line.getProperties());
+							} else if (structureFlag.equalsIgnoreCase("YYY")) {
+								r62.setR63_YYY(line.getProperties());
+							} else if (structureFlag.equalsIgnoreCase("KKK")) {
+								r62.setR63_KKK(line.getProperties());
+							} else if (structureFlag.equalsIgnoreCase("ID1")) {
+								r62.setR63_ID1(line.getProperties());
+							} else if (structureFlag.equalsIgnoreCase("RI1")) {
+								r62.setR63_RI1(line.getProperties());
+							} else if (structureFlag.equalsIgnoreCase("RI2")) {
+								r62.setR63_RI2(line.getProperties());
+							}
+							
+						} else {
+							r62.setR63(line.getProperties());
+						}
 					} catch (Exception e) {
 						logger.error("Invalid record position for 63", e);
 						// TODO exit, in caso di errore occorre scartare tutto
@@ -100,11 +127,29 @@ public class CBI_RH_MultiLineItemReader<T> implements ItemReader<RH_vo>, ItemStr
 					break;
 				}
 				case 64: {
-					t.setR64(line.getProperties());
+					try {
+						// associo il record 64 all'ultimo r61 inserito
+						RH_vo61 r61 = societa.getR61().get(societa.getR61().size() - 1);
+						r61.setR64(line.getProperties());
+						r61.getBalances().add(line.getProperties());
+					} catch (Exception e) {
+						logger.error("Invalid record position for 64", e);
+						// TODO exit, in caso di errore occorre scartare tutto
+						// il file
+					}
 					break;
 				}
 				case 65: {
-					t.setR65(line.getProperties());
+					try {
+						// associo il record 64 all'ultimo r61 inserito
+						RH_vo61 r61 = societa.getR61().get(societa.getR61().size() - 1);
+						r61.setR64(line.getProperties());
+						r61.getBalances().add(line.getProperties());
+					} catch (Exception e) {
+						logger.error("Invalid record position for 64", e);
+						// TODO exit, in caso di errore occorre scartare tutto
+						// il file
+					}
 					break;
 				}
 

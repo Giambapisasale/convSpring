@@ -10,6 +10,7 @@ import org.springframework.batch.item.ItemProcessor;
 
 import com.trim.schema.CBIDlyStmtReqLogMsg000102;
 import com.trim.vo.RH_vo;
+import com.trim.vo.RH_vo61;
 
 public class CBI_RH_Processor implements ItemProcessor<RH_vo, CBIDlyStmtReqLogMsg000102> {
 
@@ -20,12 +21,9 @@ public class CBI_RH_Processor implements ItemProcessor<RH_vo, CBIDlyStmtReqLogMs
 	@Override
 	public CBIDlyStmtReqLogMsg000102 process(RH_vo item) throws Exception {
 
-		CBIDlyStmtReqLogMsg000102 header = mapper.map(item, CBIDlyStmtReqLogMsg000102.class);		
+		CBIDlyStmtReqLogMsg000102 societa = mapper.map(item, CBIDlyStmtReqLogMsg000102.class);
 
-
-		// header.getGrpHdr().setCreDtTm(new Date());
-
-		return header;
+		return societa;
 	}
 
 	private static DozerBeanMapper getMapper() {

@@ -2,7 +2,7 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<!-- questi bindings servono a usare Date invece di XMLGregorianCalendar 
 		durante la produzione delle classi java a partire da XSD
-		i metodi non verranno utilizzati 
+		i metodi saranno utilizzati da un eventuale jaxb2Marshaller
 		-->
 	<globalBindings>
 		<javaType name="java.util.Date" xmlType="xs:date"
