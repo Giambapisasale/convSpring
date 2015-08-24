@@ -10,10 +10,12 @@
 		http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-1.5.xsd
 		">
 
-	<!-- <bean id="rulesDS" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+	<!-- bean id="rulesDS" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" 
-		/> <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/> <property 
-		name="username" value="conv"/> <property name="password" value="conv"/> </bean> -->
+		/> <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" /> <property 
+		name="username" value="conv" /> <property name="password" value="conv" /> 
+		</bean -->
+
 
 	<!-- START xml Writer -->
 	<bean id="xmlWriter" class="org.springframework.batch.item.xml.StaxEventItemWriter">
@@ -84,9 +86,13 @@
 					commit-interval="1" />
 			</tasklet>
 		</step>
+		<listeners>
+			<listener ref="job_listener" />
 
+		</listeners>
 	</job>
 
+	<bean id="job_listener" class="com.trim.utils.JobListener_setup" />
 	<bean id="RHProcessor" class="com.trim.CBI_RH_Processor" />
 
 	<bean id="multiLineReader" class="com.trim.CBI_RH_MultiLineItemReader">
@@ -207,21 +213,22 @@
 			value="type, number, movement_number, structure_flag, payee, payment_reason" />
 		<property name="columns" value="2-3, 4-10, 11-13, 14-16, 17-66, 67-120" />
 	</bean>
-	
+
 	<bean id="line63TokenizerID1"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
 		<property name="names"
 			value="type, number, movement_number, structure_flag, msg_id, end_to_end_id, filler" />
-		<property name="columns" value="2-3, 4-10, 11-13, 14-16, 17-51, 52-86, 87-120" />
+		<property name="columns"
+			value="2-3, 4-10, 11-13, 14-16, 17-51, 52-86, 87-120" />
 	</bean>
-	
+
 	<bean id="line63TokenizerRI1"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
 		<property name="names"
 			value="type, number, movement_number, structure_flag, reconciliation_data" />
 		<property name="columns" value="2-3, 4-10, 11-13, 14-16, 17-120" />
 	</bean>
-	
+
 	<bean id="line63TokenizerRI2"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
 		<property name="names"
@@ -231,14 +238,18 @@
 
 	<bean id="line64Tokenizer"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
-		<property name="names" value="type, number, currency_code, accounting_date, accounts_balance_sign, accounts_balance, cash_balance_sign, cash_balance, filler1, filler2" />
-		<property name="columns" value="2-3, 4-10, 11-13, 14-19, 20-20, 21-35, 36-36, 37-51, 52-105, 106-120" />
+		<property name="names"
+			value="type, number, currency_code, accounting_date, accounts_balance_sign, accounts_balance, cash_balance_sign, cash_balance, filler1, filler2" />
+		<property name="columns"
+			value="2-3, 4-10, 11-13, 14-19, 20-20, 21-35, 36-36, 37-51, 52-105, 106-120" />
 	</bean>
-	
+
 	<bean id="line65Tokenizer"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
-		<property name="names" value="type, number, first_cash_balance, first_cash_on_hand_date, first_cash_on_hand_sign, first_cash_on_hand_balance, second_cash_balance, second_cash_on_hand_date, second_cash_on_hand_sign, second_cash_on_hand_balance, third_cash_balance, third_cash_on_hand_date, third_cash_on_hand_sign, third_cash_on_hand_balance, fourth_cash_balance, fourth_cash_on_hand_date, fourth_cash_on_hand_sign, fourth_cash_on_hand_balance, fifth_cash_balance, fifth_cash_on_hand_date, fifth_cash_on_hand_sign, fifth_cash_on_hand_balance" />
-		<property name="columns" value="2-3, 4-10, 11-32, 11-16, 17-17, 18-32, 33-54, 33-38, 39-39, 40-54, 55-76, 55-60, 61-61, 62-76, 77-98, 77-82, 83-83, 84-98, 99-120, 99-104, 105-105, 106-120" />
+		<property name="names"
+			value="type, number, first_cash_balance, first_cash_on_hand_date, first_cash_on_hand_sign, first_cash_on_hand_balance, second_cash_balance, second_cash_on_hand_date, second_cash_on_hand_sign, second_cash_on_hand_balance, third_cash_balance, third_cash_on_hand_date, third_cash_on_hand_sign, third_cash_on_hand_balance, fourth_cash_balance, fourth_cash_on_hand_date, fourth_cash_on_hand_sign, fourth_cash_on_hand_balance, fifth_cash_balance, fifth_cash_on_hand_date, fifth_cash_on_hand_sign, fifth_cash_on_hand_balance" />
+		<property name="columns"
+			value="2-3, 4-10, 11-32, 11-16, 17-17, 18-32, 33-54, 33-38, 39-39, 40-54, 55-76, 55-60, 61-61, 62-76, 77-98, 77-82, 83-83, 84-98, 99-120, 99-104, 105-105, 106-120" />
 	</bean>
 
 </beans>
