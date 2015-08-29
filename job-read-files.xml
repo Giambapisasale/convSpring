@@ -21,50 +21,19 @@
 	<bean id="xmlWriter" class="org.springframework.batch.item.xml.StaxEventItemWriter">
 		<property name="resource" ref="outputResource" />
 		<property name="marshaller" ref="jaxb2Marshaller" />
-		<property name="rootTagName" value="CBIBkToCstmrStmtReqPhyMsg" />
+		<property name="rootTagName" value="CBIBkToCstmrStmtReqLogMsg" />
 		<property name="overwriteOutput" value="true" />
 	</bean>
 
 
-	<bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
-		<property name="classesToBeBound">
-			<list>
-				<value>com.trim.schema.CBIDlyStmtReqLogMsg000102</value>
-			</list>
-		</property>
+	<bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller" >
+		<property name="contextPath" value="com.trim.schema"/>
+		<property name="checkForXmlRootElement" value="false" />
+		<property name="supportJaxbElementClass" value="true" />
+		
+
 	</bean>
 
-	<bean id="xStreamMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
-		<property name="implicitCollections">
-			<util:map id="implicitCollections">
-				<entry key="com.trim.schema.CBIDlyStmtReqLogMsg000102" value="stmt" />
-				<entry key="com.trim.schema.CBIAccountStatement21" value="ntry" />
-			</util:map>
-
-		</property>
-		<property name="aliases">
-			<util:map id="aliases">
-				<entry key="CBIIdyStmtReqLogMsg" value="com.trim.schema.CBIDlyStmtReqLogMsg000102" />
-				<entry key="Stmt" value="com.trim.schema.CBIAccountStatement21" />
-				<entry key="Ntry" value="com.trim.schema.CBIReportEntry21" />
-
-			</util:map>
-		</property>
-
-		<property name="useAttributeFor">
-			<util:map id="useAttributeFor">
-				<entry key="ccy">
-					<value type="java.lang.Class">java.lang.String</value>
-				</entry>
-			</util:map>
-		</property>
-
-		<property name="converters">
-			<array>
-				<ref bean="dateConverter" />
-			</array>
-		</property>
-	</bean>
 
 	<bean id="dateConverter" class="com.trim.jaxb.DateConverter">
 		<constructor-arg value="ddMMyy" index="0" />
@@ -72,7 +41,8 @@
 
 
 	<bean id="outputResource" class="org.springframework.core.io.FileSystemResource">
-		<constructor-arg value="csv/outputs/domain.all._external3.xml" />
+		<!-- constructor-arg value="csv/outputs/domain.all._external3.xml" / -->
+		<constructor-arg value="${output_file}" />
 	</bean>
 
 	<!-- END xml writer -->
@@ -98,7 +68,8 @@
 	<bean id="multiLineReader" class="com.trim.CBI_RH_MultiLineItemReader">
 		<property name="delegate">
 			<bean class="org.springframework.batch.item.file.FlatFileItemReader">
-				<property name="resource" value="file:csv/inputs/testRH.csv" />
+				<!-- property name="resource" value="file:csv/inputs/testRH.csv" / -->
+				<property name="resource" value="${input_file}" />
 				<property name="lineMapper">
 					<bean
 						class="org.springframework.batch.item.file.mapping.DefaultLineMapper">

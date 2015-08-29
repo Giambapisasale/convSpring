@@ -10,10 +10,11 @@
 	<property name="dist.lib" location="dist/lib" />
 	<property name="projectName" value="convSpring" />
 	<property name="resources" value="src/main/resources" />
+	<property name="src.main" value="src/main/java" />
 
-	
-	
-<!-- compilazione seconda modalità con spring boot 
+
+
+	<!-- compilazione seconda modalità con spring boot 
  lanciare con
 java -jar target/cbi-converter-csv2xml.jar 
 
@@ -101,6 +102,22 @@ java -jar target/cbi-converter-csv2xml.jar
 		<delete dir="${build}" />
 		<delete dir="${dist}" />
 		<delete dir="target/classes" />
-				
+
 	</target>
+
+	<target name="jaxb">
+		<java classname="com.sun.tools.internal.xjc.XJCFacade">
+			<arg value="-p" />
+			<arg value="com.trim.schema" />
+			<arg value="-d" />
+			<arg value="${src.main}" />
+			<arg value="-b" />
+			<arg value="${resources}/jaxbindings.xml" />
+			<arg value="-target" />
+			<arg value="2.2" />
+			<arg value="-extension" />
+			<arg value="${resources}/XSD/CBIDlyStmtReqLogMsg.00.01.02.xsd" />
+		</java>
+	</target>
+
 </project>

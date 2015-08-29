@@ -13,8 +13,8 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 public class JobListener_setup implements JobExecutionListener {
 	private static Logger logger = LoggerFactory.getLogger(JobListener_setup.class);
 
-	@Autowired
-	Environment env;
+//	@Autowired
+//	Environment env;
 	
 	@Value("${dbProperties.url}")
 	private String url;
@@ -33,15 +33,18 @@ public class JobListener_setup implements JobExecutionListener {
 
 	@Override
 	public void beforeJob(JobExecution jobExecution) {
-		logger.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@Before Job: " + env.getProperty("db_name"));
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName(driverName);
-		dataSource.setUrl(url);
-		dataSource.setUsername(user);
-		dataSource.setPassword(password);
+		logger.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@Before Job ");
 		
-		jdbcTemplate = new JdbcTemplate(dataSource);
-		jdbcTemplate.execute("Select 1 from dual");
+//		//test connessione
+//		
+//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//		dataSource.setDriverClassName(driverName);
+//		dataSource.setUrl(url);
+//		dataSource.setUsername(user);
+//		dataSource.setPassword(password);
+//		
+//		jdbcTemplate = new JdbcTemplate(dataSource);
+//		jdbcTemplate.execute("Select 1 from dual");
 		
 	}
 
