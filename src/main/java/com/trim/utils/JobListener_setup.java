@@ -1,18 +1,21 @@
 package com.trim.utils;
 
-import org.slf4j.Logger;
+//import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.JobExecutionListener;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.LoggerContext;
 
 public class JobListener_setup implements JobExecutionListener {
-	private static Logger logger = LoggerFactory.getLogger(JobListener_setup.class);
+//	private static Logger logger = LoggerFactory.getLogger(JobListener_setup.class);
 
+//	 LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+	 Logger logger = (Logger) LoggerFactory.getLogger(JobListener_setup.class);
+	 Logger human_log = (Logger) LoggerFactory.getLogger("human_log");
+	 
 //	@Autowired
 //	Environment env;
 	
@@ -34,6 +37,8 @@ public class JobListener_setup implements JobExecutionListener {
 	@Override
 	public void beforeJob(JobExecution jobExecution) {
 		logger.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@Before Job ");
+		human_log.error("Test error human readable");
+//		logger.getAppender("STDOUT").addError("testerror");
 		
 //		//test connessione
 //		

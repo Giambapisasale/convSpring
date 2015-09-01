@@ -11,4 +11,4 @@
 			parseMethod="com.trim.jaxb.DateAdapter.parseDate" printMethod="com.trim.jaxb.DateAdapter.printDate" />
 		
 	</globalBindings>
-</bindings>
+</bindings> 
