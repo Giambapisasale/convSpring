@@ -8,8 +8,8 @@
   		<wildcard>false</wildcard>
 	</configuration>
 	<mapping type="one-way" map-null="false">
-		<class-a>com.trim.vo.RH_vo</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.trim.schema.CBIDlyStmtReqLogMsg000102
+		<class-a>com.xmlconverter.vo.RH_vo</class-a>
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.xmlconverter.schema.CBIDlyStmtReqLogMsg000102
 		</class-b>
 
 		<field>
@@ -32,17 +32,17 @@
 		<field>
 			<a>r61</a>
 			<b>stmt</b>
-			<b-hint>com.trim.schema.CBIAccountStatement21</b-hint>
+			<b-hint>com.xmlconverter.schema.CBIAccountStatement21</b-hint>
 		</field>
 
 	</mapping>
 
 
 
-	<!-- com.trim.schema.CBIAccountStatement21 -->
+	<!-- com.xmlconverter.schema.CBIAccountStatement21 -->
 	<mapping type="one-way" map-null="false">
-		<class-a>com.trim.vo.RH_vo61</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.trim.schema.CBIAccountStatement21
+		<class-a>com.xmlconverter.vo.RH_vo61</class-a>
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.xmlconverter.schema.CBIAccountStatement21
 		</class-b>
 
 		<field>
@@ -60,7 +60,7 @@
 			<a map-get-method="getProperty" key="number">data</a>
 			<b>elctrncSeqNb</b>
 		</field>
-		<field custom-converter="com.trim.utils.Converter_reasonToCpyDplctInd">
+		<field custom-converter="com.xmlconverter.utils.Converter_reasonToCpyDplctInd">
 			<a map-get-method="getProperty" key="reason">data</a>
 			<b>cpyDplctInd</b>
 		</field>
@@ -88,12 +88,12 @@
 		<field>
 			<a>r62</a>
 			<b>ntry</b>
-			<b-hint>com.trim.schema.CBIReportEntry21</b-hint>
+			<b-hint>com.xmlconverter.schema.CBIReportEntry21</b-hint>
 		</field>
-		<field custom-converter="com.trim.utils.Converter_balances">
+		<field custom-converter="com.xmlconverter.utils.Converter_balances">
 			<a>balances</a>
 			<b is-accessible="true">bal</b>
-			<b-hint>com.trim.schema.CBICashBalance3</b-hint>
+			<b-hint>com.xmlconverter.schema.CBICashBalance3</b-hint>
 		</field>
 
 		<field-exclude>
@@ -118,10 +118,10 @@
 	</mapping>
 
 
-	<!-- com.trim.schema.CBIReportEntry21 -->
+	<!-- com.xmlconverter.schema.CBIReportEntry21 -->
 	<mapping type="one-way" map-null="false">
-		<class-a>com.trim.vo.RH_vo62</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.trim.schema.CBIReportEntry21
+		<class-a>com.xmlconverter.vo.RH_vo62</class-a>
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.xmlconverter.schema.CBIReportEntry21
 		</class-b>
 		<field>
 			<a map-get-method="getProperty" key="number">data</a>
@@ -132,7 +132,7 @@
 			<a map-get-method="getProperty" key="amount">data</a>
 			<b>amt.value</b>
 		</field>
-		<field custom-converter="com.trim.utils.Converter_signToCreditDebitCode">
+		<field custom-converter="com.xmlconverter.utils.Converter_signToCreditDebitCode">
 			<a map-get-method="getProperty" key="sign">data</a>
 			<b>cdtDbtInd</b>
 		</field>
@@ -195,10 +195,10 @@
 
 	</mapping>
 
-	<!-- com.trim.schema.CBICashBalance3 -->
+	<!-- com.xmlconverter.schema.CBICashBalance3 -->
 	<mapping type="one-way" map-null="false" map-empty-string="false" map-id="map61_balance">
 		<class-a>java.util.Properties</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.trim.schema.CBICashBalance3
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.xmlconverter.schema.CBICashBalance3
 		</class-b>
 		<field>
 			<a map-get-method="getProperty" key="opening_balance">this</a>
@@ -208,14 +208,14 @@
 			<a map-get-method="getProperty" key="accounting_date">this</a>
 			<b>dt.dt</b>
 		</field>
-		<field custom-converter="com.trim.utils.Converter_signToCreditDebitCode">
+		<field custom-converter="com.xmlconverter.utils.Converter_signToCreditDebitCode">
 			<a map-get-method="getProperty" key="sign">this</a>
 			<b>cdtDbtInd</b>
 		</field>
 	</mapping>
 	<mapping type="one-way" map-null="false" map-empty-string="false" map-id="map64_balance_1">
 		<class-a>java.util.Properties</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.trim.schema.CBICashBalance3
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.xmlconverter.schema.CBICashBalance3
 		</class-b>
 		<field>
 			<a map-get-method="getProperty" key="accounts_balance">this</a>
@@ -225,14 +225,14 @@
 			<a map-get-method="getProperty" key="accounting_date">this</a>
 			<b>dt.dt</b>
 		</field>
-		<field custom-converter="com.trim.utils.Converter_signToCreditDebitCode">
+		<field custom-converter="com.xmlconverter.utils.Converter_signToCreditDebitCode">
 			<a map-get-method="getProperty" key="accounts_balance_sign">this</a>
 			<b>cdtDbtInd</b>
 		</field>
 	</mapping>
 	<mapping type="one-way" map-null="false" map-empty-string="false" map-id="map64_balance_2">
 		<class-a>java.util.Properties</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.trim.schema.CBICashBalance3
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.xmlconverter.schema.CBICashBalance3
 		</class-b>
 		<field>
 			<a map-get-method="getProperty" key="cash_balance">this</a>
@@ -242,7 +242,7 @@
 			<a map-get-method="getProperty" key="accounting_date">this</a>
 			<b>dt.dt</b>
 		</field>
-		<field custom-converter="com.trim.utils.Converter_signToCreditDebitCode">
+		<field custom-converter="com.xmlconverter.utils.Converter_signToCreditDebitCode">
 			<a map-get-method="getProperty" key="cash_balance_sign">this</a>
 			<b>cdtDbtInd</b>
 		</field>
@@ -250,7 +250,7 @@
 	
 	<mapping type="one-way" map-null="false" map-empty-string="false" map-id="map65_balance_1">
 		<class-a>java.util.Properties</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.trim.schema.CBICashBalance3
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.xmlconverter.schema.CBICashBalance3
 		</class-b>
 		<field>
 			<a map-get-method="getProperty" key="first_cash_on_hand_balance">this</a>
@@ -260,14 +260,14 @@
 			<a map-get-method="getProperty" key="first_cash_on_hand_date">this</a>
 			<b>dt.dt</b>
 		</field>
-		<field custom-converter="com.trim.utils.Converter_signToCreditDebitCode">
+		<field custom-converter="com.xmlconverter.utils.Converter_signToCreditDebitCode">
 			<a map-get-method="getProperty" key="first_cash_on_hand_sign">this</a>
 			<b>cdtDbtInd</b>
 		</field>
 	</mapping>
 	<mapping type="one-way" map-null="false" map-empty-string="false" map-id="map65_balance_2">
 		<class-a>java.util.Properties</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.trim.schema.CBICashBalance3
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.xmlconverter.schema.CBICashBalance3
 		</class-b>
 		<field>
 			<a map-get-method="getProperty" key="second_cash_on_hand_balance">this</a>
@@ -277,14 +277,14 @@
 			<a map-get-method="getProperty" key="second_cash_on_hand_date">this</a>
 			<b>dt.dt</b>
 		</field>
-		<field custom-converter="com.trim.utils.Converter_signToCreditDebitCode">
+		<field custom-converter="com.xmlconverter.utils.Converter_signToCreditDebitCode">
 			<a map-get-method="getProperty" key="second_cash_on_hand_sign">this</a>
 			<b>cdtDbtInd</b>
 		</field>
 	</mapping>
 	<mapping type="one-way" map-null="false" map-empty-string="false" map-id="map65_balance_3">
 		<class-a>java.util.Properties</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.trim.schema.CBICashBalance3
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.xmlconverter.schema.CBICashBalance3
 		</class-b>
 		<field>
 			<a map-get-method="getProperty" key="third_cash_on_hand_balance">this</a>
@@ -294,14 +294,14 @@
 			<a map-get-method="getProperty" key="third_cash_on_hand_date">this</a>
 			<b>dt.dt</b>
 		</field>
-		<field custom-converter="com.trim.utils.Converter_signToCreditDebitCode">
+		<field custom-converter="com.xmlconverter.utils.Converter_signToCreditDebitCode">
 			<a map-get-method="getProperty" key="third_cash_on_hand_sign">this</a>
 			<b>cdtDbtInd</b>
 		</field>
 	</mapping>
 	<mapping type="one-way" map-null="false" map-empty-string="false" map-id="map65_balance_4">
 		<class-a>java.util.Properties</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.trim.schema.CBICashBalance3
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.xmlconverter.schema.CBICashBalance3
 		</class-b>
 		<field>
 			<a map-get-method="getProperty" key="fourth_cash_on_hand_balance">this</a>
@@ -311,14 +311,14 @@
 			<a map-get-method="getProperty" key="fourth_cash_on_hand_date">this</a>
 			<b>dt.dt</b>
 		</field>
-		<field custom-converter="com.trim.utils.Converter_signToCreditDebitCode">
+		<field custom-converter="com.xmlconverter.utils.Converter_signToCreditDebitCode">
 			<a map-get-method="getProperty" key="fourth_cash_on_hand_sign">this</a>
 			<b>cdtDbtInd</b>
 		</field>
 	</mapping>
 	<mapping type="one-way" map-null="false" map-empty-string="false" map-id="map65_balance_5">
 		<class-a>java.util.Properties</class-a>
-		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.trim.schema.CBICashBalance3
+		<class-b bean-factory="org.dozer.factory.JAXBBeanFactory">com.xmlconverter.schema.CBICashBalance3
 		</class-b>
 		<field>
 			<a map-get-method="getProperty" key="fifth_cash_on_hand_balance">this</a>
@@ -328,7 +328,7 @@
 			<a map-get-method="getProperty" key="fifth_cash_on_hand_date">this</a>
 			<b>dt.dt</b>
 		</field>
-		<field custom-converter="com.trim.utils.Converter_signToCreditDebitCode">
+		<field custom-converter="com.xmlconverter.utils.Converter_signToCreditDebitCode">
 			<a map-get-method="getProperty" key="fifth_cash_on_hand_sign">this</a>
 			<b>cdtDbtInd</b>
 		</field>

@@ -27,7 +27,7 @@
 
 
 	<bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller" >
-		<property name="contextPath" value="com.trim.schema"/>
+		<property name="contextPath" value="com.xmlconverter.schema"/>
 		<property name="checkForXmlRootElement" value="false" />
 		<property name="supportJaxbElementClass" value="true" />
 		
@@ -35,7 +35,7 @@
 	</bean>
 
 
-	<bean id="dateConverter" class="com.trim.jaxb.DateConverter">
+	<bean id="dateConverter" class="com.xmlconverter.jaxb.DateConverter">
 		<constructor-arg value="ddMMyy" index="0" />
 	</bean>
 
@@ -62,14 +62,14 @@
 		</listeners>
 	</job>
 
-	<bean id="job_listener" class="com.trim.utils.JobListener_setup" />
-	<bean id="RHProcessor" class="com.trim.CBI_RH_Processor" />
+	<bean id="job_listener" class="com.xmlconverter.utils.JobListener_setup" />
+	<bean id="RHProcessor" class="com.xmlconverter.CBI_RH_Processor" />
 
-	<bean id="multiLineReader" class="com.trim.CBI_RH_MultiLineItemReader">
+	<bean id="multiLineReader" class="com.xmlconverter.CBI_RH_MultiLineItemReader">
 		<property name="delegate">
 			<bean class="org.springframework.batch.item.file.FlatFileItemReader">
 				<!-- property name="resource" value="file:csv/inputs/testRH.csv" / -->
-				<property name="resource" value="${input_file}" />
+				<property name="resource" value="file:${input_file}" />
 				<property name="lineMapper">
 					<bean
 						class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
@@ -120,7 +120,7 @@
 		<property name="names" value="type, content" />
 		<property name="columns" value="2-3, 4-120" />
 	</bean>
-	<bean id="line62Tokenizer" class="com.trim.utils.FixedLengthTokenizerAggregator">
+	<bean id="line62Tokenizer" class="com.xmlconverter.utils.FixedLengthTokenizerAggregator">
 		<property name="names"
 			value="type, balance_number, number, date, account_date, sign, amount, reason, internal_reason, cheque_number, bank_reference, customer_reference_type, customer_movement_description" />
 		<property name="columns"
@@ -131,7 +131,7 @@
 			</util:map>
 		</property>
 	</bean>
-	<bean id="line61Tokenizer" class="com.trim.utils.FixedLengthTokenizerAggregator">
+	<bean id="line61Tokenizer" class="com.xmlconverter.utils.FixedLengthTokenizerAggregator">
 		<property name="names"
 			value="type, number, filler1, original_abi, reason, description, account_type, cin, abi, cab, account_code, currency_code, accounting_date, sign, opening_balance, country_code, check_digit, filler2" />
 		<property name="columns"

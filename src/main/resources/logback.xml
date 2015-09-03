@@ -1,17 +1,17 @@
 <configuration>
 
+	<timestamp key="byMilliSecond" datePattern="yyyyMMddHHmmssSS" timeReference="contextBirth"/>
+	<property file="application.properties" />
+
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-    <!-- encoders are assigned the type
-         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
 		<encoder>
 			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
 		</encoder>
 	</appender>
 
-	<!-- LOGFILENAME must be command line -D parameter -->
 	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
-		<file>${LOGFILENAME}</file>
-		<append>true</append>
+		<file>LOG_${input_file}_${byMilliSecond}.log</file>
+		<append>false</append>
 		<encoder>
 			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
 		</encoder>
@@ -19,7 +19,7 @@
 	
 	<!-- human readable log file-->
 	<appender name="human_log_file" class="ch.qos.logback.core.FileAppender">
-		<file>human.log</file>
+		<file>ERROR_${input_file}_${byMilliSecond}.log</file>
 		<append>true</append>
 		<encoder>
 			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
@@ -30,8 +30,8 @@
 	<logger name="human_log" level="DEBUG" additivity="false">
 		<appender-ref ref="human_log_file" />
 	</logger>
-	
-	<root>
+
+	<root level="DEBUG">
 		<appender-ref ref="FILE" />
 		<appender-ref ref="STDOUT" />
 	</root>

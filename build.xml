@@ -17,11 +17,12 @@
 	<!-- compilazione seconda modalità con spring boot 
  lanciare con
 java -jar target/cbi-converter-csv2xml.jar 
+altrimenti compilare soltanto e lanciare con java -cp ../../lib/*:. com.xmlconverter.Application
 
 -->
 	<target name="compile2" depends="init" description="compile the source">
 		<mkdir dir="target/classes" />
-		<javac srcdir="${src}" destdir="target/classes">
+		<javac srcdir="${src}" destdir="target/classes" includeantruntime="false">
 			<classpath>
 				<pathelement path="lib/" />
 				<fileset dir="lib">
@@ -44,25 +45,12 @@ java -jar target/cbi-converter-csv2xml.jar
 			<zipfileset src="lib/spring-boot-cli.jar" />
 			<manifest>
 				<attribute name="Main-Class" value="org.springframework.boot.loader.JarLauncher" />
-				<attribute name="Start-Class" value="com.trim.Application" />
+				<attribute name="Start-Class" value="com.xmlconverter.Application" />
 			</manifest>
 		</jar>
 	</target>
 
-	<!-- compilazione prima  modalità standard -->
-	<target name="copy-dependencies">
-		<!-- Create the distribution directory -->
-		<mkdir dir="${dist}" />
-
-		<mkdir dir="${dist.lib}" />
-
-		<jar jarfile="${dist.lib}/dependencies-all.jar">
-			<zipgroupfileset dir="${lib.dir}">
-				<include name="**/*.jar" />
-			</zipgroupfileset>
-		</jar>
-
-	</target>
+	
 
 	<target name="init">
 		<!-- Create the time stamp -->
@@ -70,32 +58,7 @@ java -jar target/cbi-converter-csv2xml.jar
 		<!-- Create the build directory structure used by compile -->
 		<mkdir dir="${build}" />
 	</target>
-
-	<target name="compile" depends="init" description="compile the source">
-		<!-- Compile the java code from ${src} into ${build} -->
-		<javac srcdir="${src}" destdir="${build}">
-			<classpath>
-				<pathelement path="lib/" />
-				<fileset dir="lib">
-					<include name="**/*.jar" />
-				</fileset>
-			</classpath>
-		</javac>
-		<copy todir="${build}">
-			<fileset dir="${resources}" excludes="**/*.java" />
-		</copy>
-	</target>
-
-	<target name="dist" depends="compile, copy-dependencies" description="generate the distribution">
-
-
-		<jar jarfile="${dist}/${projectName}.jar" basedir="${build}">
-			<manifest>
-				<attribute name="Main-Class" value="com.trim.Application" />
-			</manifest>
-			<zipfileset src="${dist.lib}/dependencies-all.jar" excludes="META-INF/*.SF" />
-		</jar>
-	</target>
+	
 
 	<target name="clean" description="clean up">
 		<!-- Delete the ${build} and ${dist} directory trees -->
@@ -108,7 +71,7 @@ java -jar target/cbi-converter-csv2xml.jar
 	<target name="jaxb">
 		<java classname="com.sun.tools.internal.xjc.XJCFacade">
 			<arg value="-p" />
-			<arg value="com.trim.schema" />
+			<arg value="com.xmlconverter.schema" />
 			<arg value="-d" />
 			<arg value="${src.main}" />
 			<arg value="-b" />

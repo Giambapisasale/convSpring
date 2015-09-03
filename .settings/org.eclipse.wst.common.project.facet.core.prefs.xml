@@ -1,7 +1,7 @@
 <root>
   <facet id="jpt.jaxb">
     <node name="classgen">
-      <attribute name="package" value="com.trim.schema"/>
+      <attribute name="package" value="com.xmlconverter.schema"/>
     </node>
     <node name="libprov">
       <attribute name="provider-id" value="jaxb-no-op-library-provider"/>

@@ -6,9 +6,9 @@
 		-->
 	<globalBindings>
 		<javaType name="java.util.Date" xmlType="xs:date"
-			parseMethod="com.trim.jaxb.DateAdapter.parseDate" printMethod="com.trim.jaxb.DateAdapter.printDate" />
+			parseMethod="com.xmlconverter.jaxb.DateAdapter.parseDate" printMethod="com.xmlconverter.jaxb.DateAdapter.printDate" />
 		<javaType name="java.util.Date" xmlType="xs:dateTime"
-			parseMethod="com.trim.jaxb.DateAdapter.parseDate" printMethod="com.trim.jaxb.DateAdapter.printDate" />
+			parseMethod="com.xmlconverter.jaxb.DateAdapter.parseDate" printMethod="com.xmlconverter.jaxb.DateAdapter.printDate" />
 		
 	</globalBindings>
 </bindings> 
