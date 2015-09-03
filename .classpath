@@ -46,7 +46,7 @@
 	<classpathentry kind="lib" path="lib/commons-lang3-3.3.2.jar"/>
 	<classpathentry kind="lib" path="lib/commons-beanutils-1.9.2.jar"/>
 	<classpathentry kind="lib" path="lib/ojdbc5.jar"/>
-	<classpathentry kind="lib" path="lib/dozer-5.5.1.jar" sourcepath="lib/dozer-5.5.1-sources.jar">
+	<classpathentry kind="lib" path="lib/dozer-5.5.1.jar" sourcepath="src-lib/dozer-5.5.1-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:platform:/resource/convSpring/lib/dozer-5.5.1-javadoc.jar!/"/>
 		</attributes>

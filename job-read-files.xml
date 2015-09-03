@@ -26,11 +26,11 @@
 	</bean>
 
 
-	<bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller" >
-		<property name="contextPath" value="com.xmlconverter.schema"/>
+	<bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="contextPath" value="com.xmlconverter.schema" />
 		<property name="checkForXmlRootElement" value="false" />
 		<property name="supportJaxbElementClass" value="true" />
-		
+
 
 	</bean>
 
@@ -48,6 +48,7 @@
 	<!-- END xml writer -->
 
 	<!-- START job RH -->
+	<bean id="job_listener" class="com.xmlconverter.utils.JobListener_setup" />
 	<job id="readMultiLineJobRH" xmlns="http://www.springframework.org/schema/batch">
 
 		<step id="stepRH">
@@ -62,8 +63,21 @@
 		</listeners>
 	</job>
 
-	<bean id="job_listener" class="com.xmlconverter.utils.JobListener_setup" />
-	<bean id="RHProcessor" class="com.xmlconverter.CBI_RH_Processor" />
+	
+
+<!-- configurazione generica processor per RH -->
+	<bean id="RHProcessor" class="com.xmlconverter.CBI_RH_Processor">
+		<property name="mappeditem" ref="rh_root_xml_class" />
+		<property name="mappeditem_qname" ref="rh_root_xml_qname" />
+	</bean>
+
+	<bean id="rh_root_xml_class" class="com.xmlconverter.schema.CBIDlyStmtReqLogMsg000102" />
+	<bean id="rh_root_xml_qname" class="javax.xml.namespace.QName">
+		<constructor-arg value="urn:CBI:xsd:CBIDlyStmtReqLogMsg.00.01.02"
+			index="0" />
+		<constructor-arg value="CBIDlyStmtReqLogMsg" index="1" />
+	</bean>
+<!-- FINE configurazione generica processor per RH -->
 
 	<bean id="multiLineReader" class="com.xmlconverter.CBI_RH_MultiLineItemReader">
 		<property name="delegate">

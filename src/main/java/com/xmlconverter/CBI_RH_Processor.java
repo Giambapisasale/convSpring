@@ -4,33 +4,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.JAXBElement;
+import javax.xml.namespace.QName;
 
 import org.dozer.DozerBeanMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 
-import com.xmlconverter.schema.CBIDlyStmtReqLogMsg000102;
-import com.xmlconverter.schema.ObjectFactory;
 import com.xmlconverter.vo.RH_vo;
 
 public class CBI_RH_Processor implements ItemProcessor<RH_vo, JAXBElement> {
 
-	private static Logger logger = LoggerFactory.getLogger(CBI_RH_Processor.class);
+	private Logger logger = LoggerFactory.getLogger(getClass());
+	Logger human_log = (Logger) LoggerFactory.getLogger("human_log");
 
-	private static DozerBeanMapper mapper = getMapper();
+	Object mappeditem;
+	QName mappeditem_qname;
 
+	public void setMappeditem_qname(QName mappeditem_qname) {
+		this.mappeditem_qname = mappeditem_qname;
+	}
+
+	public void setMappeditem(Object mappeditem) {
+		this.mappeditem = mappeditem;
+	}
+
+	private DozerBeanMapper mapper = getMapper();
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public JAXBElement process(RH_vo item) throws Exception {
 
-		CBIDlyStmtReqLogMsg000102 societa = mapper.map(item, CBIDlyStmtReqLogMsg000102.class);
+		human_log.info("Avvio processo di mapping per item: " + item.getRh().toString());
 
-		ObjectFactory b = new ObjectFactory();
+		mappeditem = mapper.map(item, mappeditem.getClass());
+		
+		JAXBElement mapjaxb = new JAXBElement(mappeditem_qname, mappeditem.getClass(), null, mappeditem);
 
-		return b.createCBIDlyStmtReqLogMsg(societa);
+		return mapjaxb;
 	}
 
-	private static DozerBeanMapper getMapper() {
+	private DozerBeanMapper getMapper() {
 		// TODO load from database
 		logger.info("###Loading mapping rules from XML");
 		List<String> myMappingFiles = new ArrayList<String>();

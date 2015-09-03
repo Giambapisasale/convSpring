@@ -100,7 +100,12 @@
 			<a>this</a>
 			<b>id</b>
 		</field>
-
+		
+		<field custom-converter="com.xmlconverter.utils.Converter_listCount">
+			<a>r62</a>
+			<b>txsSummry.TtlNtries.NbOfNtries</b>
+		</field>
+		
 		<field-exclude>
 			<a>this</a>
 			<b>id</b>
@@ -110,10 +115,7 @@
 			<b>creDtTm</b>
 		</field-exclude>
 
-		<field-exclude>
-			<a>this</a>
-			<b>txsSummry</b>
-		</field-exclude>
+		
 
 		<field-exclude>
 			<a>this</a>
