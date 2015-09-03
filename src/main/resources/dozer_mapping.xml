@@ -96,6 +96,11 @@
 			<b-hint>com.xmlconverter.schema.CBICashBalance3</b-hint>
 		</field>
 
+		<field custom-converter="com.xmlconverter.utils.Converter_fixedValue" custom-converter-param="valorecustom">
+			<a>this</a>
+			<b>id</b>
+		</field>
+
 		<field-exclude>
 			<a>this</a>
 			<b>id</b>

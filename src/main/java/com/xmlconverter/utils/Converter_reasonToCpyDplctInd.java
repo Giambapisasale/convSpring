@@ -15,7 +15,6 @@ public class Converter_reasonToCpyDplctInd implements ConfigurableCustomConverte
 		// file: EC_RH_mappingXml_v1.xslx - ID 2.4 - +<CpyDplctInd>
 		// In caso di trasmissione di recupero e' presente e assume il valore
 		// DUPL
-		// TODO non e' chiara la transcodifica
 
 		if (sourceFieldValue != null && ((String) sourceFieldValue).trim().equals("93011")) {
 			return CBICopyDuplicate1Code.DUPL;
