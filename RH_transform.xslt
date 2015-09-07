@@ -3,8 +3,6 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 	<xsl:output method="xml" />
-	<xsl:output omit-xml-declaration="yes" indent="yes" />
-	<xsl:strip-space elements="*" />
 	
 	<xsl:template match="/">
 		<xsl:apply-templates select="RH" />
@@ -421,7 +419,6 @@
 							</NtryDtls>
 						</Ntry>
 					</xsl:for-each>
-					<AddtlStmtInf>AddtlStmtInf</AddtlStmtInf>
 				</Stmt>
 			</xsl:for-each>
 		</CBIDlyStmtReqLogMsg>
