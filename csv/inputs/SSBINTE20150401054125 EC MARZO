@@ -1,0 +1,1176 @@
+ EC03439AFFB0310315ECAFFB0150331234037                                                                                  
+ 610000001                  93003      BCP1EUR01 00X0343901600000000001949EUR010315C000140611491,66IT83                 
+ 640000001EUR310315C000140611491,66                                                                                     
+ EF03439AFFB0310315ECAFFB0150331234037       0000001                              0000004                               
+ EC03439AMCBW310315ECAMCBW150331234037                                                                                  
+ 610000001                  93003      AGRACHF01 00D0343901600000000004748CHF010315D000000184022,17IT90                 
+ 620000001001280215250315D000000000000,306659                CFP02150000002GT                                           
+ 630000001001  SPESE DI REGISTRAZIONE OPERAZIONITRN: CFP02150000002GTTRN orig. SEEPA: Periodo dal 01.02.2015 al 28.EtE o
+ 630000001001rig. SEPA: Numero di operazzioni consider                                                                  
+ 620000001002280215250315D000000000006,011624                CFP02150000004GT                                           
+ 630000001002  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                                        
+ 640000001CHF310315D000000184028,48                                                                                     
+ 610000002                  93003      AGRADKK01 00B0343901600000000004752DKK010315D000001417746,12IT71                 
+ 620000002001310315310315D000000000610,4218Y5                                                                           
+ 630000002001  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000002DKK310315D000001418356,54                                                                                     
+ 610000003                  93003      AGRAGBP01 00W0316301696000000001637GBP010115D000270406533,49IT89                 
+ 620000003001301114150115D000000000007,931656                CFP11140000034GT                                           
+ 630000003001  SPESE TENUTA CONTO                                                                                       
+ 620000003002301114150115D000000000007,931656                CFP11140000040GT                                           
+ 630000003002  SPESE TENUTA CONTO                                                                                       
+ 620000003003301114290115D000000000007,931656                CFP01140000034GT                                           
+ 630000003003  SPESE TENUTA CONTO                                                                                       
+ 620000003004310115300115D000000000000,0118Y9                                                                           
+ 630000003004  RETTIFICA INTERESSI                                                                                      
+ 620000003005310115300115D000000114830,1818Y5                                                                           
+ 630000003005  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 620000003006170215170215D000000000050,00ZLTN                PLUTO                                                      
+ 630000003006ZZ1000000000000050,00GBP000000000000050,00GBP000000000000050,00GBP            0000000000,000000000000,00   
+ 630000003006  SWIFT MT202RIF:                  RIF. CLI:                 BAN BENN:                                     
+ 630000003006              BEN:                                                                                         
+ 620000003007180215180215D000000000038,00ZLTN                minnie                                                     
+ 630000003007ZZ1000000000000038,00GBP000000000000038,00GBP000000000000038,00GBP            0000000000,000000000000,00   
+ 630000003007  SWIFT MT202RIF:                  RIF. CLI:                 BAN BENN:                                     
+ 630000003007              BEN:                                                                                         
+ 620000003008280215270215D000000103761,6418Y5                                                                           
+ 630000003008  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 620000003009101214200315C000000000020,003434                eclissi3                                                   
+ 630000003009giroconto  GIRO CONTO (STESSA BANCA)RIF.INT: eclissi3        giroconto                                     
+ 620000003010280215250315D000000000003,961624                CFP02150000037GT                                           
+ 630000003010  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                                        
+ 620000003011280215250315D000000000000,206659                CFP02150000035GT                                           
+ 630000003011  SPESE DI REGISTRAZIONE OPERAZIONITRN: CFP02150000035GTTRN orig. SEEPA: Periodo dal 01.02.2015 al 28.EtE o
+ 630000003011rig. SEPA: Numero di operazzioni consider                                                                  
+ 620000003012310315310315C000000000000,0318Y9                                                                           
+ 630000003012  RETTIFICA INTERESSI                                                                                      
+ 620000003013310315310315D000000114923,0418Y5                                                                           
+ 630000003013  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000003GBP310315D000270740144,28                                                                                     
+ 610000004                  93003      AGRAUSD01 00Y0316301696000000001639USD010315C000189633729,10IT43                 
+ 620000004001060315060315C000000000010,001656                fee145-146                                                 
+ 630000004001fee145-146  SPESE TENUTA CONTO                                                                             
+ 620000004002060315060315C000000000010,006659                fee177-178                                                 
+ 630000004002fee177-178  SPESE DI REGISTRAZIONE OPERAZIONITRN: fee177-178      TRN orig. SEEPA: fee177-178              
+ 630000004002           EtE orig. SEPA:                                                                                 
+ 620000004003060315060315C000000000005,001624                fee2                                                       
+ 630000004003test riskqueue fee2  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                     
+ 620000004004060315060315C000000000005,001624                fee1                                                       
+ 630000004004test riskqueue fee1  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                     
+ 620000004005100315100315C000000000005,006659                FEE177                                                     
+ 630000004005FEE177  SPESE DI REGISTRAZIONE OPERAZIONITRN: FEE177          TRN orig. SEEPA: FEE177                      
+ 630000004005       EtE orig. SEPA:                                                                                     
+ 620000004006100315100315C000000000005,001656                fee146                                                     
+ 630000004006fee146  SPESE TENUTA CONTO                                                                                 
+ 620000004007100315100315C000000000005,006666                FEE066                                                     
+ 630000004007FEE066  SPESERIF.INT: FEE066          FEE066                                                               
+ 620000004008100315100315C000000000005,006659                FEE178                                                     
+ 630000004008FEE178  SPESE DI REGISTRAZIONE OPERAZIONITRN: FEE178          TRN orig. SEEPA: FEE178                      
+ 630000004008       EtE orig. SEPA:                                                                                     
+ 620000004009100315100315C000000000005,006666                FEE209                                                     
+ 630000004009FEE209  SPESERIF.INT: FEE209          FEE209                                                               
+ 620000004010100315100315C000000000005,001656                fee145                                                     
+ 630000004010fee145  SPESE TENUTA CONTO                                                                                 
+ 620000004011280115110315D000000000475,803434                110315testcash10                                           
+ 630000004011TEST IBS MISC CASH ENTRIES  GIRO CONTO (STESSA BANCA)RIF.INT: 110315testcash10TEST IBS MISC CAASH ENTRIES  
+ 630000004011                                                                                                           
+ 620000004012260115110315D000000002318,863434                110315testcash07                                           
+ 630000004012TEST IBS MISC CASH ENTRIES  GIRO CONTO (STESSA BANCA)RIF.INT: 110315testcash07TEST IBS MISC CAASH ENTRIES  
+ 630000004012                                                                                                           
+ 620000004013280115110315D000000000626,403434                110315TESTCASH11                                           
+ 630000004013TEST IBS MISC CASH ENTRIES  GIRO CONTO (STESSA BANCA)RIF.INT: 110315TESTCASH11TEST IBS MISC CAASH ENTRIES  
+ 630000004013                                                                                                           
+ 620000004014270115110315D000000017735,763434                110315testcash08                                           
+ 630000004014TEST IBS MISC CASH ENTRIES  GIRO CONTO (STESSA BANCA)RIF.INT: 110315testcash08TEST IBS MISC CAASH ENTRIES  
+ 630000004014                                                                                                           
+ 620000004015270115110315C000000000347,833434                110315testcash09                                           
+ 630000004015TEST IBS MISC CASH ENTRIES  GIRO CONTO (STESSA BANCA)RIF.INT: 110315testcash09TEST IBS MISC CAASH ENTRIES  
+ 630000004015                                                                                                           
+ 620000004016280115110315C000000000093,963434                110315TESTCASH12                                           
+ 630000004016TEST IBS MISC CASH ENTRIES  GIRO CONTO (STESSA BANCA)RIF.INT: 110315TESTCASH12TEST IBS MISC CAASH ENTRIES  
+ 630000004016                                                                                                           
+ 620000004017101214190315D000000000056,003434                CAROL2                                                     
+ 630000004017PAGAMENTO FATTURA ARCHITETTO FABBRI  GIRO CONTO (STESSA BANCA)RIF.INT: CAROL2          PAGAMENTO FATTURRA A
+ 630000004017RCHITETTO FABBRI                                                                                           
+ 620000004018191114200315C000000000150,003434                test25                                                     
+ 630000004018giro per competenza fattura 12  GIRO CONTO (STESSA BANCA)RIF.INT: test25          giro per competeenza fatt
+ 630000004018ura 12                                                                                                     
+ 620000004019200315200315D000000007000,003434                ECLISSI1                                                   
+ 630000004019GIROCONTO PER MANCANZA FONDI  GIRO CONTO (STESSA BANCA)RIF.INT: ECLISSI1        GIROCONTO PER MAANCANZA FON
+ 630000004019DI                                                                                                         
+ 620000004020101214200315C000000000015,003434                ECLISSI2                                                   
+ 630000004020GIROCONTO  GIRO CONTO (STESSA BANCA)RIF.INT: ECLISSI2        GIROCONTO                                     
+ 620000004021310315310315D000000006550,6019X4                                                                           
+ 630000004021  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000004022310315310315D000000000002,5674X3                                                                           
+ 630000004022  IMPOSTA DI BOLLO C/C AUTOMATICOADD. BOLLO: DATA INVIO E/C:                                               
+ 620000004023310315310315D000000000001,7918Y9                                                                           
+ 630000004023  RETTIFICA INTERESSI                                                                                      
+ 620000004024310315310315C000000000000,0318Y9                                                                           
+ 630000004024  RETTIFICA INTERESSI                                                                                      
+ 620000004025310315310315C000000025194,6318Y6                                                                           
+ 630000004025  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000004USD310315C000189624822,78                                                                                     
+ 610000005                  93003      O274EUR01 00E0343901600000000004466EUR010315C000000056007,42IT45                 
+ 620000005001160315250315C000000004444,4434F5                321014799sxcvbnm                                           
+ 630000005001  GIROCONTORIF: 321014799sxcvbnm                                                                           
+ 620000005002310315310315D000000000002,0074X3                                                                           
+ 630000005002  IMPOSTA DI BOLLO C/C AUTOMATICOADD. BOLLO: DATA INVIO E/C:                                               
+ 620000005003310315310315D000000000009,7719X4                                                                           
+ 630000005003  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000005004310315310315C000000000037,5618Y6                                                                           
+ 630000005004  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000005EUR310315C000000060477,65                                                                                     
+ 610000006                  93003      O274GBP01 00F0343901600000000004467GBP010315C000000194046,44IT22                 
+ 620000006001310315310315D000000000021,7219X4                                                                           
+ 630000006001  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000006002310315310315C000000000083,5518Y6                                                                           
+ 630000006002  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000006GBP310315C000000194108,27                                                                                     
+ 610000007                  93003      O274JPY01 00H0343901600000000004469JPY010315C000000000591,28IT73                 
+ 640000007JPY310315C000000000591,28                                                                                     
+ 610000008                  93003      SJ0UEUR01 00Q0343901600000000004422EUR310315D000001007770,68IT20                 
+ 620000008001310315310315D000000000433,9218Y5                                                                           
+ 630000008001  DEBIT INTERESTLIQUIDAZIONE MENSILE                                                                       
+ 620000008002310315310315D000000000044,7818Y9                                                                           
+ 630000008002  INTEREST ADJUSTMENT                                                                                      
+ 640000008EUR310315D000001008249,38                                                                                     
+ 610000009                  93003      SJ0UGBP01 00R0343901600000000004423GBP010315D002021174363,16IT94                 
+ 620000009001310315310315D000001740455,7018Y5                                                                           
+ 630000009001  DEBIT INTERESTLIQUIDAZIONE MENSILE                                                                       
+ 640000009GBP310315D002022914818,86                                                                                     
+ 610000010                  93003      SJ0UJPY01 00T0343901600000000004425JPY010315C000993470817,28IT48                 
+ 620000010001310315310315C000001539880,0018Y6                                                                           
+ 630000010001  CREDIT INTERESTLIQUIDAZIONE MENSILE                                                                      
+ 640000010JPY310315C000995010697,28                                                                                     
+ 610000011                  93003      SJ0UUSD01 00S0343901600000000004424USD010315C000010339280,27IT71                 
+ 620000011001310315310315C000000035613,0818Y6                                                                           
+ 630000011001  CREDIT INTERESTLIQUIDAZIONE MENSILE                                                                      
+ 640000011USD310315C000010374893,35                                                                                     
+ 610000012                  93003      SJOVEUR01 00U0343901600000000004426EUR010315C000081996293,29IT25                 
+ 620000012001310315310315C000000174101,7118Y6                                                                           
+ 630000012001  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000012EUR310315C000082170395,00                                                                                     
+ 610000013                  93003      SJOVGBP01 00V0343901600000000004427GBP010315C000001021861,61IT02                 
+ 620000013001130215250315C000000005555,5534F5                987430werzxvbn                                             
+ 630000013001  GIROCONTORIF: 987430werzxvbn                                                                             
+ 620000013002270315270315C000000000121,2134F5                qwertyuiop9651                                             
+ 630000013002  GIROCONTORIF: qwertyuiop9651                                                                             
+ 620000013003310315310315D000000000001,2119X4                                                                           
+ 630000013003  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000013004310315310315C000000001769,4718Y6                                                                           
+ 630000013004  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000013005310315310315C000000000004,6418Y9                                                                           
+ 630000013005  RETTIFICA INTERESSI                                                                                      
+ 640000013GBP310315C000001029311,27                                                                                     
+ EF03439AMCBW310315ECAMCBW150331234037       0000013                              0000162                               
+ EC03439AWKMU310315ECAWKMU150331234037                                                                                  
+ 610000001                  93003      MIA2EUR01 00E0343901600000000001403EUR010315C000000000140,94IT05                 
+ 620000001001020315020315C000000000150,00Z703                27152748518810GT                                           
+ 630000001001  ACCREDITO RID SIA: N.Pres.:  Date Pres.:                                                                 
+ 620000001002020315020315D000000000290,94Z1X5                                                                           
+ 630000001002  AUTOMATIC CASH SWEEP                                                                                     
+ 620000001003260215020315D000000000550,002636                15BRKBBBBH8FTA                                             
+ 630000001003ID1                                                                                                        
+ 630000001003  BONIFICO SEPA IN USCITA   EtE:TRN:BAN BEN: BEN:                                                          
+ 620000001004260215020315C000000000550,00Z1W9                                                                           
+ 630000001004  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001005270215030315C000000000260,60Z1W9                                                                           
+ 630000001005  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001006270215030315D000000000260,602636                15BPKBBBBL1FTA                                             
+ 630000001006ID1                                                                                                        
+ 630000001006  BONIFICO SEPA IN USCITA   EtE:TRN:BAN BEN: BEN:                                                          
+ 620000001007030315040315D000000000777,772636                15CBKBBBBQNFTA                                             
+ 630000001007ID11                                  NOTPROVIDED                                                          
+ 630000001007TEST SINGLE PAYMENT /REC/TEST SINGLE PAYMENT BONIFICO SEPA IN USCITA   EtE:NOTPROVIDEDTRN:1BAN BEN: BOFAIT2
+ 630000001007XXXXX BANK OF AMERICA, N.A.               BEN: TONY MONTAGNA TEST SINGLE PAYMENT                           
+ 620000001008060315060315C000000008000,0028VO                15CCKBBBBLQ                                                
+ 630000001008  ACQUISTO DIVISA TERZE PARTI CLS                                                                          
+ 620000001009060315060315C000000000044,454838                50306061809001GT                                           
+ 630000001009YYY06032015UNKNOWN                                                                                         
+ 630000001009ID1011503060BJUV2                     NOTPROVIDED                                                          
+ 630000001009  BONIFICO SEPA IN ENTRATA  EtE:NOTPROVIDEDTRN: 011503060BJUV2BAN ORRD: UNCRITMMXXX UNICREDIT S.P.A.       
+ 630000001009             0200809423ORD:: GIOVANARDI FATTORI STUDI                                                      
+ 620000001010090315090315D000000000062,772636                15CEKBBBCGMFTA                                             
+ 630000001010ID11                                  20150403135777000001                                                 
+ 630000001010REGRESSION TESTING FOLLOWING UPGRADE OF GRS TO 11G /REC/REGRESSION TESTING FOLLOWING U//PGRADE OF GRS TO 11
+ 630000001010G BONIFICO SEPA IN USCITA   EtE:20150403135777000001TRN:1BAN BEN: BOOFAIT2XXXX   BANK OF AMERICA, N.A.     
+ 630000001010          BEN: TONY MONTAGNNA                      REGRESSION TESTING FOLLOWING UPGRADE OF GRRS TO 11G     
+ 620000001011090315090315D000000000088,502636                15CEKBBBCQ0FTA                                             
+ 630000001011ID11                                  99EGS8T00002114256542100630.6992096                                  
+ 630000001011CREDIT TRASFER STIPENDI TEST- EMOLUMENTI STIPENDI- TRF BONIFICO SEPA SENZA ESITO A ORDINANTE /REC/CREDIT TR
+ 630000001011ASFER STIPENDI TEST- //EMOLUMENTI STIPENDI- TRF BONIFICO// SEPA SENZA ESITO A ORDINANTE BONIFICO SEPA IN US
+ 630000001011CITA   EtE:99EGS8T00002114256542100630.6992096TTRN:1BAN BEN: UNCRITMMXXX UNICREDIT SPA                     
+ 630000001011  BEN:: PETER GOMEZ                                                                                        
+ 620000001012100315100315C000000000015,003434                batch1aN03                                                 
+ 630000001012accredito di 15 eur su MIA2EUR01  GIRO CONTO (STESSA BANCA)RIF.INT: batch1aN03      accredito di 15 eur su 
+ 630000001012MIA2EUR01                                                                                                  
+ 620000001013100315100315C016661697931,77Z1W9                                                                           
+ 630000001013  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001014100315100315D000000000015,00Z1W9                                                                           
+ 630000001014  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001015100315100315D000000007115,41Z1W9                                                                           
+ 630000001015  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001016100315100315D000000212134,47Z1W9                                                                           
+ 630000001016  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001017110315110315D016661485797,30Z1W9                                                                           
+ 630000001017  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001018110315110315D000000020000,00Z1W9                                                                           
+ 630000001018  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001019110315110315C000000030000,00Z1W9                                                                           
+ 630000001019  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001020110315110315C000000018000,003434                15CGKBBBBMQFTD                                             
+ 630000001020IT70C0343901600000000004357        IT05E0343901600000000001403  GIRO CONTO (STESSA BANCA)RIF.INT: 2314784IT
+ 63000000102070C03439016000000000043357        IT05E0343901600000000001403                                              
+ 620000001021110315110315D000000005000,003434                15CGKBBBBMNFTD                                             
+ 630000001021IT05E0343901600000000001403        IT70C0343901600000000004357  GIRO CONTO (STESSA BANCA)RIF.INT: 896963258
+ 630000001021IT05E03439016000000000001403        IT70C0343901600000000004357                                            
+ 620000001022110315110315C000000002000,003434                15CGKBBBBMRFTD                                             
+ 630000001022IT70C0343901600000000004357        IT05E0343901600000000001403  GIRO CONTO (STESSA BANCA)RIF.INT: 328796354
+ 630000001022IT70C03439016000000000004357        IT05E0343901600000000001403                                            
+ 620000001023110315110315D000000000761,002636                15CGKBBBBJZFTA                                             
+ 630000001023ID11                                  20150403135777000001                                                 
+ 630000001023TEST OF DEFECTS DEFECTS 761, 815 AND 823 /REC/TEST OF DEFECTS DEFECTS 761, 8//15 AND 823 BONIFICO SEPA IN U
+ 630000001023SCITA   EtE:20150403135777000001TRN:1BAN BEN: BEEPOIT21050   BANCA POPOLARE DI BERGAMO S.P.A. (U BEN: CLINT
+ 630000001023 WESTTRREE                     TEST OF DEFECTS DEFECTS 761, 815 AND 823                                    
+ 620000001024110315110315D000000025000,003434                15CGKBBBBMMFTD                                             
+ 630000001024IT05E0343901600000000001403        IT70C0343901600000000004357  GIRO CONTO (STESSA BANCA)RIF.INT: 8575419IT
+ 63000000102405E03439016000000000014403        IT70C0343901600000000004357                                              
+ 620000001025110315110315C000000000761,00Z1W9                                                                           
+ 630000001025  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001026130315130315C000000064303,30Z703                12150140916558GT                                           
+ 630000001026  ACCREDITO RID SIA: 36394N.Pres.:  Date Pres.: 2015-03-05                                                 
+ 620000001027130315130315D000000064303,30Z1W9                                                                           
+ 630000001027  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001028130315130315D000000000615,002636                15CJKBBBBTRFTA                                             
+ 630000001028ID11                                  20151303135777000012                                                 
+ 630000001028EXECUTION DATE ON SATURDAY 140315 /REC/EXECUTION DATE ON SATURDAY 140//315 BONIFICO SEPA IN USCITA   EtE:20
+ 630000001028151303135777000012TRN:1BAN BEN: BOOFAIT2XXXX   BANK OF AMERICA, N.A.               BEN: EMMA WATSON EXECUTI
+ 630000001028ON DATE ON SATURDAY 140315                                                                                 
+ 620000001029130315130315C000000008000,0028VO                15CIKBBBBKJ                                                
+ 630000001029  ACQUISTO DIVISA TERZE PARTI CLS                                                                          
+ 620000001030120315130315D000000000500,001980                12150141022989GT                                           
+ 630000001030  TASSAZIONE F23/F24/I24N. RIF.: B0343901600150312                                                         
+ 620000001031120315130315C000000000500,00Z1W9                                                                           
+ 630000001031  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001032130315130315D000000000150,003488                1603151647                                                 
+ 630000001032SWITCH DA MIA2 A GLE1 PER INVEST  SWITCHRIF.INT: 1603151647      SWITCH DA MIA2 A GLE1 PER INVEST          
+ 620000001033130315130315D000000008000,00Z1W9                                                                           
+ 630000001033  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001034130315130315D000000050000,0028HT                TESTRC301FM                                                
+ 630000001034TEST RC 301  FX TRANSACTIONRIF.INT: IMP:  DIV:  TASSO: TEST RC 301                                         
+ 620000001035130315130315D000000002000,007979                130315testcash01                                           
+ 630000001035test reason code079  GIRO FONDI (DA/A ALTRO ISTITUTO)                                                      
+ 620000001036120315130315C000000002000,003434                15CGKBBBBMSFTD                                             
+ 630000001036IT70C0343901600000000004357        IT05E0343901600000000001403  GIRO CONTO (STESSA BANCA)RIF.INT: 098756231
+ 630000001036IT70C03439016000000000004357        IT05E0343901600000000001403                                            
+ 620000001037130315130315C000000055265,00Z1W9                                                                           
+ 630000001037  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001038120315130315D000000002000,00Z1W9                                                                           
+ 630000001038  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001039130315130315D000000002500,007979                130315testcash02                                           
+ 630000001039test reason code 079  GIRO FONDI (DA/A ALTRO ISTITUTO)                                                     
+ 620000001040120315160315C000000007000,00Z1W9                                                                           
+ 630000001040  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001041120315160315D000000002000,001980                12150141022845GT                                           
+ 630000001041  TASSAZIONE F23/F24/I24N. RIF.: 10698820155                                                               
+ 620000001042120315160315D000000003000,001980                12150141023102GT                                           
+ 630000001042  TASSAZIONE F23/F24/I24N. RIF.: 10698820155                                                               
+ 620000001043120315160315D000000002000,003434                15CGKBBBBMPFTD                                             
+ 630000001043IT05E0343901600000000001403        IT70C0343901600000000004357  GIRO CONTO (STESSA BANCA)RIF.INT: 5231478IT
+ 63000000104305E03439016000000000014403        IT70C0343901600000000004357                                              
+ 620000001044170315170315D000000006000,00Z1W9                                                                           
+ 630000001044  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001045160315170315D000000020269,042649                15CKKBBBC0RFTD                                             
+ 630000001045ID1                                                                                                        
+ 630000001045IT05E0343901600000000001403        IT24T0343901600000000006700  BENEFICIARI DIVERSI       EtE:TRN: BAN BEN:
+ 630000001045 IT05E0343901600000000001403        IT24T0343901600000000006700    T24T0343901600000000006700              
+ 620000001046170315170315C000000000500,00Z1W9                                                                           
+ 630000001046  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001047101214170315C000000015000,003434                TEST1                                                      
+ 630000001047GIROCONTO A SISTEMAZIONE  GIRO CONTO (STESSA BANCA)RIF.INT: TEST1           GIROCONTO A SISTTEMAZIONE      
+ 620000001048160315170315C000000020269,04Z1W9                                                                           
+ 630000001048  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001049170315170315D000000009000,00Z1W9                                                                           
+ 630000001049  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001050101214170315D000000015000,00Z1W9                                                                           
+ 630000001050  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001051170315170315C000000007000,003434                15CLKBBBBQLFTD                                             
+ 630000001051IT70C0343901600000000004357        IT05E0343901600000000001403  GIRO CONTO (STESSA BANCA)RIF.INT: 74547457I
+ 630000001051T70C03439016000000000044357        IT05E0343901600000000001403                                             
+ 620000001052170315170315C000000002000,003434                15CLKBBBBQMFTD                                             
+ 630000001052IT70C0343901600000000004357        IT05E0343901600000000001403  GIRO CONTO (STESSA BANCA)RIF.INT: 6325896IT
+ 63000000105270C03439016000000000043357        IT05E0343901600000000001403                                              
+ 620000001053170315170315D000000000500,003434                test3                                                      
+ 630000001053giroconto a sistemazione  GIRO CONTO (STESSA BANCA)RIF.INT: test3           giroconto a sisttemazione      
+ 620000001054170315170315C000000006000,0028VO                15CKKBBBC65                                                
+ 630000001054  ACQUISTO DIVISA TERZE PARTI CLS                                                                          
+ 620000001055180315180315D000000008000,00Z1W9                                                                           
+ 630000001055  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001056180315180315C000000008000,0028VO                15CKKBBBC64                                                
+ 630000001056  ACQUISTO DIVISA TERZE PARTI CLS                                                                          
+ 620000001057180315190315D000000000323,002649                15CLKBBBBQWFTD                                             
+ 630000001057ID1                                                                                                        
+ 630000001057IT05E0343901600000000001403        IT24T0343901600000000006700  BENEFICIARI DIVERSI       EtE:TRN: BAN BEN:
+ 630000001057 IT05E0343901600000000001403        IT24T0343901600000000006700    T24T0343901600000000006700              
+ 620000001058180315190315D000000000600,001980                17170050066219GT                                           
+ 630000001058  TASSAZIONE F23/F24/I24N. RIF.: B0343901600180315                                                         
+ 620000001059180315190315C000000001223,00Z1W9                                                                           
+ 630000001059  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001060180315190315D000000000300,001980                17170050126844GT                                           
+ 630000001060  TASSAZIONE F23/F24/I24N. RIF.: B0343901600180315                                                         
+ 620000001061200315200315D000000000050,003434                fiore1                                                     
+ 630000001061giroconto  GIRO CONTO (STESSA BANCA)RIF.INT: fiore1          giroconto                                     
+ 620000001062190315200315C000000008000,0028VO                15CTGGJDH9H                                                
+ 630000001062  ACQUISTO DIVISA TERZE PARTI CLS                                                                          
+ 620000001063200315200315C000000000050,00Z1W9                                                                           
+ 630000001063  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001064190315200315D000000008000,00Z1W9                                                                           
+ 630000001064  GIRO NETTING DATA VALUTA                                                                                 
+ 620000001065180315250315D000000000666,002649                15CLKBBBBQ6FTD                                             
+ 630000001065ID1                                                                                                        
+ 630000001065IT05E0343901600000000001403        IT24T0343901600000000006700  BENEFICIARI DIVERSI       EtE:TRN: BAN BEN:
+ 630000001065 IT05E0343901600000000001403        IT24T0343901600000000006700    T24T0343901600000000006700              
+ 620000001066250315250315C000000007000,003434                15CRKBBBBG5FTD                                             
+ 630000001066IT70C0343901600000000004357        IT05E0343901600000000001403  GIRO CONTO (STESSA BANCA)RIF.INT: 986325124
+ 630000001066IT70C03439016000000000004357        IT05E0343901600000000001403                                            
+ 620000001067280215250315D000000000008,506659                CFP02150003940GT                                           
+ 630000001067  SPESE DI REGISTRAZIONE OPERAZIONITRN: CFP02150003940GTTRN orig. SEEPA: Periodo dal 01.02.2015 al 28.EtE o
+ 630000001067rig. SEPA: Numero di operazzioni consider                                                                  
+ 620000001068280215250315D000000000049,501628                CFP02150003943GT                                           
+ 630000001068  SPESE BONIFICI SEPATRN: CFP02150003943GTTRN orig. SEPA: Periodo daal 01.02.2015 al 28.EtE orig. SEPA: Num
+ 630000001068ero di operazioni consider r                                                                               
+ 620000001069280215250315D000000000004,001667                CFP01153003647GT                                           
+ 630000001069  COMMISSIONI RIDTRN: CFP01153003647GTPeriodo dal 01.01.2015 al 31.NNumero di presentazioni consi          
+ 620000001070190315250315D000000000188,002649                15CMKBBBBNGFTD                                             
+ 630000001070ID1                                                                                                        
+ 630000001070IT05E0343901600000000001403        IT24T0343901600000000006700  BENEFICIARI DIVERSI       EtE:TRN: BAN BEN:
+ 630000001070 IT05E0343901600000000001403        IT24T0343901600000000006700    T24T0343901600000000006700              
+ 620000001071280215250315D000000000010,001632                CFP01153003651GT                                           
+ 630000001071  SPESE EMISSIONE ASSEGNITRN: CFP01153003651GTEtE orig. Assegno: Perriodo dal 01.01.2015 al 31.Numero di as
+ 630000001071segni considerati                                                                                          
+ 620000001072190315250315D000000001503,002636                15CJKBBBBTSFTA                                             
+ 630000001072ID11                                  20151303135777000011                                                 
+ 630000001072EXECUTION DATE WAY IN THE FUTURE /REC/EXECUTION DATE WAY IN THE FUTU//RE BONIFICO SEPA IN USCITA   EtE:2015
+ 6300000010721303135777000011TRN:1BAN BEN: BOOFAIT2XXXX   BANK OF AMERICA, N.A.               BEN: JENNIFER ANIISTON    
+ 630000001072               EXECUTION DATE WAY IN THE FUTURE                                                            
+ 620000001073250315250315C000000002000,003434                15CRKBBBBG6FTD                                             
+ 630000001073IT70C0343901600000000004357        IT05E0343901600000000001403  GIRO CONTO (STESSA BANCA)RIF.INT: 5632471IT
+ 63000000107370C03439016000000000043357        IT05E0343901600000000001403                                              
+ 620000001074280215250315D000000000004,501627                CFP02150003941GT                                           
+ 630000001074  SPESE SWIFT-OUT-EUROTRN: CFP02150003941GTTRN orig. SWIFT: Periodo dal 01.02.2015 al 28.Numero di operazio
+ 630000001074ni consider                                                                                                
+ 620000001075280215250315D000000000024,751621                CFP02150003947GT                                           
+ 630000001075  SPESE PAGAMENTI A BENEF DIVERSI                                                                          
+ 620000001076270315270315C000000000050,007474                1503270074                                                 
+ 630000001076TEST PER BOLLI SECONDO LA CMR018  IMPOSTA DI BOLLO C/C - MANUALERIF.INT: TEST PER BOLLI SECONDO LA CMR018  
+ 630000001076                                                                                                           
+ 620000001077270315270315C000000000000,509696                2703151020                                                 
+ 630000001077rettifica importo  RETTIFICA IMPORTORIF.INT: 2703151020      rettifica importo                             
+ 620000001078270315270315C000000000100,001616                1503270016                                                 
+ 630000001078TEST RC COMMISSIONI AL 270315  COMMISSIONI A FAVORE DI SSBRIF.INT: 1503270016      TEST RC COMMISSSIONI AL 
+ 630000001078270315                                                                                                     
+ 620000001079310315310315D000000029671,3319X4                                                                           
+ 630000001079  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000001080270315310315C000000007000,003434                15CTKBBBBNDFTD                                             
+ 630000001080IT83N0316301696000000000515        IT05E0343901600000000001403  GIRO CONTO (STESSA BANCA)RIF.INT: 85317784I
+ 630000001080T83N03163016960000000000515        IT05E0343901600000000001403                                             
+ 620000001081310315310315C000000114120,4918Y6                                                                           
+ 630000001081  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000001082310315310315D000000000040,1218Y9                                                                           
+ 630000001082  RETTIFICA INTERESSI                                                                                      
+ 620000001083270315310315C000000002000,003434                15CTKBBBBNFFTD                                             
+ 630000001083IT83N0316301696000000000515        IT05E0343901600000000001403  GIRO CONTO (STESSA BANCA)RIF.INT: 963254127
+ 630000001083IT83N03163016960000000000515        IT05E0343901600000000001403                                            
+ 620000001084310315310315D000000000000,1418Y5                                                                           
+ 630000001084  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000001EUR310315C000000100101,15                                                                                     
+ 610000002                  93003      MIA2GBP01 00G0316301696000000001410GBP010315C000020798307,48IT43                 
+ 620000002001060315060315D000000004000,0028VP                15CCKBBBBLQ                                                
+ 630000002001  VENDITA DIVISA TERZE PARTI CLS                                                                           
+ 620000002002130315130315D000000004000,0028VP                15CIKBBBBKJ                                                
+ 630000002002  VENDITA DIVISA TERZE PARTI CLS                                                                           
+ 620000002003170315170315D000000003000,0028VP                15CKKBBBC65                                                
+ 630000002003  VENDITA DIVISA TERZE PARTI CLS                                                                           
+ 620000002004180315180315D000000004000,0028VP                15CKKBBBC64                                                
+ 630000002004  VENDITA DIVISA TERZE PARTI CLS                                                                           
+ 620000002005280215190315D000000000001,196659                CFP02150003951GT                                           
+ 630000002005  SPESE DI REGISTRAZIONE OPERAZIONITRN: CFP02150003951GTTRN orig. SEEPA: Periodo dal 01.02.2015 al 28.EtE o
+ 630000002005rig. SEPA: Numero di operazzioni consider                                                                  
+ 620000002006101214200315D000000000020,003434                eclissi3                                                   
+ 630000002006giroconto  GIRO CONTO (STESSA BANCA)RIF.INT: eclissi3        giroconto                                     
+ 620000002007230115200315C000000000025,003434                eclissi4                                                   
+ 630000002007giroconto  GIRO CONTO (STESSA BANCA)RIF.INT: eclissi4        giroconto                                     
+ 620000002008200315200315D000000004000,0028VP                15CTGGJDH9H                                                
+ 630000002008  VENDITA DIVISA TERZE PARTI CLS                                                                           
+ 620000002009310315310315D000000000000,0118Y9                                                                           
+ 630000002009  RETTIFICA INTERESSI                                                                                      
+ 640000002GBP310315C000020779311,28                                                                                     
+ 610000003                  93003      MIA2USD01 00I0316301696000000001412USD310315C000010933494,03IT94                 
+ 620000003001310315310315D000000000739,8919X4                                                                           
+ 630000003001  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000003002310315310315C000000002845,7218Y6                                                                           
+ 630000003002  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000003USD310315C000010935599,86                                                                                     
+ EF03439AWKMU310315ECAWKMU150331234037       0000003                              0000249                               
+ EC03439BCZAV310315ECBCZAV150331234037                                                                                  
+ 610000001                  93003      BUA5EUR03 00A0343901600000000005337EUR010315C000140604512,33IT83                 
+ 640000001EUR310315C000140604512,33                                                                                     
+ 610000002                  93003      BUA5GBP01 00R0316301696000000001731GBP010315D000000000112,72IT53                 
+ 640000002GBP310315D000000000112,72                                                                                     
+ 610000003                  93003      BUA5USD01 00X0316301696000000001737USD010315C000000000000,00IT12                 
+ 640000003USD310315C000000000000,00                                                                                     
+ 610000004                  93003      BUA6EUR01 00W0316301696000000001744EUR010315C000000000000,00IT13                 
+ 640000004EUR310315C000000000000,00                                                                                     
+ 610000005                  93003      BUA6GBP01 00W0316301696000000001750GBP010315C000000000000,00IT45                 
+ 640000005GBP310315C000000000000,00                                                                                     
+ 610000006                  93003      BUA6USD01 00C0316301696000000001756USD010315C000000000000,00IT94                 
+ 640000006USD310315C000000000000,00                                                                                     
+ EF03439BCZAV310315ECBCZAV150331234037       0000006                              0000014                               
+ EC034390E169310315EC0E169150331234037                                                                                  
+ 610000001                  93003      BCR1EUR01 00T0343901600000000001648EUR010315C000140184015,94IT46                 
+ 640000001EUR310315C000140184015,94                                                                                     
+ 610000002                  93003      BCR1GBP01 00Y0316301696000000001661GBP010315C000000000000,00IT31                 
+ 640000002GBP310315C000000000000,00                                                                                     
+ 610000003                  93003      BCR1USD01 00A0316301696000000001655USD010315D000000000813,75IT00                 
+ 640000003USD310315D000000000813,75                                                                                     
+ 610000004                  93003      ZILEGBP01 00O0316301696000000001530GBP010315C000000061151,82IT36                 
+ 620000004001310315310315C000000000025,9718Y6                                                                           
+ 630000004001  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000004002310315310315D000000000006,7519X4                                                                           
+ 630000004002  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 640000004GBP310315C000000061171,04                                                                                     
+ 610000005                  93003      ZILEMXN01 00P0343901600000000004421MXN010315D000000047347,39IT43                 
+ 620000005001310315310315D000000000142,7018Y5                                                                           
+ 630000005001  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000005MXN310315D000000047490,09                                                                                     
+ 610000006                  93003      ZILEUSD01 00U0316301696000000001528USD010315C000000074909,75IT17                 
+ 620000006001310315310315C000000000019,7618Y6                                                                           
+ 630000006001  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000006002310315310315D000000000005,1419X4                                                                           
+ 630000006002  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 640000006USD310315C000000074924,37                                                                                     
+ EF034390E169310315EC0E169150331234037       0000006                              0000024                               
+ EC03439613D0310315EC613D0150331234037                                                                                  
+ 610000001                  93003      GLE1MXN01 00M0343901600000000004501MXN010115C000010540568,01IT05                 
+ 620000001001301114140115D000000000170,221656                CFP11140001530GT                                           
+ 630000001001  SPESE TENUTA CONTO                                                                                       
+ 620000001002301114160115D000000000170,221656                CFP01140001530GT                                           
+ 630000001002  SPESE TENUTA CONTO                                                                                       
+ 620000001003311214260115D000000001702,231656                CFP12140001695GT                                           
+ 630000001003  SPESE TENUTA CONTO                                                                                       
+ 620000001004310115300115C000000031761,9518Y6                                                                           
+ 630000001004  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000001005310115300115D000000000001,0318Y9                                                                           
+ 630000001005  RETTIFICA INTERESSI                                                                                      
+ 620000001006301114040215D000000000495,001628                CFP11140007584GT                                           
+ 630000001006  SPESE BONIFICI SEPATRN:                 TRN orig. SEPA: EtE orig. SEPA:                                  
+ 620000001007301114040215D000000000019,521624                CFP11140007583GT                                           
+ 630000001007  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                                        
+ 620000001008301114040215D000000007890,216659                CFP11140007581GT                                           
+ 630000001008  SPESE DI REGISTRAZIONE OPERAZIONITRN:                 TRN orig. SEEPA:                                   
+ 630000001008 EtE orig. SEPA:                                                                                           
+ 620000001009301114040215D000000000170,221656                CFP11140007580GT                                           
+ 630000001009  SPESE TENUTA CONTO                                                                                       
+ 620000001010301114040215D000000000382,501627                CFP11140007582GT                                           
+ 630000001010  SPESE SWIFT-OUT-EUROTRN:                 TRN orig. SWIFT:                                                
+ 620000001011301114040215D000000000062,591630                CFP11140007590GT                                           
+ 630000001011  SPESE SWIFT-IN-DIV/EURO EXTRA UE                                                                         
+ 620000001012301114040215D000000000060,001632                CFP11140007589GT                                           
+ 630000001012  SPESE EMISSIONE ASSEGNITRN:                 EtE orig. Assegno:                                           
+ 620000001013311214060215D000000001702,231656                CFP12142001695GT                                           
+ 630000001013  SPESE TENUTA CONTO                                                                                       
+ 620000001014310115190215D000000001702,231656                CFP01150002036GT                                           
+ 630000001014  SPESE TENUTA CONTO                                                                                       
+ 620000001015280215270215C000000028740,5218Y6                                                                           
+ 630000001015  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000001016280215270215D000000000059,9518Y9                                                                           
+ 630000001016  RETTIFICA INTERESSI                                                                                      
+ 620000001017280215190315D000000001805,231656                CFP02150002289GT                                           
+ 630000001017  SPESE TENUTA CONTO                                                                                       
+ 620000001018310315310315C000000031901,0418Y6                                                                           
+ 630000001018  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000001MXN310315C000010616578,14                                                                                     
+ 610000002                  93003      GLE1NOK01 00K0316301696000000003955NOK010315C000000014466,18IT20                 
+ 620000002001310315310315C000000000018,6918Y6                                                                           
+ 630000002001  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000002NOK310315C000000014484,87                                                                                     
+ 610000003                  93003      GLE1NZD01 00L0343901600000000004500NZD010315C000009161409,43IT28                 
+ 620000003001280215190315D000000000158,921656                CFP02150002311GT                                           
+ 630000003001  SPESE TENUTA CONTO                                                                                       
+ 620000003002310315310315C000000019722,1418Y6                                                                           
+ 630000003002  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000003NZD310315C000009180972,65                                                                                     
+ 610000004                  93003      GLE1SEK01 00L0316301696000000003956SEK010315C000129069980,60IT94                 
+ 620000004001280215190315D000000000915,701656                CFP02150002322GT                                           
+ 630000004001  SPESE TENUTA CONTO                                                                                       
+ 620000004002310315310315C000000083357,1018Y6                                                                           
+ 630000004002  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000004SEK310315C000129152422,00                                                                                     
+ 610000005                  93003      MS03EUR01 00B0343901600000000004356EUR010315C000292680536,31IT93                 
+ 620000005001280215190315D000000000000,256659                CFP02150004138GT                                           
+ 630000005001  SPESE DI REGISTRAZIONE OPERAZIONITRN: CFP02150004138GTTRN orig. SEEPA: Period from 01.02.2015 TO 28.EtE o
+ 630000005001rig. SEPA: Operations consiidered:                                                                         
+ 620000005002250315250315C000000000200,003434                15CRKBBBBJRFTD                                             
+ 630000005002IT19A0343901600000000004355        IT93B0343901600000000004356  GIRO CONTO (STESSA BANCA)RIF.INT: I00001161
+ 630000005002EPIT19A03439016000000000004355        IT93B0343901600000000004356                                          
+ 620000005003250315250315D000000500000,00ZL02                15CRKBBBBJSFTA                                             
+ 630000005003ZZ1000000000500000,00EUR000000000500000,00EUR000000000500000,00EUR            0000000000,000000000000,00   
+ 630000005003ZZ2IMA TEST FUND 3FIFTH AVENUENY NEW YORK                                                                  
+ 630000005003ZZ3INTESA SANPAOLO SPAPIAZZA DELLA SCALA 6MILANO     PRELIEVO LIQ. - DISINVESTIMENTO PARZIALE              
+ 630000005003/ZZ4/                RIF.INTERNO: 18612/ZZ4/                                                               
+ 630000005003PRELIEVO LIQ. - DISINVESTIMENTO PARZIALE                              RIF.INTERNO: 18612  BONIFICO SWIFT OU
+ 620000005004310315310315D000000013004,8718Y9                                                                           
+ 630000005004  RETTIFICA INTERESSI                                                                                      
+ 620000005005310315310315C000000062984,0018Y6                                                                           
+ 630000005005  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000005EUR310315C000292230715,19                                                                                     
+ EF03439613D0310315EC613D0150331234037       0000005                              0000077                               
+ EC03439613D5310315EC613D5150331234037                                                                                  
+ 610000001                  93003      GLE5EUR01 00O0316301696000000000516EUR010315C000000566795,45IT60                 
+ 620000001001040315040315D000000566795,453434                testrocco2                                                 
+ 630000001001azzeramento saldo test georges  GIRO CONTO (STESSA BANCA)RIF.INT: testrocco2      azzeramento salddo test g
+ 630000001001eorges                                                                                                     
+ 620000001002050315050315D000000001000,00ZL02                swift33                                                    
+ 630000001002ZZ1000000000001000,00EUR000000000001000,00EUR000000000001000,00EUR            0000000000,000000000000,00   
+ 630000001002ZZ2SECURITY SQA EF5VIA BIGLI,11MI MILANO                                                                   
+ 630000001002ZZ3BANK OF AMERICA, N.A.MAINTOWERNEUE MAINZER STRASSEtest riskqueue swift33                                
+ 630000001002test riskqueue swift33  BONIFICO SWIFT OUTTRN: swift33          RIF. ORIG.: BAN BEN: BOFADEFXXXX   BANK OF 
+ 630000001002AMERICA, N.A.               BEN: zi: zio paperone                       test riskqueue swift33             
+ 620000001003050315050315D000000001000,00ZL02                swift49                                                    
+ 630000001003ZZ1000000000001000,00EUR000000000001000,00EUR000000000001000,00EUR            0000000000,000000000000,00   
+ 630000001003ZZ2SECURITY SQA EF5VIA BIGLI,11MI MILANO                                                                   
+ 630000001003ZZ3UNICREDIT S.P.A.PIAZZA CORDUSIOMILANO             test risk queue swift49                               
+ 630000001003test risk queue swift49  BONIFICO SWIFT OUTTRN: swift49          RIF. ORIG.: BAN BEN: UNCRITMMXXX   UNICRED
+ 630000001003IT S.P.A.                    BEN: pi: pippo paperino                     test risk queue swift49           
+ 620000001004060315060315D000000000005,001667                fee81                                                      
+ 630000001004test riskqueue fee81  COMMISSIONI RIDTRN: fee81           test riskqueue fee81                             
+ 620000001005060315060315D000000000005,001632                fee130                                                     
+ 630000001005fee130  SPESE EMISSIONE ASSEGNITRN: fee130          EtE orig. Assegno: feee130                             
+ 620000001006060315060315D000000000005,001627                fee33                                                      
+ 630000001006test risk queue fee33  SPESE SWIFT-OUT-EUROTRN: fee33           TRN orig. SWIFT: test rissk queue fee33    
+ 620000001007060315060315D000000000005,001624                fee17                                                      
+ 630000001007test riskqueue fee17  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                    
+ 620000001008060315060315D000000000005,001656                fee161                                                     
+ 630000001008fee161  SPESE TENUTA CONTO                                                                                 
+ 620000001009060315060315D000000000005,001621                fee49                                                      
+ 630000001009test riskqueue fee49  SPESE PAGAMENTI A BENEF DIVERSI                                                      
+ 620000001010060315060315D000000000005,006659                fee193                                                     
+ 630000001010fee193  SPESE DI REGISTRAZIONE OPERAZIONITRN: fee193          TRN orig. SEEPA: fee193                      
+ 630000001010       EtE orig. SEPA:                                                                                     
+ 620000001011060315060315D000000000005,001628                fee65                                                      
+ 630000001011test riskqueue fee65  SPESE BONIFICI SEPATRN: fee65           TRN orig. SEPA: test riskqqueue fee65        
+ 630000001011       EtE orig. SEPA:                                                                                     
+ 620000001012060315060315D000000000005,006659                fee177                                                     
+ 630000001012fee177  SPESE DI REGISTRAZIONE OPERAZIONITRN: fee177          TRN orig. SEEPA: fee177                      
+ 630000001012       EtE orig. SEPA:                                                                                     
+ 620000001013060315060315D000000000005,001631                fee97                                                      
+ 630000001013test riskqueue fee97  COMMISSIONI SDDTRN: fee97           EtE orig. SEPA: test riskqueuee fee97            
+ 620000001014060315060315D000000000005,001641                fee114                                                     
+ 630000001014test riskqueue fee114  COMMISSIONI MAVTRN: fee114          test riskqueue fee114                           
+ 620000001015090315090315D000000000005,001624                fee17                                                      
+ 630000001015fee17  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                                   
+ 620000001016090315090315D000000001000,00ZLTN                swift113                                                   
+ 630000001016ZZ1000000000001000,00EUR000000000001000,00EUR000000000001000,00EUR            0000000000,000000000000,00   
+ 630000001016ZZ2Via Ferrante Aporti, 12Milan, Italy 20125                                                               
+ 630000001016ZZ3BANCA MEDIOLANUMPALAZZO MEUCCIMILANO 3BASIGLIO                                                          
+ 630000001016 /bnf/swift113 SWIFT MT202RIF: swift113         RIF. CLI: swift113        BAN BENN: MEDBITMMXXX   BANCA MED
+ 630000001016IOLANUM                    BEN: mediolannum gestione fondi                                                 
+ 620000001017090315090315D000000000400,00ZLTN                testrocco10                                                
+ 630000001017ZZ1000000000000400,00EUR000000000000400,00EUR000000000000400,00EUR            0000000000,000000000000,00   
+ 630000001017ZZ2Via Ferrante Aporti, 12Milan, Italy 20125                                                               
+ 630000001017ZZ3UNICREDIT S.P.A.PIAZZA CORDUSIOMILANO                                                                   
+ 630000001017 /bnf/verificare se viene popolato  //il campo 72 SWIFT MT202RIF: testrocco10      RIF. CLI: il trn della c
+ 630000001017tpBAN BENN: UNCRITMMXXX   UNICREDIT S.P.A.                    BEN: societa di capitali spa                 
+ 620000001018100315100315D000000000005,001656                FEE161                                                     
+ 630000001018FEE161  SPESE TENUTA CONTO                                                                                 
+ 620000001019100315100315D000000000005,001631                fee97                                                      
+ 630000001019fee97  COMMISSIONI SDDTRN: fee97           EtE orig. SEPA: fee97                                           
+ 620000001020100315100315D000000000005,001632                fee129                                                     
+ 630000001020fee129  SPESE EMISSIONE ASSEGNITRN: fee129          EtE orig. Assegno: feee129                             
+ 620000001021100315100315D000000000005,001641                fee113                                                     
+ 630000001021fee113  COMMISSIONI MAVTRN: fee113          fee113                                                         
+ 620000001022100315100315D000000000005,001621                fee49                                                      
+ 630000001022fee49  SPESE PAGAMENTI A BENEF DIVERSI                                                                     
+ 620000001023100315100315D000000000005,001628                fee65                                                      
+ 630000001023fee65  SPESE BONIFICI SEPATRN: fee65           TRN orig. SEPA: fee65 EtE orig. SEPA:                       
+ 630000001023                                                                                                           
+ 620000001024100315100315D000000000005,001627                fee33new                                                   
+ 630000001024fee33new  SPESE SWIFT-OUT-EUROTRN: fee33new        TRN orig. SWIFT: fee33neww                              
+ 620000001025100315100315D000000000005,006666                FEE225                                                     
+ 630000001025FEE225  SPESERIF.INT: FEE225          FEE225                                                               
+ 620000001026100315100315D000000000005,006659                FEE193                                                     
+ 630000001026FEE193  SPESE DI REGISTRAZIONE OPERAZIONITRN: FEE193          TRN orig. SEEPA: FEE193                      
+ 630000001026       EtE orig. SEPA:                                                                                     
+ 620000001027100315100315D000000000005,001667                fee81                                                      
+ 630000001027fee81  COMMISSIONI RIDTRN: fee81           fee81                                                           
+ 620000001028110315110315D000000001000,00ZLTN                testswift97                                                
+ 630000001028ZZ1000000000001000,00EUR000000000001000,00EUR000000000001000,00EUR            0000000000,000000000000,00   
+ 630000001028ZZ2Via Ferrante Aporti, 12Milan, Italy 20125                                                               
+ 630000001028ZZ3DEUTSCHE BANK AG6 BISHOPSGATELONDON                                                                     
+ 630000001028 /bnf/ffc a/c DE43500700100925799900//societa del carbone ardente SWIFT MT202RIF: testswift97      RIF. CLI
+ 630000001028: testswift97     BAN BENN: DEUTGB2LXXX   DEUTSCHE BANK AG                    BEN: DEUTSCHEE BANK AG       
+ 620000001029300315300315D000000000008,006659                TESTFEE195                                                 
+ 630000001029TESTFEE195  SPESE DI REGISTRAZIONE OPERAZIONITRN: TESTFEE195      TRN orig. SEEPA: TESTFEE195              
+ 630000001029           EtE orig. SEPA:                                                                                 
+ 620000001030300315300315D000000000004,001628                testfee67                                                  
+ 630000001030testfee67  SPESE BONIFICI SEPATRN: testfee67       TRN orig. SEPA: testfee67 EtE orig. SEPA:               
+ 630000001030                                                                                                           
+ 620000001031300315300315D000000000002,001624                testfee19                                                  
+ 630000001031testfee19  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                               
+ 620000001032300315300315D000000000005,001632                testfee131                                                 
+ 630000001032testfee131  SPESE EMISSIONE ASSEGNITRN: testfee131      EtE orig. Assegno: tesstfee131                     
+ 620000001033300315300315D000000000005,006666                testfee227                                                 
+ 630000001033testfee227  SPESERIF.INT: testfee227      testfee227                                                       
+ 620000001034300315300315C000000020000,003434                giro5                                                      
+ 630000001034giro5  GIRO CONTO (STESSA BANCA)RIF.INT: giro5           giro5                                             
+ 620000001035300315300315D000000000002,001627                testfee35                                                  
+ 630000001035testfee35  SPESE SWIFT-OUT-EUROTRN: testfee35       TRN orig. SWIFT: testfee335                            
+ 620000001036300315300315D000000000001,001631                testfee031                                                 
+ 630000001036testfee031  COMMISSIONI SDDTRN: testfee031      EtE orig. SEPA: testfee031                                 
+ 620000001037300315300315D000000000005,001667                testfee83                                                  
+ 630000001037testfee83  COMMISSIONI RIDTRN: testfee83       testfee83                                                   
+ 620000001038300315300315D000000000003,001621                testfee51                                                  
+ 630000001038testfee51  SPESE PAGAMENTI A BENEF DIVERSI                                                                 
+ 620000001039300315300315D000000000007,001656                testfee163                                                 
+ 630000001039testfee163  SPESE TENUTA CONTO                                                                             
+ 620000001040300315300315D000000000008,001641                testfee115                                                 
+ 630000001040testfee115  COMMISSIONI MAVTRN: testfee115      testfee115                                                 
+ 620000001041310315310315D000000000525,00ZL02                r.q.swift35                                                
+ 630000001041ZZ1000000000000525,00EUR000000000000525,00EUR000000000000525,00EUR            0000000000,000000000000,00   
+ 630000001041ZZ2SECURITY SQA EF5VIA BIGLI,11MI MILANO                                                                   
+ 630000001041ZZ3COMMERZBANK AGKAISERSTRASSE 16FRANKFURT AM MAIN   compenso vendita orologi                              
+ 630000001041compenso vendita orologi  BONIFICO SWIFT OUTTRN: r.q.swift35      RIF. ORIG.: BAN BEN: COBADEFFXXX   COMMER
+ 630000001041ZBANK AG                      BEN: or: orologi gmbh                       compenso vendita orologi         
+ 620000001042310315310315D000000000004,1219X4                                                                           
+ 630000001042  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000001043310315310315C000000000015,8518Y6                                                                           
+ 630000001043  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000001044310315310315D000000000025,1918Y9                                                                           
+ 630000001044  RETTIFICA INTERESSI                                                                                      
+ 620000001045310315310315D000000000000,6918Y5                                                                           
+ 630000001045  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 620000001046310315310315D000000000750,00ZL02                testswift51                                                
+ 630000001046ZZ1000000000000750,00EUR000000000000750,00EUR000000000000750,00EUR            0000000000,000000000000,00   
+ 630000001046ZZ2SECURITY SQA EF5VIA BIGLI,11MI MILANO                                                                   
+ 630000001046  BONIFICO SWIFT OUTTRN: testswift51      RIF. ORIG.: BAN BEN:                                             
+ 630000001046      BEN: ge: gennaro ortofrutta                                                                          
+ 640000001EUR310315C000000014150,85                                                                                     
+ 610000002                  93003      GLE5GBP01 00P0316301696000000000517GBP010315D000000008928,75IT37                 
+ 620000002001310315310315D000000000003,7918Y5                                                                           
+ 630000002001  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000002GBP310315D000000008932,54                                                                                     
+ 610000003                  93003      GLE5JPY01 00Q0316301696000000000518JPY010315D000013718532,72IT14                 
+ 620000003001310315310315D000000001181,0018Y5                                                                           
+ 630000003001  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000003JPY310315D000013719713,72                                                                                     
+ 610000004                  93003      GLE5USD01 00R0316301696000000000519USD010315D000013767523,95IT88                 
+ 620000004001040315040315C000013767523,953434                testrocco3                                                 
+ 630000004001azzeramento saldo test georges  GIRO CONTO (STESSA BANCA)RIF.INT: testrocco3      azzeramento salddo test g
+ 630000004001eorges                                                                                                     
+ 620000004002050315050315D000000001000,00ZL02                swift17                                                    
+ 630000004002ZZ1000000000001000,00USD000000000001000,00USD000000000001000,00USD            0000000000,000000000000,00   
+ 630000004002ZZ2SECURITY SQA EF5VIA BIGLI,11MI MILANO                                                                   
+ 630000004002ZZ3BANCA MEDIOLANUMPALAZZO MEUCCIMILANO 3BASIGLIO    test riskqueue swift17                                
+ 630000004002test riskqueue swift17  BONIFICO SWIFT OUTTRN: swift17          RIF. ORIG.: BAN BEN: MEDBITMMXXX   BANCA ME
+ 630000004002DIOLANUM                    BEN: la: lanfranco caciotta                 test riskqueue swift17             
+ 620000004003050315050315D000000001000,00ZL02                swift1                                                     
+ 630000004003ZZ1000000000001000,00USD000000000001000,00USD000000000001000,00USD            0000000000,000000000000,00   
+ 630000004003ZZ2SECURITY SQA EF5VIA BIGLI,11MI MILANO                                                                   
+ 630000004003ZZ3INTESA SANPAOLO SPA (FORMERLY BANCA1 WILLIAM STREEtest riskqueue swift1                                 
+ 630000004003test riskqueue swift1  BONIFICO SWIFT OUTTRN: swift1           RIF. ORIG.: BAN BEN: BCITUS33XXX   INTESA SA
+ 630000004003NPAOLO SPA (FORMERLY BANCA BEN: jo: johnny stuzzicadenti               test riskqueue swift1               
+ 620000004004060315060315D000000000005,001624                fee1                                                       
+ 630000004004test riskqueue fee1  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                     
+ 620000004005060315060315D000000000005,006659                fee177                                                     
+ 630000004005fee177  SPESE DI REGISTRAZIONE OPERAZIONITRN: fee177          TRN orig. SEEPA: fee177                      
+ 630000004005       EtE orig. SEPA:                                                                                     
+ 620000004006060315060315D000000000005,001656                fee146                                                     
+ 630000004006fee146  SPESE TENUTA CONTO                                                                                 
+ 620000004007090315090315D000000000005,001624                fee1                                                       
+ 630000004007fee1  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                                    
+ 620000004008090315090315D000000001000,00ZLTN                swift81                                                    
+ 630000004008ZZ1000000000001000,00USD000000000001000,00USD000000000001000,00USD            0000000000,000000000000,00   
+ 630000004008ZZ2SECURITY SQA EF5VIA BIGLI,11MI MILANO                                                                   
+ 630000004008  SWIFT MT202RIF: swift81          RIF. CLI: swift81         BAN BENN:                                     
+ 630000004008              BEN: pluto e paperino                                                                        
+ 620000004009090315090315D000000001000,00ZLTN                swift65                                                    
+ 630000004009ZZ1000000000001000,00USD000000000001000,00USD000000000001000,00USD            0000000000,000000000000,00   
+ 630000004009ZZ2Via Ferrante Aporti, 12Milan, Italy 20125                                                               
+ 630000004009ZZ3BANK OF AMERICA, N.A.100 WEST 33RD STREETNEW YORK,                                                      
+ 630000004009 /bnf/swift65 SWIFT MT202RIF: swift65          RIF. CLI: swift65         BAN BENN: BOFAUS3NXXX   BANK OF AM
+ 630000004009ERICA, N.A.               BEN: oz wizarrd                                                                  
+ 620000004010100315100315D000000000005,001656                fee145                                                     
+ 630000004010fee145  SPESE TENUTA CONTO                                                                                 
+ 620000004011100315100315D000000000005,006659                FEE177                                                     
+ 630000004011FEE177  SPESE DI REGISTRAZIONE OPERAZIONITRN: FEE177          TRN orig. SEEPA: FEE177                      
+ 630000004011       EtE orig. SEPA:                                                                                     
+ 620000004012100315100315D000000000005,006666                FEE209                                                     
+ 630000004012FEE209  SPESERIF.INT: FEE209          FEE209                                                               
+ 620000004013110315110315D000000001000,00ZLTN                test swift81                                               
+ 630000004013ZZ1000000000001000,00USD000000000001000,00USD000000000001000,00USD            0000000000,000000000000,00   
+ 630000004013ZZ2Via Ferrante Aporti, 12Milan, Italy 20125                                                               
+ 630000004013ZZ3VENETO BANCA SCPAPIAZZA G.B. DALL'ARMI 1MONTEBELLU                                                      
+ 630000004013 /bnf/test swift81 SWIFT MT202RIF: test swift81     RIF. CLI: test swift81    BAN BENN: VEBHIT2M      VENET
+ 630000004013O BANCA SCPA                   BEN: societa asfalto liquido                                                
+ 620000004014110315110315D000000001000,00ZLTN                testswift81                                                
+ 630000004014ZZ1000000000001000,00USD000000000001000,00USD000000000001000,00USD            0000000000,000000000000,00   
+ 630000004014ZZ2Via Ferrante Aporti, 12Milan, Italy 20125                                                               
+ 630000004014ZZ3VENETO BANCA SCPAPIAZZA G.B. DALL'ARMI 1MONTEBELLU                                                      
+ 630000004014 /bnf/ffc a/c 123456                // societa dei minatori SWIFT MT202RIF: testswift81      RIF. CLI: test
+ 630000004014swift81     BAN BENN: VEBHIT2M      VENETO BANCA SCPA                   BEN: BANCA INNTERMOBILIARE S.P.A.  
+ 620000004015300315300315D000000000350,00ZL02                testsepa3                                                  
+ 630000004015ZZ1000000000000350,00USD000000000000350,00USD000000000000350,00USD            0000000000,000000000000,00   
+ 630000004015ZZ2SECURITY SQA EF5VIA BIGLI,11MI MILANO                                                                   
+ 630000004015ZZ3JPMORGAN CHASE BANK, N.A.125 LONDON WALLLONDON    testswift3                                            
+ 630000004015testswift3  BONIFICO SWIFT OUTTRN: testsepa3        RIF. ORIG.: BAN BEN: CHASGB2LXXX   JPMORGAN CHASE BANK,
+ 630000004015 N.A.           BEN: pi: pippotopolino                      testswift3                                     
+ 620000004016300315300315D000000000004,006659                testfee179                                                 
+ 630000004016testfee159  SPESE DI REGISTRAZIONE OPERAZIONITRN: testfee179      TRN orig. SEEPA: testfee159              
+ 630000004016           EtE orig. SEPA:                                                                                 
+ 620000004017300315300315C000000020000,003434                girosaldo                                                  
+ 630000004017girosaldo  GIRO CONTO (STESSA BANCA)RIF.INT: girosaldo       girosaldo                                     
+ 620000004018300315300315D000000000004,006666                testfee211                                                 
+ 630000004018testfee211  SPESERIF.INT: testfee211      testfee211                                                       
+ 620000004019300315300315D000000000006,001656                testfee147                                                 
+ 630000004019testfee147  SPESE TENUTA CONTO                                                                             
+ 620000004020300315300315D000000000002,001624                testfee3                                                   
+ 630000004020testfee3  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                                
+ 620000004021310315310315C000000000000,7618Y6                                                                           
+ 630000004021  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000004022310315310315C000000000000,0118Y9                                                                           
+ 630000004022  RETTIFICA INTERESSI                                                                                      
+ 620000004023310315310315D000000001000,00ZL02                r.q. swift19                                               
+ 630000004023ZZ1000000000001000,00USD000000000001000,00USD000000000001000,00USD            0000000000,000000000000,00   
+ 630000004023ZZ2SECURITY SQA EF5VIA BIGLI,11MI MILANO                                                                   
+ 630000004023ZZ3BANCA MEDIOLANUMPALAZZO MEUCCIMILANO 3BASIGLIO    pagamento tangenti scavo                              
+ 630000004023pagamento tangenti scavo  BONIFICO SWIFT OUTTRN: r.q. swift19     RIF. ORIG.: BAN BEN: MEDBITMMXXX   BANCA 
+ 630000004023MEDIOLANUM                    BEN: pi: pippotopolini                      pagamento tangenti scavo         
+ 620000004024310315310315D000000000000,2019X4                                                                           
+ 630000004024  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000004025310315310315D000000001200,00ZLTN                r.q.swift67                                                
+ 630000004025ZZ1000000000001200,00USD000000000001200,00USD000000000001200,00USD            0000000000,000000000000,00   
+ 630000004025ZZ2Via Ferrante Aporti, 12Milan, Italy 20125                                                               
+ 630000004025 /BNF/test risk queue swift67 SWIFT MT202RIF: r.q.swift67      RIF. CLI: mt202           BAN BENN:         
+ 630000004025                                          BEN: UNICREDIIT S.P.A.                                           
+ 620000004026310315310315D000000000383,3318Y5                                                                           
+ 630000004026  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000004USD310315C000000011016,24                                                                                     
+ EF03439613D5310315EC613D5150331234037       0000004                              0000232                               
+ EC03439613EE310315EC613EE150331234037                                                                                  
+ 610000001                  93003      GLE2AUD01 00Z0316301696000000002809AUD010315C000012873933,75IT79                 
+ 620000001001310315310315D000000007244,6719X4                                                                           
+ 630000001001  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000001002310315310315C000000027864,1318Y6                                                                           
+ 630000001002  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000001AUD310315C000012894553,21                                                                                     
+ 610000002                  93003      GLE2CAD01 00S0343901600000000004408CAD010315C000000449783,83IT18                 
+ 620000002001310315310315C000000000406,6518Y6                                                                           
+ 630000002001  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000002002310315310315D000000000105,7319X4                                                                           
+ 630000002002  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 640000002CAD310315C000000450084,75                                                                                     
+ 610000003                  93003      GLE2CHF01 00Y0343901600000000007430CHF010315C000001210103,30IT25                 
+ 620000003001310315310315D000000000212,2918Y9                                                                           
+ 630000003001  RETTIFICA INTERESSI                                                                                      
+ 620000003002310315310315D000000000719,3118Y6                                                                           
+ 630000003002  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000003CHF310315C000001209171,70                                                                                     
+ 610000004                  93003      GLE2JPY01 00I0316301696000000000510JPY010315D043923533479,70IT04                 
+ 620000004001310115250315D000000000136,896659                CFP01150002180GT                                           
+ 630000004001  SPESE DI REGISTRAZIONE OPERAZIONITRN:                 TRN orig. SEEPA:                                   
+ 630000004001 EtE orig. SEPA:                                                                                           
+ 620000004002310315310315D000003782304,0018Y5                                                                           
+ 630000004002  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000004JPY310315D043927315920,59                                                                                     
+ 610000005                  93003      GLE2MXN01 00O0343901600000000004503MXN010315D000010759729,69IT56                 
+ 620000005001310315310315D000000032428,6318Y5                                                                           
+ 630000005001  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000005MXN310315D000010792158,32                                                                                     
+ 610000006                  93003      GLE2NZD01 00N0343901600000000004502NZD010315D000000000031,54IT79                 
+ 620000006001310315310315D000000000000,0718Y5                                                                           
+ 630000006001  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000006NZD310315D000000000031,61                                                                                     
+ 610000007                  93003      GLE2USD01 00R0316301696000000000508USD010315D000002447809,70IT94                 
+ 620000007001310115250315D000000000128,001630                CFP01150002266GT                                           
+ 630000007001  SPESE SWIFT-IN-DIV/EURO EXTRA UE                                                                         
+ 620000007002280215250315D000000000001,286659                CFP02150002510GT                                           
+ 630000007002  SPESE DI REGISTRAZIONE OPERAZIONITRN: CFP02150002510GTTRN orig. SEEPA: Periodo dal 01.02.2015 al 28.EtE o
+ 630000007002rig. SEPA: Numero di operazzioni consider                                                                  
+ 620000007003280215250315D000000000006,401624                CFP02150002512GT                                           
+ 630000007003  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                                        
+ 620000007004280215250315D000000000142,221630                CFP01153002266GT                                           
+ 630000007004  SPESE SWIFT-IN-DIV/EURO EXTRA UE                                                                         
+ 620000007005310115250315D000000000005,126659                CFP01150002257GT                                           
+ 630000007005  SPESE DI REGISTRAZIONE OPERAZIONITRN: CFP02150002510GTTRN orig. SEEPA: Periodo dal 01.02.2015 al 28.EtE o
+ 630000007005rig. SEPA: Numero di operazzioni consider                                                                  
+ 620000007006310315310315D000000000646,0218Y5                                                                           
+ 630000007006  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 620000007007310315310315D000000000000,0218Y9                                                                           
+ 630000007007  RETTIFICA INTERESSI                                                                                      
+ 640000007USD310315D000002448738,76                                                                                     
+ 610000008                  93003      ZLIAGBP01 00L0316301696000000001503GBP010315C000015820116,63IT74                 
+ 620000008001310315310315C000000006718,1318Y6                                                                           
+ 630000008001  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000008002310315310315D000000001746,7119X4                                                                           
+ 630000008002  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 640000008GBP310315C000015825088,05                                                                                     
+ 610000009                  93003      ZLIAJPY01 00M0316301696000000001504JPY010315C002439819518,28IT51                 
+ 620000009001310315310315C000000210096,0018Y6                                                                           
+ 630000009001  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000009002310315310315D000000054625,0019X4                                                                           
+ 630000009002  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 640000009JPY310315C002439974989,28                                                                                     
+ 610000010                  93003      ZLIAUSD01 00N0316301696000000001505USD010315D000009399106,83IT28                 
+ 620000010001310315310315D000000002480,3218Y5                                                                           
+ 630000010001  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000010USD310315D000009401587,15                                                                                     
+ 610000011                  93003      ZLIEEUR01 00M0316301696000000001515EUR010315C000008000046,27IT45                 
+ 620000011001310315310315D000000000355,5018Y9                                                                           
+ 630000011001  RETTIFICA INTERESSI                                                                                      
+ 620000011002310315310315C000000001722,1618Y6                                                                           
+ 630000011002  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000011003310315310315D000000000447,7619X4                                                                           
+ 630000011003  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 640000011EUR310315C000008000965,17                                                                                     
+ 610000012                  93003      ZLIEGBP01 00O0316301696000000001517GBP010315C000000000200,47IT96                 
+ 620000012001310315310315D000000000000,0219X4                                                                           
+ 630000012001  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000012002310315310315C000000000000,0818Y6                                                                           
+ 630000012002  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000012GBP310315C000000000200,53                                                                                     
+ 610000013                  93003      ZLIEUSD01 00N0316301696000000001516USD310315C000000000973,85IT22                 
+ 640000013USD310315C000000000973,85                                                                                     
+ 610000014                  93003   GLE2BRLBR101 00E0316301696000000000110BRL010315C000000777963,99IT21                 
+ 620000014001310315310315D000000001741,7819X4                                                                           
+ 630000014001  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000014002310315310315C000000006699,1418Y6                                                                           
+ 630000014002  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000014BRL310315C000000782921,35                                                                                     
+ 610000015                  93003   SMISKRWKR301 00X0343901600000000007041KRW010315C000000264486,61IT48                 
+ 620000015001310315310315D000000002736,0074X3                                                                           
+ 630000015001  STAMP DUTY ON CASH ACCOUNTSADD. BOLLO: DATA INVIO E/C:                                                   
+ 640000015KRW310315C000000261750,61                                                                                     
+ EF03439613EE310315EC613EE150331234037       0000015                              0000095                               
+ EC03439613EF310315EC613EF150331234037                                                                                  
+ 610000001                  93003      GLE4CAD01 00X0343901600000000004940CAD010315D000000000022,22IT30                 
+ 620000001001310315310315D000000000000,0218Y5                                                                           
+ 630000001001  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000001CAD310315D000000000022,24                                                                                     
+ 610000002                  93003      GLE4GBP01 00L0316301696000000000513GBP010315C000000000076,44IT32                 
+ 620000002001310315310315C000000000000,0318Y6                                                                           
+ 630000002001  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000002002310315310315D000000000000,0119X4                                                                           
+ 630000002002  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 640000002GBP310315C000000000076,46                                                                                     
+ 610000003                  93003      GLE4JPY01 00M0316301696000000000514JPY010315D000000003098,70IT09                 
+ 640000003JPY310315D000000003098,70                                                                                     
+ 610000004                  93003      GLE4USD01 00K0316301696000000000512USD010315D000000050173,24IT55                 
+ 620000004001040315040315C000000050173,243434                testrocco1                                                 
+ 630000004001azzeramento conto test georges  GIRO CONTO (STESSA BANCA)RIF.INT: testrocco1      azzeramento contto test g
+ 630000004001eorges                                                                                                     
+ 620000004002180315180315C000000005450,001212                15CMKBBBBM2                                                
+ 630000004002IT15I0316301696000000000312  STORNO ACCREDITI RIMBORSI IMPOSTE                                             
+ 620000004003060315190315D000000000005,001656                fee145                                                     
+ 630000004003fee145  SPESE TENUTA CONTO                                                                                 
+ 620000004004050315190315D000000001000,00ZL02                swift18                                                    
+ 630000004004ZZ1000000000001000,00USD000000000001000,00USD000000000001000,00USD            0000000000,000000000000,00   
+ 630000004004ZZ2PROVA SGRVIA MANZONI 15MI MILANO                                                                        
+ 630000004004ZZ3STATE STREET BANK AND TRUST - BOS225 FRANKLIN STREtest riskqueue swift18                                
+ 630000004004test riskqueue swift18  BONIFICO SWIFT OUTTRN: swift18          RIF. ORIG.: BAN BEN: SBOSUS3FXXX   STATE ST
+ 630000004004REET BANK AND TRUST - BOS   BEN: ro: romina power e figli               test riskqueue swift18             
+ 620000004005100315190315D000000000005,006659                FEE178                                                     
+ 630000004005FEE178  SPESE DI REGISTRAZIONE OPERAZIONITRN: FEE178          TRN orig. SEEPA: FEE178                      
+ 630000004005       EtE orig. SEPA:                                                                                     
+ 620000004006050315190315D000000001000,00ZL02                swfift18right                                              
+ 630000004006ZZ1000000000001000,00USD000000000001000,00USD000000000001000,00USD            0000000000,000000000000,00   
+ 630000004006ZZ2PROVA SGRVIA MANZONI 15MI MILANO                                                                        
+ 630000004006ZZ3BANCA MEDIOLANUMPALAZZO MEUCCIMILANO 3BASIGLIO    test riskqueue swift18right                           
+ 630000004006test riskqueue swift18right  BONIFICO SWIFT OUTTRN: swfift18right    RIF. ORIG.: BAN BEN: MEDBITMMXXX   BAN
+ 630000004006CA MEDIOLANUM                    BEN: pi: pizzeria gennaro pummarola         test riskqueue swift18right   
+ 620000004007110315190315D000000001000,00ZLTN                testswift82                                                
+ 630000004007ZZ1000000000001000,00USD000000000001000,00USD000000000001000,00USD            0000000000,000000000000,00   
+ 630000004007ZZ2Via Ferrante Aporti, 12Milan, Italy 20125                                                               
+ 630000004007ZZ3VENETO BANCA SCPAPIAZZA G.B. DALL'ARMI 1MONTEBELLU                                                      
+ 630000004007 /bnf/ffc societa dei fannulloni SWIFT MT202RIF: testswift82      RIF. CLI: testswift82     BAN BENN: VEBHI
+ 630000004007T2MXXX   VENETO BANCA SCPA                   BEN: BANCA INNTERMOBILIARE S.P.A.                             
+ 620000004008090315190315D000000001000,00ZLTN                swift66                                                    
+ 630000004008ZZ1000000000001000,00USD000000000001000,00USD000000000001000,00USD            0000000000,000000000000,00   
+ 630000004008ZZ2Via Ferrante Aporti, 12Milan, Italy 20125                                                               
+ 630000004008ZZ3INTESA SANPAOLO SPA (FORMERLY BANCA1 WILLIAM STREE                                                      
+ 630000004008 /bnf/swift66 SWIFT MT202RIF: swift66          RIF. CLI: swift66         BAN BENN: BCITUS33XXX   INTESA SAN
+ 630000004008PAOLO SPA (FORMERLY BANCA BEN: paperinoo                                                                   
+ 620000004009060315190315D000000000005,006659                fee178                                                     
+ 630000004009fee178  SPESE DI REGISTRAZIONE OPERAZIONITRN: fee178          TRN orig. SEEPA: fee178                      
+ 630000004009       EtE orig. SEPA:                                                                                     
+ 620000004010060315190315D000000000005,001624                fee1                                                       
+ 630000004010test riskqueue fee1  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                     
+ 620000004011100315190315D000000000005,001656                fee146                                                     
+ 630000004011fee146  SPESE TENUTA CONTO                                                                                 
+ 620000004012100315190315D000000000005,006666                FEE210                                                     
+ 630000004012FEE210  SPESERIF.INT: FEE210          FEE210                                                               
+ 620000004013090315190315D000000000005,001624                fee2                                                       
+ 630000004013fee2  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                                    
+ 620000004014260315260315D000000000015,006659                fee178                                                     
+ 630000004014test fee178  SPESE DI REGISTRAZIONE OPERAZIONITRN: fee178          TRN orig. SEEPA: test fee178            
+ 630000004014            EtE orig. SEPA:                                                                                
+ 620000004015260315260315D000000000915,003434                azz.saldo                                                  
+ 630000004015azz.saldo  GIRO CONTO (STESSA BANCA)RIF.INT: azz.saldo       azz.saldo                                     
+ 620000004016260315260315D000000000009,001656                fee146                                                     
+ 630000004016test fee146  SPESE TENUTA CONTO                                                                            
+ 620000004017260315260315D000000000500,001624                fee02                                                      
+ 630000004017test fee02  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                              
+ 620000004018260315260315D000000000500,001624                testfee2                                                   
+ 630000004018testfee2  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                                
+ 620000004019300315300315D000000000002,001624                testfee4                                                   
+ 630000004019testfee4  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                                
+ 620000004020270315300315D000000000007,106666                270315rntest                                               
+ 630000004020test fee 210  SPESERIF.INT: 270315rntest    test fee 210                                                   
+ 620000004021300315300315D000000000005,006659                testfee180                                                 
+ 630000004021testfee180  SPESE DI REGISTRAZIONE OPERAZIONITRN: testfee180      TRN orig. SEEPA: testfee180              
+ 630000004021           EtE orig. SEPA:                                                                                 
+ 620000004022300315300315D000000000006,006666                testrc066                                                  
+ 630000004022test rc 066  SPESERIF.INT: testrc066       test rc 066                                                     
+ 620000004023300315300315D000000000006,001656                testfee148                                                 
+ 630000004023testfee148  SPESE TENUTA CONTO                                                                             
+ 620000004024300315300315C000000020000,003434                girosaldo2                                                 
+ 630000004024girosaldo2  GIRO CONTO (STESSA BANCA)RIF.INT: girosaldo2      girosaldo2                                   
+ 620000004025260315300315D000000000007,006666                fee210                                                     
+ 630000004025test fee210  SPESERIF.INT: fee210          test fee210                                                     
+ 620000004026300315300315D000000000450,00ZL02                testswift4                                                 
+ 630000004026ZZ1000000000000450,00USD000000000000450,00USD000000000000450,00USD            0000000000,000000000000,00   
+ 630000004026ZZ2PROVA SGRVIA MANZONI 15MI MILANO                                                                        
+ 630000004026ZZ3JPMORGAN CHASE BANK, N.A.125 LONDON WALLLONDON    testswift4                                            
+ 630000004026testswift4  BONIFICO SWIFT OUTTRN: testswift4       RIF. ORIG.: BAN BEN: CHASGB2LXXX   JPMORGAN CHASE BANK,
+ 630000004026 N.A.           BEN: to: topolinoplutopaperino              testswift4                                     
+ 620000004027300315300315D000000000004,006666                testfee212                                                 
+ 630000004027testfee212  SPESERIF.INT: testfee212      testfee212                                                       
+ 620000004028310315310315D000000000001,6918Y5                                                                           
+ 630000004028  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 620000004029310315310315D000000001200,00ZLTN                test r.q.swift68                                           
+ 630000004029ZZ1000000000001200,00USD000000000001200,00USD000000000001200,00USD            0000000000,000000000000,00   
+ 630000004029ZZ2Via Ferrante Aporti, 12Milan, Italy 20125                                                               
+ 630000004029 /BNF/test risk queue swift68 SWIFT MT202RIF: test r.q.swift68 RIF. CLI: mt202 swift68   BAN BENN:         
+ 630000004029                                          BEN: UNICREDIIT S.P.A.                                           
+ 620000004030310315310315D000000000000,3019X4                                                                           
+ 630000004030  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000004031310315310315C000000000001,1418Y6                                                                           
+ 630000004031  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000004032310315310315C000000000000,0118Y9                                                                           
+ 630000004032  RETTIFICA INTERESSI                                                                                      
+ 620000004033310315310315D000000001000,00ZL02                r.q.swift20                                                
+ 630000004033ZZ1000000000001000,00USD000000000001000,00USD000000000001000,00USD            0000000000,000000000000,00   
+ 630000004033ZZ2PROVA SGRVIA MANZONI 15MI MILANO                                                                        
+ 630000004033ZZ3BANCA MEDIOLANUMPALAZZO MEUCCIMILANO 3BASIGLIO    pagamento penne di anatra                             
+ 630000004033pagamento penne di anatra  BONIFICO SWIFT OUTTRN: r.q.swift20      RIF. ORIG.: BAN BEN: MEDBITMMXXX   BANCA
+ 630000004033 MEDIOLANUM                    BEN: pa: pareino e duffy duck               pagamento penne di anatra       
+ 640000004USD310315C000000016788,06                                                                                     
+ 610000005                  93003   GLE1KRWKR303 00O0343901600000000004404KRW010315C000250544354,32IT13                 
+ 620000005001160315160315C000000000225,0014CD                M15073#BCFZ001                                             
+ 630000005001  CSD INCOMERIF: ISIN: DES: DEPOSITO TITOLI:  TASSO%: DIVISA: QUANTIIT` :  CAMBIO: DATA STACCO CEDOLA:     
+ 640000005KRW310315C000250544579,32                                                                                     
+ EF03439613EF310315EC613EF150331234037       0000005                              0000118                               
+ EC0343970570310315EC70570150331234037                                                                                  
+ 610000001                  93003      BDP1EUR01 00E0343901600000000001700EUR010315C000050594486,41IT37                 
+ 620000001001050315060315D000000000450,111980                05172343223193GT                                           
+ 630000001001  TASSAZIONE F23/F24/I24N. RIF.:                                                                           
+ 620000001002050315060315D000000000304,061980                05172343181171GT                                           
+ 630000001002  TASSAZIONE F23/F24/I24N. RIF.:                                                                           
+ 620000001003090315090315D000000000015,001980                09144739736891GT                                           
+ 630000001003  TASSAZIONE F23/F24/I24N. RIF.:                                                                           
+ 620000001004090315090315D000000000050,001980                09144739736717GT                                           
+ 630000001004  TASSAZIONE F23/F24/I24N. RIF.:                                                                           
+ 620000001005090315090315D000000000170,005014                0569666062692770                                           
+ 630000001005MAV PAGATO05696660626927708        CONS STRADALE CENTRO RES AXA  MAV PASSIVOTRN: 0569666062692770MAV PAGATO
+ 63000000100505696660626927708 CONS STRADALE CENTRO RES AXA                                                             
+ 620000001006090315090315D000000000508,661980                09144739692158GT                                           
+ 630000001006  TASSAZIONE F23/F24/I24N. RIF.:                                                                           
+ 620000001007090315090315D000000000060,001980                09144739735446GT                                           
+ 630000001007  TASSAZIONE F23/F24/I24N. RIF.:                                                                           
+ 620000001008130315130315D000000000852,00ZL02                mt940                                                      
+ 630000001008ZZ1000000000000852,00EUR000000000000852,00EUR000000000000852,00EUR            0000000000,000000000000,00   
+ 630000001008ZZ2BDP1 - BANCA DEPO TESTPIAZZETTA GIORDANO DELL'AMORE,3MI MILANOIT                                        
+ 630000001008biglietto per concerto  BONIFICO SWIFT OUTTRN: mt940            RIF. ORIG.: BAN BEN:                       
+ 630000001008                            BEN: gi: giuseppe verdi                     biglietto per concerto             
+ 620000001009130315130315C000000000004,001818                1303RC018                                                  
+ 630000001009reason code per testare interessi ecompetenze per la cmr018 e che le  descrizioni inserite siano visibiline
+ 630000001009l reporting  INTERESSI E COMPETENZERIF.INT: 1303RC018       LIQUIDAZIONE MENSILLE                          
+ 620000001010130315130315D000000000550,003434                testmt940                                                  
+ 630000001010giroconto per liquidita` frank tmpl  GIRO CONTO (STESSA BANCA)RIF.INT: testmt940       giroconto per liiqui
+ 630000001010dita` frank tmpl                                                                                           
+ 620000001011170315170315D000000008081,511980                17170050128050GT                                           
+ 630000001011  TASSAZIONE F23/F24/I24N. RIF.: 04550250015                                                               
+ 620000001012170315170315D000000000125,005014                mav170315                                                  
+ 63000000101205696660627283835                  cons. stradale centro res  axa  MAV PASSIVOTRN: mav170315       05696660
+ 630000001012627283835 cons. stradale centro res  axa                                                                   
+ 620000001013170315170315D000000000200,001980                17170050127184GT                                           
+ 630000001013  TASSAZIONE F23/F24/I24N. RIF.: B0343901600150317                                                         
+ 620000001014170315170315D000000000508,661980                17170050126991GT                                           
+ 630000001014  TASSAZIONE F23/F24/I24N. RIF.: B0343901600150317                                                         
+ 620000001015170315170315D000000000150,001980                17170050127109GT                                           
+ 630000001015  TASSAZIONE F23/F24/I24N. RIF.: B0343901600150317                                                         
+ 620000001016101214190315D000000000080,003434                go1                                                        
+ 630000001016pagamento fattura commercialista  GIRO CONTO (STESSA BANCA)RIF.INT: go1             pagamento fatturra comm
+ 630000001016ercialista                                                                                                 
+ 620000001017220115190315D000000000065,003434                go2                                                        
+ 630000001017pagamento lavori di restauro  GIRO CONTO (STESSA BANCA)RIF.INT: go2             pagamento lavorii di restau
+ 630000001017ro                                                                                                         
+ 620000001018280215190315D000000000000,756659                CFP02150001718GT                                           
+ 630000001018  SPESE DI REGISTRAZIONE OPERAZIONITRN: CFP02150001718GTTRN orig. SEEPA: Periodo dal 01.02.2015 al 28.EtE o
+ 630000001018rig. SEPA: Numero di operazzioni consider                                                                  
+ 620000001019200315200315C000000000050,003434                fiore1                                                     
+ 630000001019giroconto  GIRO CONTO (STESSA BANCA)RIF.INT: fiore1          giroconto                                     
+ 620000001020230315230315D000000000100,001980                23145506772883GT                                           
+ 630000001020  TASSAZIONE F23/F24/I24N. RIF.: B0343901600150323                                                         
+ 620000001021230315230315D000000000050,001980                23145506772624GT                                           
+ 630000001021  TASSAZIONE F23/F24/I24N. RIF.: B0343901600150323                                                         
+ 620000001022230315230315D000000000030,001980                23145506772956GT                                           
+ 630000001022  TASSAZIONE F23/F24/I24N. RIF.: B0343901600150323                                                         
+ 620000001023230315230315D000000000020,001980                23145506771297GT                                           
+ 630000001023  TASSAZIONE F23/F24/I24N. RIF.: 04550250015                                                               
+ 620000001024230315230315D000000000114,005014                0569665862074949                                           
+ 630000001024MAV FAV CONS STRADALE CENTRO RES AX  MAV PASSIVOTRN: 0569665862074949MAV FAV CONS STRADALE CENTRO RES AX   
+ 630000001024                                                                                                           
+ 620000001025270315270315D000000000050,007474                1503270074                                                 
+ 630000001025TEST PER BOLLI SECONDO LA CMR018  IMPOSTA DI BOLLO C/C - MANUALERIF.INT: TEST PER BOLLI SECONDO LA CMR018  
+ 630000001025                                                                                                           
+ 620000001026270315270315D000000000100,001616                1503270016                                                 
+ 630000001026TEST RC COMMISSIONI AL 270315  COMMISSIONI A FAVORE DI SSBRIF.INT: 1503270016      TEST RC COMMISSSIONI AL 
+ 630000001026270315                                                                                                     
+ 620000001027270315270315D000000000000,509696                2703151020                                                 
+ 630000001027rettifica importo  RETTIFICA IMPORTORIF.INT: 2703151020      rettifica importo                             
+ 620000001028310315310315D000000002218,5218Y9                                                                           
+ 630000001028  RETTIFICA INTERESSI                                                                                      
+ 620000001029310315310315D000000006583,6218Y6                                                                           
+ 630000001029  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 640000001EUR310315C000050573103,02                                                                                     
+ 610000002                  93003      BDP1GBP01 00G0316301696000000002458GBP010315D000004905355,99IT71                 
+ 620000002001310315310315D000000002083,1018Y5                                                                           
+ 630000002001  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000002GBP310315D000004907439,09                                                                                     
+ 610000003                  93003      BDP1USD01 00H0316301696000000002459USD010215C000000001415,64IT48                 
+ 620000003001301114040215D000000000060,001632                CFP11140002947GT                                           
+ 630000003001  SPESE EMISSIONE ASSEGNITRN:                 EtE orig. Assegno:                                           
+ 620000003002301114040215D000000000062,591630                CFP11140002948GT                                           
+ 630000003002  SPESE SWIFT-IN-DIV/EURO EXTRA UE                                                                         
+ 620000003003301114040215D000000000382,501627                CFP11140002940GT                                           
+ 630000003003  SPESE SWIFT-OUT-EUROTRN:                 TRN orig. SWIFT:                                                
+ 620000003004301114040215D000000000019,521624                CFP11140002941GT                                           
+ 630000003004  SPESE SWIFT-OUT-DIV/EURO EXTRA UE                                                                        
+ 620000003005301114040215D000000000495,001628                CFP11140002942GT                                           
+ 630000003005  SPESE BONIFICI SEPATRN:                 TRN orig. SEPA: EtE orig. SEPA:                                  
+ 620000003006200315200315D000000000010,00ZLTN                esercizio2                                                 
+ 630000003006ZZ1000000000000010,00USD000000000000010,00USD000000000000010,00USD            0000000000,000000000000,00   
+ 630000003006ZZ2Via Ferrante Aporti, 12Milan, Italy 20125                                                               
+ 630000003006 /BNF/FONDI PER APPROVIGIONAMENTO SWIFT MT202RIF: esercizio2       RIF. CLI: MT202           BAN BENN:     
+ 630000003006                                              BEN: BANK OF AMERICA                                         
+ 620000003007200315200315D000000000600,00ZL02                esercizio1                                                 
+ 630000003007ZZ1000000000000600,00USD000000000000600,00USD000000000000600,00USD            0000000000,000000000000,00   
+ 630000003007ZZ2BDP1 - BANCA DEPO TESTPIAZZETTA GIORDANO DELL'AMORE,3MI MILANOIT                                        
+ 630000003007PAGAMENTO AFFITTO APPARTAMENTO  BONIFICO SWIFT OUTTRN: esercizio1       RIF. ORIG.: BAN BEN:               
+ 630000003007                                    BEN: MI: MIRKO FERGUSON                     PAGAMENTO AFFITTO APPARTAME
+ 630000003007NTTO                                                                                                       
+ 620000003008101214200315D000000000015,003434                ECLISSI2                                                   
+ 630000003008GIROCONTO  GIRO CONTO (STESSA BANCA)RIF.INT: ECLISSI2        GIROCONTO                                     
+ 620000003009200315200315C000000007000,003434                ECLISSI1                                                   
+ 630000003009GIROCONTO PER MANCANZA FONDI  GIRO CONTO (STESSA BANCA)RIF.INT: ECLISSI1        GIROCONTO PER MAANCANZA FON
+ 630000003009DI                                                                                                         
+ 620000003010191114200315D000000000150,003434                test25                                                     
+ 630000003010giro per competenza fattura 12  GIRO CONTO (STESSA BANCA)RIF.INT: test25          giro per competeenza fatt
+ 630000003010ura 12                                                                                                     
+ 620000003011260315300315D000000000100,003434                150330BSD145                                               
+ 630000003011TEST PER BSD 145 PER INT MATURATI  GIRO CONTO (STESSA BANCA)RIF.INT: 150330BSD145    TEST PER BSD 1455 PER 
+ 630000003011INT MATURATI                                                                                               
+ 620000003012310315310315D000000000000,5118Y9                                                                           
+ 630000003012  RETTIFICA INTERESSI                                                                                      
+ 620000003013310315310315D000000000000,2319X4                                                                           
+ 630000003013  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000003014310315310315C000000000000,9018Y6                                                                           
+ 630000003014  INTERESSI A CREDITOLIQUIDAZIONE TRIMESTRALE                                                              
+ 640000003USD310315C000000006521,19                                                                                     
+ 610000004                  93003      GL00CHF01 00J0343901600000000004966CHF010315C000004993751,96IT48                 
+ 620000004001310315310315D000000002149,4718Y9                                                                           
+ 630000004001  INTEREST ADJUSTMENT                                                                                      
+ 640000004CHF310315C000004991602,49                                                                                     
+ 610000005                  93003      GL00EUR01 00P0343901600000000004603EUR010315C000004779062,54IT76                 
+ 620000005001310315310315C000000001028,7818Y6                                                                           
+ 630000005001  CREDIT INTERESTLIQUIDAZIONE MENSILE                                                                      
+ 620000005002310315310315D000000000212,3618Y9                                                                           
+ 630000005002  INTEREST ADJUSTMENT                                                                                      
+ 620000005003310315310315D000000000267,4819X4                                                                           
+ 630000005003  TAX WITHHOLDING ON CREDIT INTEREST                                                                       
+ 640000005EUR310315C000004779611,48                                                                                     
+ 610000006                  93003      GL00GBP01 00R0343901600000000004605GBP010315C000005003065,87IT30                 
+ 620000006001310315310315C000000002124,5918Y6                                                                           
+ 630000006001  CREDIT INTERESTLIQUIDAZIONE MENSILE                                                                      
+ 620000006002310315310315D000000000552,3919X4                                                                           
+ 630000006002  TAX WITHHOLDING ON CREDIT INTEREST                                                                       
+ 640000006GBP310315C000005004638,07                                                                                     
+ 610000007                  93003      GL00JPY01 00S0343901600000000004606JPY010315C000004995941,28IT07                 
+ 620000007001310315310315C000000000430,0018Y6                                                                           
+ 630000007001  CREDIT INTERESTLIQUIDAZIONE MENSILE                                                                      
+ 620000007002310315310315D000000000112,0019X4                                                                           
+ 630000007002  TAX WITHHOLDING ON CREDIT INTEREST                                                                       
+ 640000007JPY310315C000004996259,28                                                                                     
+ 610000008                  93003      GL00NOK01 00C0343901600000000004654NOK010315C000006527116,55IT05                 
+ 620000008001310315310315C000000008430,8618Y6                                                                           
+ 630000008001  CREDIT INTERESTLIQUIDAZIONE MENSILE                                                                      
+ 620000008002310315310315D000000002192,0219X4                                                                           
+ 630000008002  TAX WITHHOLDING ON CREDIT INTEREST                                                                       
+ 640000008NOK310315C000006533355,39                                                                                     
+ 610000009                  93003      GL00USD01 00Q0343901600000000004604USD010315C000005000445,86IT53                 
+ 620000009001310315310315C000000001319,5618Y6                                                                           
+ 630000009001  CREDIT INTERESTLIQUIDAZIONE MENSILE                                                                      
+ 620000009002310315310315D000000000343,0919X4                                                                           
+ 630000009002  TAX WITHHOLDING ON CREDIT INTEREST                                                                       
+ 640000009USD310315C000005001422,33                                                                                     
+ EF0343970570310315EC70570150331234037       0000009                              0000155                               
+ EC034398Y627310315EC8Y627150331234037                                                                                  
+ 610000001                  93003      BAGLCHF01 00C0343901600000000004753CHF010315D000000100802,80IT48                 
+ 640000001CHF310315D000000100802,80                                                                                     
+ 610000002                  93003      BAGLDKK01 00D0343901600000000004754DKK010315D000000107998,65IT25                 
+ 620000002001310315310315D000000000293,5218Y5                                                                           
+ 630000002001  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 640000002DKK310315D000000108292,17                                                                                     
+ 610000003                  93003      BAGLEUR01 00O0343901600000000001627EUR010315C000146990393,22IT11                 
+ 620000003001101214190315C000000000080,003434                go1                                                        
+ 630000003001pagamento fattura commercialista  GIRO CONTO (STESSA BANCA)RIF.INT: go1             pagamento fatturra comm
+ 630000003001ercialista                                                                                                 
+ 620000003002280215250315D000000000000,256659                CFP02150001300GT                                           
+ 630000003002  SPESE DI REGISTRAZIONE OPERAZIONITRN: CFP02150001300GTTRN orig. SEEPA: Periodo dal 01.02.2015 al 28.EtE o
+ 630000003002rig. SEPA: Numero di operazzioni consider                                                                  
+ 620000003003310315310315D000000008227,0119X4                                                                           
+ 630000003003  RITENUTA D'ACCONTO SU INTER A CRED                                                                       
+ 620000003004310315310315C000000031642,3618Y6                                                                           
+ 630000003004  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000003005310315310315D000000006587,9118Y9                                                                           
+ 630000003005  RETTIFICA INTERESSI                                                                                      
+ 620000003006310315310315D000000000002,0074X3                                                                           
+ 630000003006  IMPOSTA DI BOLLO C/C AUTOMATICOADD. BOLLO: DATA INVIO E/C:                                               
+ 640000003EUR310315C000147007298,41                                                                                     
+ 610000004                  93003      BAGLGBP01 00V0316301696000000001628GBP010315C000000007601,30IT37                 
+ 620000004001170315170315D000000000097,00ZLTN                PROVA6                                                     
+ 630000004001ZZ1000000000000097,00GBP000000000000097,00GBP000000000000097,00GBP            0000000000,000000000000,00   
+ 630000004001ZZ2Via Ferrante Aporti, 12Milan, Italy 20125                                                               
+ 630000004001 /BNF/ GIRO FATTURE SWIFT MT202RIF: PROVA6           RIF. CLI: MT202           BAN BENN:                   
+ 630000004001                                BEN: BANCA DEELL'ETRURIA                                                   
+ 620000004002150115190315D000000000070,003434                CARLOL1                                                    
+ 630000004002PAGAMENTO FATTURA AVVOCATO SCALZO  GIRO CONTO (STESSA BANCA)RIF.INT: CARLOL1         PAGAMENTO FATTURRA AVV
+ 630000004002OCATO SCALZO                                                                                               
+ 620000004003310315310315D000000000000,0218Y6                                                                           
+ 630000004003  INTERESSI A CREDITOLIQUIDAZIONE MENSILE                                                                  
+ 620000004004310315310315D000000000001,5974X3                                                                           
+ 630000004004  IMPOSTA DI BOLLO C/C AUTOMATICOADD. BOLLO: DATA INVIO E/C:                                               
+ 620000004005310315310315C000000000000,0118Y9                                                                           
+ 630000004005  RETTIFICA INTERESSI                                                                                      
+ 640000004GBP310315C000000007432,70                                                                                     
+ 610000005                  93003      BAGLUSD01 00Q0316301696000000001631USD010315D000000075294,07IT33                 
+ 620000005001260315300315C000000000100,003434                150330BSD145                                               
+ 630000005001TEST PER BSD 145 PER INT MATURATI  GIRO CONTO (STESSA BANCA)RIF.INT: 150330BSD145    TEST PER BSD 1455 PER 
+ 630000005001INT MATURATI                                                                                               
+ 620000005002310315310315D000000000019,8718Y5                                                                           
+ 630000005002  INTERESSI A DEBITOLIQUIDAZIONE MENSILE                                                                   
+ 620000005003310315310315D000000000010,6774X3                                                                           
+ 630000005003  IMPOSTA DI BOLLO C/C AUTOMATICOADD. BOLLO: DATA INVIO E/C:                                               
+ 640000005USD310315D000000075224,61                                                                                     
+ EF034398Y627310315EC8Y627150331234037       0000005                              0000049                               

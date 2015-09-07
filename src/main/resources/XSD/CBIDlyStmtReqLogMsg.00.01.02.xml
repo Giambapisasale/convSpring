@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:CBIDlyStmtReqLogMsg xmlns:p="urn:CBI:xsd:CBIDlyStmtReqLogMsg.00.01.02"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:CBI:xsd:CBIDlyStmtReqLogMsg.00.01.02 CBIDlyStmtReqLogMsg.00.01.02.xsd ">
+	<p:GrpHdr>
+		<p:MsgId>p:MsgId</p:MsgId>
+		<p:CreDtTm>2001-12-31T12:00:00</p:CreDtTm>
+		<p:MsgRcpt>
+			<p:Id>
+				<p:OrgId>
+					<p:Othr>
+						<p:Id>p:Id</p:Id>
+					</p:Othr>
+				</p:OrgId>
+			</p:Id>
+		</p:MsgRcpt>
+		<p:AddtlInf>p:AddtlInf</p:AddtlInf>
+	</p:GrpHdr>
+	<p:Stmt>
+		<p:Id>p:Id</p:Id>
+		<p:ElctrncSeqNb>0.0</p:ElctrncSeqNb>
+		<p:CreDtTm>2001-12-31T12:00:00</p:CreDtTm>
+		<p:CpyDplctInd>DUPL</p:CpyDplctInd>
+		<p:Acct>
+			<p:Id>
+				<p:IBAN>p:IBAN</p:IBAN>
+			</p:Id>
+			<p:Ccy>p:Ccy</p:Ccy>
+			<p:Ownr />
+		</p:Acct>
+		<p:Bal>
+			<p:Tp>
+				<p:CdOrPrtry>
+					<p:Cd>CLAV</p:Cd>
+				</p:CdOrPrtry>
+			</p:Tp>
+			<p:Amt Ccy="">0.0</p:Amt>
+			<p:CdtDbtInd>CRDT</p:CdtDbtInd>
+			<p:Dt>
+				<p:Dt>2001-01-01</p:Dt>
+			</p:Dt>
+		</p:Bal>
+		<p:TxsSummry>
+			<p:TtlNtries>
+				<p:NbOfNtries>p:NbOfNtries</p:NbOfNtries>
+			</p:TtlNtries>
+		</p:TxsSummry>
+		<p:Ntry>
+			<p:NtryRef>p:NtryRef</p:NtryRef>
+			<p:Amt Ccy="">0.0</p:Amt>
+			<p:CdtDbtInd>CRDT</p:CdtDbtInd>
+			<p:Sts>BOOK</p:Sts>
+			<p:BookgDt>
+				<p:Dt>2001-01-01</p:Dt>
+			</p:BookgDt>
+			<p:ValDt>
+				<p:Dt>2001-01-01</p:Dt>
+			</p:ValDt>
+			<p:BkTxCd>
+				<p:Prtry>
+					<p:Cd>p:Cd</p:Cd>
+					<p:Issr>p:Issr</p:Issr>
+				</p:Prtry>
+			</p:BkTxCd>
+		</p:Ntry>
+		<p:AddtlStmtInf>p:AddtlStmtInf</p:AddtlStmtInf>
+	</p:Stmt>
+</p:CBIDlyStmtReqLogMsg>
