@@ -3,6 +3,9 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 	<xsl:output method="xml" />
+	<xsl:output omit-xml-declaration="yes" indent="yes" />
+	<xsl:strip-space elements="*" />
+	
 	<xsl:template match="/">
 		<xsl:apply-templates select="RH" />
 	</xsl:template>
@@ -74,18 +77,210 @@
 							</FinInstnId>
 						</Svcr>
 					</Acct>
+
 					<Bal>
 						<Tp>
 							<CdOrPrtry>
-								<Cd>CLAV</Cd>
+								<Cd>OPBD</Cd>
 							</CdOrPrtry>
 						</Tp>
-						<Amt Ccy="">0.0</Amt>
-						<CdtDbtInd>CRDT</CdtDbtInd>
+						<Amt>
+							<xsl:value-of select="opening_balance" />
+						</Amt>
+						<CdtDbtInd>
+							<xsl:if test="sign = C or sign = c">
+								CRDT
+							</xsl:if>
+							<xsl:if test="sign = D or sign = d">
+								DBIT
+							</xsl:if>
+						</CdtDbtInd>
 						<Dt>
-							<Dt>2001-01-01</Dt>
+							<Dt>
+								<xsl:value-of select="accounting_date" />
+							</Dt>
 						</Dt>
 					</Bal>
+					<xsl:if test="x64">
+						<Bal>
+							<Tp>
+								<CdOrPrtry>
+									<Cd>CLBD</Cd>
+								</CdOrPrtry>
+							</Tp>
+							<Amt>
+								<xsl:value-of select="x64/accounts_balance" />
+							</Amt>
+							<CdtDbtInd>
+								<xsl:if
+									test="x64/accounts_balance_sign = C or x64/accounts_balance_sign = c">
+									CRDT
+								</xsl:if>
+								<xsl:if
+									test="x64/accounts_balance_sign = D or x64/accounts_balance_sign = d">
+									DBIT
+								</xsl:if>
+							</CdtDbtInd>
+							<Dt>
+								<Dt>
+									<xsl:value-of select="x64/accounting_date" />
+								</Dt>
+							</Dt>
+						</Bal>
+						<Bal>
+							<Tp>
+								<CdOrPrtry>
+									<Cd>CLAV</Cd>
+								</CdOrPrtry>
+							</Tp>
+							<Amt>
+								<xsl:value-of select="x64/cash_balance" />
+							</Amt>
+							<CdtDbtInd>
+								<xsl:if test="x64/cash_balance_sign = C or x64/cash_balance_sign = c">
+									CRDT
+								</xsl:if>
+								<xsl:if test="x64/cash_balance_sign = D or x64/cash_balance_sign = d">
+									DBIT
+								</xsl:if>
+							</CdtDbtInd>
+							<Dt>
+								<Dt>
+									<xsl:value-of select="x64/accounting_date" />
+								</Dt>
+							</Dt>
+						</Bal>
+
+					</xsl:if>
+					<xsl:if test="x65">
+						<Bal>
+							<Tp>
+								<CdOrPrtry>
+									<Cd>FWAV</Cd>
+								</CdOrPrtry>
+							</Tp>
+							<Amt>
+								<xsl:value-of select="x65/first_cash_on_hand_balance" />
+							</Amt>
+							<CdtDbtInd>
+								<xsl:if
+									test="x65/first_cash_on_hand_sign = C or x65/first_cash_on_hand_sign = c">
+									CRDT
+								</xsl:if>
+								<xsl:if
+									test="x65/first_cash_on_hand_sign = D or x65/first_cash_on_hand_sign = d">
+									DBIT
+								</xsl:if>
+							</CdtDbtInd>
+							<Dt>
+								<Dt>
+									<xsl:value-of select="x65/first_cash_on_hand_date" />
+								</Dt>
+							</Dt>
+						</Bal>
+						<Bal>
+							<Tp>
+								<CdOrPrtry>
+									<Cd>FWAV</Cd>
+								</CdOrPrtry>
+							</Tp>
+							<Amt>
+								<xsl:value-of select="x65/second_cash_on_hand_balance" />
+							</Amt>
+							<CdtDbtInd>
+								<xsl:if
+									test="x65/second_cash_on_hand_sign = C or x65/second_cash_on_hand_sign = c">
+									CRDT
+								</xsl:if>
+								<xsl:if
+									test="x65/second_cash_on_hand_sign = D or x65/second_cash_on_hand_sign = d">
+									DBIT
+								</xsl:if>
+							</CdtDbtInd>
+							<Dt>
+								<Dt>
+									<xsl:value-of select="x65/second_cash_on_hand_date" />
+								</Dt>
+							</Dt>
+						</Bal>
+						<Bal>
+							<Tp>
+								<CdOrPrtry>
+									<Cd>FWAV</Cd>
+								</CdOrPrtry>
+							</Tp>
+							<Amt>
+								<xsl:value-of select="x65/third_cash_on_hand_balance" />
+							</Amt>
+							<CdtDbtInd>
+								<xsl:if
+									test="x65/third_cash_on_hand_sign = C or x65/third_cash_on_hand_sign = c">
+									CRDT
+								</xsl:if>
+								<xsl:if
+									test="x65/third_cash_on_hand_sign = D or x65/third_cash_on_hand_sign = d">
+									DBIT
+								</xsl:if>
+							</CdtDbtInd>
+							<Dt>
+								<Dt>
+									<xsl:value-of select="x65/third_cash_on_hand_date" />
+								</Dt>
+							</Dt>
+						</Bal>
+						<Bal>
+							<Tp>
+								<CdOrPrtry>
+									<Cd>FWAV</Cd>
+								</CdOrPrtry>
+							</Tp>
+							<Amt>
+								<xsl:value-of select="x65/fourth_cash_on_hand_balance" />
+							</Amt>
+							<CdtDbtInd>
+								<xsl:if
+									test="x65/fourth_cash_on_hand_sign = C or x65/fourth_cash_on_hand_sign = c">
+									CRDT
+								</xsl:if>
+								<xsl:if
+									test="x65/fourth_cash_on_hand_sign = D or x65/fourth_cash_on_hand_sign = d">
+									DBIT
+								</xsl:if>
+							</CdtDbtInd>
+							<Dt>
+								<Dt>
+									<xsl:value-of select="x65/fourth_cash_on_hand_date" />
+								</Dt>
+							</Dt>
+						</Bal>
+						<Bal>
+							<Tp>
+								<CdOrPrtry>
+									<Cd>FWAV</Cd>
+								</CdOrPrtry>
+							</Tp>
+							<Amt>
+								<xsl:value-of select="x65/fifth_cash_on_hand_balance" />
+							</Amt>
+							<CdtDbtInd>
+								<xsl:if
+									test="x65/fifth_cash_on_hand_sign = C or x65/fifth_cash_on_hand_sign = c">
+									CRDT
+								</xsl:if>
+								<xsl:if
+									test="x65/fifth_cash_on_hand_sign = D or x65/fifth_cash_on_hand_sign = d">
+									DBIT
+								</xsl:if>
+							</CdtDbtInd>
+							<Dt>
+								<Dt>
+									<xsl:value-of select="x65/fifth_cash_on_hand_date" />
+								</Dt>
+							</Dt>
+						</Bal>
+					</xsl:if>
+
+
 					<TxsSummry>
 						<TtlNtries>
 							<NbOfNtries>
