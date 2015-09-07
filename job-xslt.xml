@@ -42,7 +42,10 @@
 
 
 	<bean id="RHProcessor2" class="com.xmlconverter.CBI_RH_Processor2">
-
+		<property name="template" ref="template_xslt" />
+	</bean>
+	<bean id="template_xslt" class="com.xmlconverter.XSLT_Templates">
+		<constructor-arg value="${xslt_file}" />
 	</bean>
 
 
