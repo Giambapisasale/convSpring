@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,8 +31,21 @@ public class ConfigurationFilesDAO {
 	@Value("${dbProperties.url}")
 	private String url;
 
+	public String getUrl() {
+		return url;
+	}
+
 	@Value("${dbProperties.driverName}")
 	private String driverName;
+
+	@Value("${dbProperties.isCloakWare}")
+	private Boolean isCloakWare;
+
+	@Value("${dbProperties.CLOAKWARE_DRIVER_CLASS_NAME}")
+	private String cloakWareDriverName;
+
+	@Value("${dbProperties.CLOAKWARE_URL}")
+	private String cloakWareUrl;
 
 	@Value("${dbProperties.user}")
 	private String user;
@@ -40,11 +54,7 @@ public class ConfigurationFilesDAO {
 	private String password;
 
 	public void updateConfigurationFile(String filename) throws Exception {
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName(driverName);
-		dataSource.setUrl(url);
-		dataSource.setUsername(user);
-		dataSource.setPassword(password);
+		DriverManagerDataSource dataSource = getDataSource();
 
 		JdbcTemplate jdbc = new JdbcTemplate(dataSource);
 
@@ -80,12 +90,25 @@ public class ConfigurationFilesDAO {
 
 	}
 
-	public void downloadConfigurationFile(String filename, String prefix) throws Exception {
+	private DriverManagerDataSource getDataSource()
+			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName(driverName);
-		dataSource.setUrl(url);
-		dataSource.setUsername(user);
-		dataSource.setPassword(password);
+		if (isCloakWare) {
+			Class.forName(cloakWareDriverName).newInstance();
+			dataSource.setDriverClassName(driverName);
+			dataSource.setUrl(cloakWareUrl);
+		} else {
+			dataSource.setDriverClassName(driverName);
+			dataSource.setUrl(url);
+			dataSource.setUsername(user);
+			dataSource.setPassword(password);
+		}
+
+		return dataSource;
+	}
+
+	public String downloadConfigurationFile(String filename, String prefix) throws Exception {
+		DriverManagerDataSource dataSource = getDataSource();
 
 		JdbcTemplate jdbc = new JdbcTemplate(dataSource);
 
@@ -98,7 +121,11 @@ public class ConfigurationFilesDAO {
 			List<Map<String, Object>> result = jdbc.queryForList(
 					"SELECT * FROM CONFIGURATION_FILES WHERE FILE_NAME = ? ORDER BY FILE_ROW ASC", filename);
 			for (Map<String, Object> row : result) {
-				br.write((String) row.get("LINE_CONTENT"));
+
+				String line_content = (String) row.get("LINE_CONTENT");
+				if (line_content != null) {
+					br.write(line_content);
+				}
 				br.newLine();
 			}
 			br.close();
@@ -108,7 +135,26 @@ public class ConfigurationFilesDAO {
 			throw e;
 
 		}
+		return prefix + filename;
 
+	}
+
+	public ConfigurationFilesDAO() {
+		super();
+		if (url == null) {
+			// provo a caricare le properties dalle system properties
+
+			Properties p = new Properties(System.getProperties());
+
+			url = p.getProperty("dbProperties.url");
+			driverName = p.getProperty("dbProperties.driverName");
+			isCloakWare = new Boolean(p.getProperty("dbProperties.isCloakWare"));
+			cloakWareDriverName = p.getProperty("dbProperties.CLOAKWARE_DRIVER_CLASS_NAME");
+			cloakWareUrl = p.getProperty("dbProperties.CLOAKWARE_URL");
+			user = p.getProperty("dbProperties.user");
+			password = p.getProperty("dbProperties.password");
+
+		}
 	}
 
 }

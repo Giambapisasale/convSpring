@@ -19,7 +19,7 @@ public class Test2 {
 		Properties prop = new Properties();
 		prop.load(new FileInputStream("application.properties"));
 
-		String filename = prop.getProperty("xslt_file");
+		String filename = prop.getProperty("job_file_name");
 
 		String url = prop.getProperty("dbProperties.url");
 		String driverName = prop.getProperty("dbProperties.driverName");
@@ -51,6 +51,7 @@ public class Test2 {
 			String line;
 			int row = 0;
 			while ((line = br.readLine()) != null) {
+				System.out.println(line);
 				jdbc.update("INSERT INTO CONFIGURATION_FILES(FILE_NAME, FILE_ROW, LINE_CONTENT) VALUES(?,?,?)",
 						filename, row, line);
 				row++;

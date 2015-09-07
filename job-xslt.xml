@@ -213,7 +213,8 @@
 	<bean id="line65Tokenizer"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
 		<property name="names"
-			value="type, number, first_cash_balance, first_cash_on_hand_date, first_cash_on_hand_sign, first_cash_on_hand_balance, second_cash_balance, second_cash_on_hand_date, second_cash_on_hand_sign, second_cash_on_hand_balance, third_cash_balance, third_cash_on_hand_date, third_cash_on_hand_sign, third_cash_on_hand_balance, fourth_cash_balance, fourth_cash_on_hand_date, fourth_cash_on_hand_sign, fourth_cash_on_hand_balance, fifth_cash_balance, fifth_cash_on_hand_date, fifth_cash_on_hand_sign, fifth_cash_on_hand_balance" />
+			value="type, number, first_cash_balance, first_cash_on_hand_date, first_cash_on_hand_sign, first_cash_on_hand_balance, second_cash_balance, second_cash_on_hand_date, second_cash_on_hand_sign, second_cash_on_hand_balance, third_cash_balance, third_cash_on_hand_date, third_cash_on_hand_sign, third_cash_on_hand_balance, fourth_cash_balance, fourth_cash_on_hand_date, fourth_cash_on_hand_sign, fourth_cash_on_hand_balance, 
+			fifth_cash_balance, fifth_cash_on_hand_date, fifth_cash_on_hand_sign, fifth_cash_on_hand_balance" />
 		<property name="columns"
 			value="2-3, 4-10, 11-32, 11-16, 17-17, 18-32, 33-54, 33-38, 39-39, 40-54, 55-76, 55-60, 61-61, 62-76, 77-98, 77-82, 83-83, 84-98, 99-120, 99-104, 105-105, 106-120" />
 	</bean>
