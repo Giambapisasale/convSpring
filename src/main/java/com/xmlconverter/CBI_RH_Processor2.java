@@ -13,10 +13,10 @@ public class CBI_RH_Processor2 implements ItemProcessor<Document, String> {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	Logger human_log = (Logger) LoggerFactory.getLogger("human_log");
-	
+
 	@Override
 	public String process(Document item) throws Exception {
-		
+
 		Transformer transformer = getTemplate().getCachedXSLT().newTransformer();
 
 		// applica la trasformazione xslt
@@ -29,7 +29,7 @@ public class CBI_RH_Processor2 implements ItemProcessor<Document, String> {
 
 		return transformedDoc.getRootElement().asXML();
 	}
-	
+
 	private XSLT_Templates template;
 
 	public XSLT_Templates getTemplate() {
@@ -39,6 +39,5 @@ public class CBI_RH_Processor2 implements ItemProcessor<Document, String> {
 	public void setTemplate(XSLT_Templates templates) {
 		this.template = templates;
 	}
-
 
 }

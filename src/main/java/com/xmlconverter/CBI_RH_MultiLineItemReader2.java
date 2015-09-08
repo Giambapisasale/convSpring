@@ -99,8 +99,7 @@ public class CBI_RH_MultiLineItemReader2<T> implements ItemReader<Document>, Ite
 				// xslt??)
 
 				String path = keyToPath.get(prefix);
-				logger.info("@@Per la chiave: " + prefix);
-				logger.info("@@trovato path: " + path);
+				logger.info("@@Per la chiave: " + prefix + " @@trovato path: " + path);
 				Node node = document.selectSingleNode(path);
 
 				// TODO controllare node, se non presente allora file input

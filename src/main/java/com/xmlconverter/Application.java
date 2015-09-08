@@ -15,6 +15,7 @@ public class Application {
 
 	public static void main(String[] args) throws Exception {
 
+		//job setup, scarica i file di configurazione
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmssSS");
 
 		// forza il caricamento delle system properties per popolare il DAO
@@ -36,5 +37,9 @@ public class Application {
 		System.setProperty("xslt_file", newXSLTName);
 
 		SpringApplication.run(Application.class, args);
+		
+		//TODO AFTER JOB "incastrare" il file in output in un modello precompilato che 
+		// contiene il nodo root del file XML completo di destinazione
+		// e verificare il requisito sulla produzione dei file in output 
 	}
 }
