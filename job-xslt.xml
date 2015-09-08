@@ -52,6 +52,12 @@
 	<bean id="multiLineReader" class="com.xmlconverter.CBI_RH_MultiLineItemReader2">
 		<property name="header" value="RH" />
 		<property name="footer" value="EF" />
+		<property name="type_property" value="type" />
+		<property name="attribute_property" value="structure_flag" />
+		<property name="consecutive_join_property" value="description" />
+		
+		<property name="x_tag_prefix" value="x" />
+		
 		<property name="keyToPath">
 			<map>
 				<entry key="61" value="//RH" />

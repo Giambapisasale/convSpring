@@ -36,6 +36,9 @@ public class Application {
 		String newXSLTName = daoConf.downloadConfigurationFile(xslt_file, prefix);
 		System.setProperty("xslt_file", newXSLTName);
 
+//		SpringApplication app = new SpringApplication(Application.class);
+		
+		
 		SpringApplication.run(Application.class, args);
 		
 		//TODO AFTER JOB "incastrare" il file in output in un modello precompilato che 

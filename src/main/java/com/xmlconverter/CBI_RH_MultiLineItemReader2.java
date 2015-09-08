@@ -17,12 +17,6 @@ import org.springframework.batch.item.file.transform.FieldSet;
 
 public class CBI_RH_MultiLineItemReader2<T> implements ItemReader<Document>, ItemStream {
 
-	private static final String X_TAG_PREFIX = "x";
-
-	private static final String STRUCTURE_FLAG_FIELD_NAME = "structure_flag";
-
-	private static final String TYPE_FIELD_NAME = "type";
-
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	private FlatFileItemReader<FieldSet> delegate;
@@ -46,12 +40,68 @@ public class CBI_RH_MultiLineItemReader2<T> implements ItemReader<Document>, Ite
 		delegate.update(arg0);
 	}
 
+	/**
+	 * questo valore viene prefissato al type per evitare tag 
+	 * di tipo numerico
+	 */
+	private String x_tag_prefix = "x";
+	
+	/**
+	 * il tipo di record che definisce l'inizio di un blocco di informazioni
+	 */
 	private String header;
+
+	/**
+	 * il tipo di record che definisce la fine di un blocco di informazioni
+	 */
 	private String footer;
+
+	/**
+	 * Questa mappa viene utilizzata per costruire una struttura dati complessa
+	 * a partire da un blocco di record consecutivi Ogni chiave rappresenta un
+	 * record di tipo definito dal campo type_property mentre il valore
+	 * associato alla chiave raprresenta il path XPath utilizzato per
+	 * "agganciare" il nodo corrente all'interno del frammento XML in fase di
+	 * creazione. Il frammento di XML viene aperto a partire da un record di
+	 * tipo header e chiuso da un record di tipo footer.
+	 */
 	private Map<String, String> keyToPath;
+
+	/**
+	 * questa variabile viene utilizzata per discriminare il tipo di record
+	 */
+	private String type_property;
+
+	/**
+	 * la property definita in questo campo verra' impostata come attributo per
+	 * facilitare il filtro, come nel caso dei campi 63 per lo structure_flag
+	 */
+	private String attribute_property;
+
+	/**
+	 * la property definita in questo campo verra' unita in caso di due record
+	 * consecutivi con identico type_property e attribute_property
+	 */
+	private String consecutive_join_property = "description";
+	
+	public void setConsecutive_join_property(String consecutive_join_property) {
+		this.consecutive_join_property = consecutive_join_property;
+	}
+
+	public void setType_property(String type_property) {
+		this.type_property = type_property;
+	}
+
+	public void setAttribute_property(String attribute_property) {
+		this.attribute_property = attribute_property;
+	}
 
 	public void setKeyToPath(Map<String, String> keyToPath) {
 		this.keyToPath = keyToPath;
+	}
+
+	public void setx_tag_prefix(String x_tag_prefix) {
+		this.x_tag_prefix = x_tag_prefix;
 	}
 
 	public String getHeader() {
@@ -74,42 +124,71 @@ public class CBI_RH_MultiLineItemReader2<T> implements ItemReader<Document>, Ite
 	public Document read() throws Exception {
 		Document document = DocumentHelper.createDocument();
 		Element societa = null;
+		Element lastRow = null;
 
 		for (FieldSet line = null; (line = this.delegate.read()) != null;) {
-			String prefix = line.readString(TYPE_FIELD_NAME);
+			String rowType = line.readString(type_property);
 
 			// "costruzione" di un Document a partire dalla struttura dati
 			// che rappresenta l'input
 			// ogni nodo, categorizzato cal campo "type", viene
 			// agganciato al dom nella posizione indicata dalla stringa
 			// XPATH associata nella mappa keyToPath
-			if (prefix.equals(header)) {
+			if (rowType.equals(header)) {
 				societa = document.addElement(header);
 				fromFieldSetToElement(societa, line);
-			} else if (prefix.equals(footer)) {
+			} else if (rowType.equals(footer)) {
 				return document; // Record must end with footer
 			} else // if other types
 			{
 				// recupera la posizione all'interno del DOM in pase al type del
 				// record
-				// se è presente il campo structure_flag viene inserito come
+				// se e' presente il campo structure_flag viene inserito come
 				// attributo per facilitare la selezione (in particolare dei
 				// record 63)
-				// FIXME i campi 63 consecutivi devono essere uniti, (magari in
-				// xslt??)
 
-				String path = keyToPath.get(prefix);
-				logger.info("@@Per la chiave: " + prefix + " @@trovato path: " + path);
+				String path = keyToPath.get(rowType);
+				logger.info("@@Per la chiave: " + rowType + " @@trovato path: " + path);
 				Node node = document.selectSingleNode(path);
 
 				// TODO controllare node, se non presente allora file input
 				// malformato e lanciare eccezione
-				Element item = ((Element) node).addElement(X_TAG_PREFIX + prefix);
+				Element item = ((Element) node).addElement(x_tag_prefix + rowType);
 				fromFieldSetToElement(item, line);
 
+				// fix elementi consecutivi
+				// se trovo due elementi consecutivi faccio append del campo
+				// consecutive_join_property
+
+				Element typeElem = item.element(type_property);
+				Element flagElem = item.element(attribute_property);
+				// verifico che sia presente il record precedente e che abbiano
+				// lo stesso type e che sia presente in entrambi il tag da unire
+				if (lastRow != null && typeElem != null && typeElem.getText() != null) {
+					Element lasttypeElem = lastRow.element(type_property);
+					if (lasttypeElem.getText() != null && lasttypeElem.getText().equals(typeElem.getText())) {
+						// se presente attribute_property devono essere entrambi
+						// null o avere lo stesso valore
+						Element lastflagElem = lastRow.element(attribute_property);
+						if ((lastflagElem == null && flagElem == null) || (lastflagElem != null && flagElem != null
+								&& lastflagElem.getText().equals(flagElem.getText()))) {
+							
+							Element lastdescription = lastRow.element(consecutive_join_property);
+							Element description = item.element(consecutive_join_property);
+							if (description != null && lastdescription != null) {
+								lastdescription.setText(lastdescription.getText() + description.getText());
+								logger.debug("@@@@ Trovati record consecutivi: " + lastdescription.getText());
+								//stacco l'elemento consecutivo dopo averne salvato il contenuto
+								item.detach();
+							}
+						}
+					}
+				}
+
+				lastRow = item;
 			}
+
 		}
-		// Assert.isNull(t, "No 'END' was found.");
 		return null;
 	}
 
@@ -119,9 +198,9 @@ public class CBI_RH_MultiLineItemReader2<T> implements ItemReader<Document>, Ite
 			Element item = elem.addElement(chiave);
 			item.setText(valore);
 		}
-		if (line.getProperties().containsKey(STRUCTURE_FLAG_FIELD_NAME)) {
-			String structure_flag = line.readString(STRUCTURE_FLAG_FIELD_NAME);
-			elem.addAttribute(STRUCTURE_FLAG_FIELD_NAME, structure_flag);
+		if (line.getProperties().containsKey(attribute_property)) {
+			String structure_flag = line.readString(attribute_property);
+			elem.addAttribute(attribute_property, structure_flag);
 		}
 		return;
 	}

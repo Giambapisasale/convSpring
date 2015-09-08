@@ -53,6 +53,9 @@ public class ConfigurationFilesDAO {
 	@Value("${dbProperties.password}")
 	private String password;
 
+	@Value("${dbProperties.configuration_table}")
+	private String configuration_table;
+
 	public void updateConfigurationFile(String filename) throws Exception {
 		DriverManagerDataSource dataSource = getDataSource();
 
@@ -69,12 +72,12 @@ public class ConfigurationFilesDAO {
 		try {
 
 			// elimino il contenuto del file da database
-			jdbc.update("DELETE FROM CONFIGURATION_FILES WHERE FILE_NAME= ? ", filename);
+			jdbc.update("DELETE FROM " + configuration_table + " WHERE FILE_NAME= ? ", filename);
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 			String line;
 			int row = 0;
 			while ((line = br.readLine()) != null) {
-				jdbc.update("INSERT INTO CONFIGURATION_FILES(FILE_NAME, FILE_ROW, LINE_CONTENT) VALUES(?,?,?)",
+				jdbc.update("INSERT INTO " + configuration_table + " (FILE_NAME, FILE_ROW, LINE_CONTENT) VALUES(?,?,?)",
 						filename, row, line);
 				row++;
 			}
@@ -119,7 +122,7 @@ public class ConfigurationFilesDAO {
 		try {
 			BufferedWriter br = new BufferedWriter(new FileWriter(prefix + filename));
 			List<Map<String, Object>> result = jdbc.queryForList(
-					"SELECT * FROM CONFIGURATION_FILES WHERE FILE_NAME = ? ORDER BY FILE_ROW ASC", filename);
+					"SELECT * FROM " + configuration_table + " WHERE FILE_NAME = ? ORDER BY FILE_ROW ASC", filename);
 			for (Map<String, Object> row : result) {
 
 				String line_content = (String) row.get("LINE_CONTENT");
@@ -153,7 +156,7 @@ public class ConfigurationFilesDAO {
 			cloakWareUrl = p.getProperty("dbProperties.CLOAKWARE_URL");
 			user = p.getProperty("dbProperties.user");
 			password = p.getProperty("dbProperties.password");
-
+			configuration_table = p.getProperty("dbProperties.configuration_table");
 		}
 	}
 
