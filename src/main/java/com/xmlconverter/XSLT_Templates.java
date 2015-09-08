@@ -29,6 +29,7 @@ public class XSLT_Templates {
 			cachedXSLT = transFact.newTemplates(xslt_source);
 
 		} catch (FileNotFoundException e) {
+			// TODO gestire errore
 			// logger.error
 			// throw exception
 		} catch (TransformerConfigurationException e) {
