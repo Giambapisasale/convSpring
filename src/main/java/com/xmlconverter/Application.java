@@ -53,10 +53,6 @@ public class Application {
 		// SpringApplication app = new SpringApplication(Application.class);
 
 		SpringApplication.run(Application.class, args);
-
-		// TODO AFTER JOB "incastrare" il file in output in un modello
-		// precompilato che
-		// contiene il nodo root del file XML completo di destinazione
-		// e verificare il requisito sulla produzione dei file in output
+		
 	}
 }

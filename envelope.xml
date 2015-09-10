@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CBIBkToCstmrStmtReqPhyMsg>
+	<CBIHdrTrt/>
+	<CBIHdrSrv/>
+	<CBIBdyBkToCstmrStmtReq>
+		<PhyMsgInf>
+			<PhyMsgTpCd>INF-STMT-01</PhyMsgTpCd>
+			<NbOfLogMsg>
+			{{NbOfLogMsg}}
+			</NbOfLogMsg>
+		</PhyMsgInf>
+		{{XMLmesg}}
+		</CBIBdyBkToCstmrStmtReq>
+</CBIBkToCstmrStmtReqPhyMsg>

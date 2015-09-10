@@ -12,6 +12,7 @@ import java.io.IOException;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.JobExecutionListener;
+import org.springframework.batch.core.StepExecution;
 
 import ch.qos.logback.classic.Logger;
 
@@ -38,17 +39,22 @@ public class JobListener_setup implements JobExecutionListener {
 		String output_file_def = System.getProperty("output_file_def");
 		String envelope_placeholder = System.getProperty("envelope_placeholder");
 		try {
-			
+
 			BufferedReader br = new BufferedReader(new FileReader(output_file));
 			BufferedReader brenv = new BufferedReader(new FileReader(envelope_file));
 			BufferedWriter bw = new BufferedWriter(new FileWriter(output_file_def));
 			String env_line = null;
-			while( (env_line = brenv.readLine()) != null) {
-				if(env_line.trim().equals(envelope_placeholder)) {
+			while ((env_line = brenv.readLine()) != null) {
+				if (env_line.trim().equals(envelope_placeholder)) {
 					String line;
-					while( (line = br.readLine()) != null) {
+					while ((line = br.readLine()) != null) {
 						bw.write(line);
 					}
+				}
+				if (env_line.trim().equals("{{NbOfLogMsg}}")) {
+
+					bw.write("" + jobExecution.getStepExecutions().toArray(new StepExecution[0])[0].getWriteCount());
+
 				} else {
 					bw.write(env_line);
 				}
@@ -58,23 +64,27 @@ public class JobListener_setup implements JobExecutionListener {
 			bw.flush();
 			bw.close();
 
-			// clean file temporanei, TODO deve essere fatto anche in caso di errore
+			logger.info("@@@ totale righe scritte:"
+					+ jobExecution.getStepExecutions().toArray(new StepExecution[0])[0].getWriteCount());
+
+			// clean file temporanei, TODO deve essere fatto anche in caso di
+			// errore
 			new File(output_file).delete();
 			new File(envelope_file).delete();
 			String job_file_name = System.getProperty("job_file_name");
 			String xslt_file = System.getProperty("xslt_file");
 			new File(job_file_name).delete();
 			new File(xslt_file).delete();
-			
+
 		} catch (FileNotFoundException e) {
 			String msg = "Errore durante la lettura del file creato o del file di envelope: ";
 			human_log.error(msg, e);
-			logger.error(msg + e.getMessage(), e); 
+			logger.error(msg + e.getMessage(), e);
 			// FIXME gestire ritorno errore
 		} catch (IOException e) {
 			String msg = "Errore durante la scrittura del file definitivo: ";
 			human_log.error(msg, e);
-			logger.error(msg + e.getMessage(), e); 
+			logger.error(msg + e.getMessage(), e);
 			// FIXME gestire ritorno errore
 		}
 
