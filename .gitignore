@@ -1,3 +1,5 @@
 /target/
 /*.zip
-/convSpring_beta1.zip
+/xml/
+/CbiDlyRH.xml
+/*.log

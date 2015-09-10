@@ -3,7 +3,6 @@ package convSpring;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.Properties;
 
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,13 +12,15 @@ import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+import com.xmlconverter.utils.CryptUtils;
+
 public class Test2 {
 
 	public static void main(String[] args) throws Exception {
 		Properties prop = new Properties();
 		prop.load(new FileInputStream("application.properties"));
 
-		String filename = prop.getProperty("job_file_name");
+		String filename = prop.getProperty("envelope_file");
 
 		String url = prop.getProperty("dbProperties.url");
 		String driverName = prop.getProperty("dbProperties.driverName");
@@ -30,7 +31,7 @@ public class Test2 {
 		dataSource.setDriverClassName(driverName);
 		dataSource.setUrl(url);
 		dataSource.setUsername(user);
-		dataSource.setPassword(password);
+		dataSource.setPassword(CryptUtils.decrypt(password));
 
 		JdbcTemplate jdbc = new JdbcTemplate(dataSource);
 
@@ -67,4 +68,5 @@ public class Test2 {
 		}
 
 	}
+
 }

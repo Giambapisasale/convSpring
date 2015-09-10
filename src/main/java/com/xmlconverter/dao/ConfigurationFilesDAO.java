@@ -17,6 +17,8 @@ import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+import com.xmlconverter.utils.CryptUtils;
+
 import ch.qos.logback.classic.Logger;
 
 public class ConfigurationFilesDAO {
@@ -94,8 +96,9 @@ public class ConfigurationFilesDAO {
 	}
 
 	private DriverManagerDataSource getDataSource()
-			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+			throws Exception {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		
 		if (isCloakWare) {
 			Class.forName(cloakWareDriverName).newInstance();
 			dataSource.setDriverClassName(driverName);
@@ -104,7 +107,7 @@ public class ConfigurationFilesDAO {
 			dataSource.setDriverClassName(driverName);
 			dataSource.setUrl(url);
 			dataSource.setUsername(user);
-			dataSource.setPassword(password);
+			dataSource.setPassword(CryptUtils.decrypt(password));
 		}
 
 		return dataSource;

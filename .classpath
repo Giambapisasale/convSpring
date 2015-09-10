@@ -23,7 +23,7 @@
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.12.jar"/>
 	<classpathentry kind="lib" path="lib/snakeyaml-1.14.jar"/>
 	<classpathentry kind="lib" path="lib/spring-aop-4.1.7.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-batch-core-3.0.4.RELEASE.jar" sourcepath="/home/giambattista/.m2/repository/org/springframework/batch/spring-batch-core/3.0.4.RELEASE/spring-batch-core-3.0.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-batch-core-3.0.4.RELEASE.jar" sourcepath="/home/giambattista/Scaricati/conv_csv_xml/workspace/spring-batch-core-3.0.4.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="lib/spring-batch-infrastructure-3.0.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-beans-4.1.7.RELEASE.jar" sourcepath="/home/giambattista/Scaricati/conv_csv_xml/workspace/spring-beans-4.1.7.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="lib/spring-boot-1.2.5.RELEASE.jar" sourcepath="/home/giambattista/Scaricati/conv_csv_xml/workspace/spring-boot-1.2.5.RELEASE-sources.jar"/>
