@@ -20,7 +20,7 @@ public class Test2 {
 		Properties prop = new Properties();
 		prop.load(new FileInputStream("application.properties"));
 
-		String filename = prop.getProperty("envelope_file");
+		String filename = prop.getProperty("job_file_name");
 
 		String url = prop.getProperty("dbProperties.url");
 		String driverName = prop.getProperty("dbProperties.driverName");

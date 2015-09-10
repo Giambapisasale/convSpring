@@ -10,13 +10,15 @@ import java.io.IOException;
 
 //import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.batch.core.ExitStatus;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.StepExecution;
+import org.springframework.batch.core.StepExecutionListener;
 
 import ch.qos.logback.classic.Logger;
 
-public class JobListener_setup implements JobExecutionListener {
+public class JobListener_setup implements JobExecutionListener, StepExecutionListener {
 
 	Logger logger = (Logger) LoggerFactory.getLogger(getClass());
 	Logger human_log = (Logger) LoggerFactory.getLogger("human_log");
@@ -53,7 +55,7 @@ public class JobListener_setup implements JobExecutionListener {
 				}
 				if (env_line.trim().equals("{{NbOfLogMsg}}")) {
 
-					bw.write("" + jobExecution.getStepExecutions().toArray(new StepExecution[0])[0].getWriteCount());
+					bw.write("" + writeCount);
 
 				} else {
 					bw.write(env_line);
@@ -65,7 +67,7 @@ public class JobListener_setup implements JobExecutionListener {
 			bw.close();
 
 			logger.info("@@@ totale righe scritte:"
-					+ jobExecution.getStepExecutions().toArray(new StepExecution[0])[0].getWriteCount());
+					+writeCount);
 
 			// clean file temporanei, TODO deve essere fatto anche in caso di
 			// errore
@@ -90,4 +92,17 @@ public class JobListener_setup implements JobExecutionListener {
 
 	}
 
+	@Override
+	public void beforeStep(StepExecution stepExecution) {
+		logger.info("@@Start step");
+	}
+
+	@Override
+	public ExitStatus afterStep(StepExecution stepExecution) {
+		writeCount = stepExecution.getWriteCount();
+		return stepExecution.getExitStatus();
+	}
+
+	private int writeCount = 0;
+	
 }

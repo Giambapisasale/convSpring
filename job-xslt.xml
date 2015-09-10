@@ -25,7 +25,7 @@
 	</bean>
 
 	<!-- START job RH -->
-	<bean id="job_listener" class="com.xmlconverter.utils.JobListener_setup" />
+	<bean id="job_step_listener" class="com.xmlconverter.utils.JobListener_setup" />
 	<job id="readMultiLineJobRH" xmlns="http://www.springframework.org/schema/batch">
 
 		<step id="stepRH">
@@ -33,9 +33,12 @@
 				<chunk reader="multiLineReader" writer="itemWriter" processor="RHProcessor2"
 					commit-interval="1" />
 			</tasklet>
+			<listeners>
+				<listener ref="job_step_listener" />
+			</listeners>
 		</step>
 		<listeners>
-			<listener ref="job_listener" />
+			<listener ref="job_step_listener" />
 
 		</listeners>
 	</job>
@@ -55,9 +58,9 @@
 		<property name="type_property" value="type" />
 		<property name="attribute_property" value="structure_flag" />
 		<property name="consecutive_join_property" value="description" />
-		
+
 		<property name="x_tag_prefix" value="x" />
-		
+
 		<property name="keyToPath">
 			<map>
 				<entry key="61" value="//RH" />
