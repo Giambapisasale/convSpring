@@ -10,7 +10,13 @@ import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class XSLT_Templates {
+
+	private Logger logger = LoggerFactory.getLogger(getClass());
+	private Logger human_log = (Logger) LoggerFactory.getLogger("human_log");
 
 	private Templates cachedXSLT;
 
@@ -18,7 +24,7 @@ public class XSLT_Templates {
 		return cachedXSLT;
 	}
 
-	public XSLT_Templates(String xslt_file_name) {
+	public XSLT_Templates(String xslt_file_name) throws FileNotFoundException, TransformerConfigurationException {
 		// load the transformer using JAXP
 		TransformerFactory transFact = TransformerFactory.newInstance();
 		InputStream stylesheet;
@@ -29,12 +35,18 @@ public class XSLT_Templates {
 			cachedXSLT = transFact.newTemplates(xslt_source);
 
 		} catch (FileNotFoundException e) {
-			// TODO gestire errore
-			// logger.error
-			// throw exception
+			String msg = "Si e' verificato un errore durante il caricamento delle regole di mappatura, file non trovato: "
+					+ xslt_file_name;
+			logger.error(msg, e);
+			human_log.error(msg);
+			throw e;
 		} catch (TransformerConfigurationException e) {
-			// logger.error
-			// throw exception
+			String msg = "Si e' verificato un errore durante il caricamento delle regole di mappatura, "
+					+ "le regole definite non sono valide: "
+					+ xslt_file_name;
+			logger.error(msg, e);
+			human_log.error(msg);
+			throw e;
 		}
 	}
 

@@ -12,22 +12,29 @@ import org.springframework.batch.item.ItemProcessor;
 public class CBI_RH_Processor2 implements ItemProcessor<Document, String> {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
-	Logger human_log = (Logger) LoggerFactory.getLogger("human_log");
+	private Logger human_log = (Logger) LoggerFactory.getLogger("human_log");
 
 	@Override
 	public String process(Document item) throws Exception {
 
-		Transformer transformer = getTemplate().getCachedXSLT().newTransformer();
+		try {
+			Transformer transformer = getTemplate().getCachedXSLT().newTransformer();
 
-		// applica la trasformazione xslt
-		DocumentSource source = new DocumentSource(item);
-		DocumentResult result = new DocumentResult();
-		transformer.transform(source, result);
+			// applica la trasformazione xslt
+			DocumentSource source = new DocumentSource(item);
+			DocumentResult result = new DocumentResult();
+			transformer.transform(source, result);
 
-		// restituisce il documento trasformato
-		Document transformedDoc = result.getDocument();
+			// restituisce il documento trasformato
+			Document transformedDoc = result.getDocument();
 
-		return transformedDoc.getRootElement().asXML();
+			return transformedDoc.getRootElement().asXML();
+		} catch (Exception e) {
+			String msg = "Errore durante la conversione tramite regole: ";
+			logger.error(msg, e);
+			human_log.error(msg + e.getMessage());
+			throw e;
+		}
 	}
 
 	private XSLT_Templates template;

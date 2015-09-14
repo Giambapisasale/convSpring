@@ -24,7 +24,11 @@ public class Application {
 		p.load(propFile);
 		System.setProperties(p);
 
-		String prefix = df.format(new Date());
+		String tmp_prefix = "_tmp_";
+		System.setProperty("tmp_prefix", tmp_prefix);
+
+		String id_istanza = p.getProperty("id_istanza");
+		String prefix = tmp_prefix + id_istanza + df.format(new Date());
 
 		// TODO check file existence
 		ConfigurationFilesDAO daoConf = new ConfigurationFilesDAO();
@@ -43,16 +47,17 @@ public class Application {
 		// salva il nome definitivo del file output e imposta il nome del file
 		// output temporaneo
 		String output_file = p.getProperty("output_file");
-		System.setProperty("output_file_def", output_file);
+		System.setProperty("output_file_def", tmp_prefix + id_istanza + output_file);
 		System.setProperty("output_file", prefix + output_file);
 
-		// scarica il file con l'envelope fisico che contiene il messaggio logico
+		// scarica il file con l'envelope fisico che contiene il messaggio
+		// logico
 		String newenvelope_file = daoConf.downloadConfigurationFile(envelope_file, prefix);
 		System.setProperty("envelope_file", newenvelope_file);
 
 		// SpringApplication app = new SpringApplication(Application.class);
 
 		SpringApplication.run(Application.class, args);
-		
+
 	}
 }

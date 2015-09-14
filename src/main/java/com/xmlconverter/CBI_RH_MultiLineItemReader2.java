@@ -18,6 +18,7 @@ import org.springframework.batch.item.file.transform.FieldSet;
 public class CBI_RH_MultiLineItemReader2<T> implements ItemReader<Document>, ItemStream {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
+	private Logger human_log = (Logger) LoggerFactory.getLogger("human_log");
 
 	private FlatFileItemReader<FieldSet> delegate;
 
@@ -41,11 +42,10 @@ public class CBI_RH_MultiLineItemReader2<T> implements ItemReader<Document>, Ite
 	}
 
 	/**
-	 * questo valore viene prefissato al type per evitare tag 
-	 * di tipo numerico
+	 * questo valore viene prefissato al type per evitare tag di tipo numerico
 	 */
 	private String x_tag_prefix = "x";
-	
+
 	/**
 	 * il tipo di record che definisce l'inizio di un blocco di informazioni
 	 */
@@ -83,7 +83,7 @@ public class CBI_RH_MultiLineItemReader2<T> implements ItemReader<Document>, Ite
 	 * consecutivi con identico type_property e attribute_property
 	 */
 	private String consecutive_join_property = "description";
-	
+
 	public void setConsecutive_join_property(String consecutive_join_property) {
 		this.consecutive_join_property = consecutive_join_property;
 	}
@@ -126,68 +126,79 @@ public class CBI_RH_MultiLineItemReader2<T> implements ItemReader<Document>, Ite
 		Element societa = null;
 		Element lastRow = null;
 
-		for (FieldSet line = null; (line = this.delegate.read()) != null;) {
-			String rowType = line.readString(type_property);
+		try {
 
-			// "costruzione" di un Document a partire dalla struttura dati
-			// che rappresenta l'input
-			// ogni nodo, categorizzato cal campo "type", viene
-			// agganciato al dom nella posizione indicata dalla stringa
-			// XPATH associata nella mappa keyToPath
-			if (rowType.equals(header)) {
-				societa = document.addElement(header);
-				fromFieldSetToElement(societa, line);
-			} else if (rowType.equals(footer)) {
-				return document; // Record must end with footer
-			} else // if other types
-			{
-				// recupera la posizione all'interno del DOM in pase al type del
-				// record
-				// se e' presente il campo structure_flag viene inserito come
-				// attributo per facilitare la selezione (in particolare dei
-				// record 63)
+			for (FieldSet line = null; (line = this.delegate.read()) != null;) {
+				String rowType = line.readString(type_property);
+				human_log.debug("Lettura della riga " + rowType);
 
-				String path = keyToPath.get(rowType);
-				logger.info("@@Per la chiave: " + rowType + " @@trovato path: " + path);
-				Node node = document.selectSingleNode(path);
+				// "costruzione" di un Document a partire dalla struttura dati
+				// che rappresenta l'input
+				// ogni nodo, categorizzato cal campo "type", viene
+				// agganciato al dom nella posizione indicata dalla stringa
+				// XPATH associata nella mappa keyToPath
+				if (rowType.equals(header)) {
+					societa = document.addElement(header);
+					fromFieldSetToElement(societa, line);
+				} else if (rowType.equals(footer)) {
+					return document; // Record must end with footer
+				} else // if other types
+				{
+					// recupera la posizione all'interno del DOM in pase al type
+					// del record se e' presente il campo structure_flag viene
+					// inserito come attributo per facilitare la selezione (in
+					// particolare dei record 63)
 
-				// TODO controllare node, se non presente allora file input
-				// malformato e lanciare eccezione
-				Element item = ((Element) node).addElement(x_tag_prefix + rowType);
-				fromFieldSetToElement(item, line);
+					String path = keyToPath.get(rowType);
+					logger.debug("@@Per la chiave: " + rowType + " @@trovato path: " + path);
+					Node node = document.selectSingleNode(path);
 
-				// fix elementi consecutivi
-				// se trovo due elementi consecutivi faccio append del campo
-				// consecutive_join_property
+					// TODO controllare node, se non presente allora file input
+					// malformato e lanciare eccezione
+					Element item = ((Element) node).addElement(x_tag_prefix + rowType);
+					fromFieldSetToElement(item, line);
 
-				Element typeElem = item.element(type_property);
-				Element flagElem = item.element(attribute_property);
-				// verifico che sia presente il record precedente e che abbiano
-				// lo stesso type e che sia presente in entrambi il tag da unire
-				if (lastRow != null && typeElem != null && typeElem.getText() != null) {
-					Element lasttypeElem = lastRow.element(type_property);
-					if (lasttypeElem.getText() != null && lasttypeElem.getText().equals(typeElem.getText())) {
-						// se presente attribute_property devono essere entrambi
-						// null o avere lo stesso valore
-						Element lastflagElem = lastRow.element(attribute_property);
-						if ((lastflagElem == null && flagElem == null) || (lastflagElem != null && flagElem != null
-								&& lastflagElem.getText().equals(flagElem.getText()))) {
-							
-							Element lastdescription = lastRow.element(consecutive_join_property);
-							Element description = item.element(consecutive_join_property);
-							if (description != null && lastdescription != null) {
-								lastdescription.setText(lastdescription.getText() + description.getText());
-								logger.debug("@@@@ Trovati record consecutivi: " + lastdescription.getText());
-								//stacco l'elemento consecutivo dopo averne salvato il contenuto
-								item.detach();
+					// fix elementi consecutivi
+					// se trovo due elementi consecutivi faccio append del campo
+					// consecutive_join_property
+
+					Element typeElem = item.element(type_property);
+					Element flagElem = item.element(attribute_property);
+					// verifico che sia presente il record precedente e che
+					// abbiano
+					// lo stesso type e che sia presente in entrambi il tag da
+					// unire
+					if (lastRow != null && typeElem != null && typeElem.getText() != null) {
+						Element lasttypeElem = lastRow.element(type_property);
+						if (lasttypeElem.getText() != null && lasttypeElem.getText().equals(typeElem.getText())) {
+							// se presente attribute_property devono essere
+							// entrambi null o avere lo stesso valore
+							Element lastflagElem = lastRow.element(attribute_property);
+							if ((lastflagElem == null && flagElem == null) || (lastflagElem != null && flagElem != null
+									&& lastflagElem.getText().equals(flagElem.getText()))) {
+
+								Element lastdescription = lastRow.element(consecutive_join_property);
+								Element description = item.element(consecutive_join_property);
+								if (description != null && lastdescription != null) {
+									lastdescription.setText(lastdescription.getText() + description.getText());
+									logger.debug("@@@@ Trovati record consecutivi: " + lastdescription.getText());
+									// stacco l'elemento consecutivo dopo averne
+									// salvato il contenuto
+									item.detach();
+								}
 							}
 						}
 					}
+
+					lastRow = item;
 				}
 
-				lastRow = item;
 			}
-
+		} catch (Exception e) {
+			String msg = "Si e' verificato un errore durante la lettura del file di input: " + e.getMessage();
+			human_log.error(msg);
+			logger.error(msg, e);
+			throw e;
 		}
 		return null;
 	}
