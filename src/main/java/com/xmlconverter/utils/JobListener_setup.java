@@ -76,18 +76,28 @@ public class JobListener_setup implements JobExecutionListener, StepExecutionLis
 
 			logger.info("@@@ totale righe scritte:" + writeCount);
 			human_log.info("@@@ totale righe scritte:" + writeCount);
+			
 			// clean file temporanei, TODO deve essere fatto anche in caso di
 			// errore
-			new File(output_file).delete();
-			new File(envelope_file).delete();
 			String job_file_name = System.getProperty("job_file_name");
 			String xslt_file = System.getProperty("xslt_file");
-			new File(job_file_name).delete();
-			new File(xslt_file).delete();
+			
+			File file_output_file = new File(output_file);
+			if(file_output_file.exists()) file_output_file.delete();
+			
+			File file_envelope_file = new File(envelope_file);
+			if(file_envelope_file.exists()) file_envelope_file.delete();			
+			
+			File file_job_file = new File(job_file_name);
+			if(file_job_file.exists()) file_job_file.delete();
+			
+			File file_xslt_file = new File(xslt_file);
+			if(file_xslt_file.exists()) file_xslt_file.delete();
 
 			String tmp_prefix = System.getProperty("tmp_prefix");
 			String output_file_def_final = output_file_def.substring(tmp_prefix.length(), output_file_def.length());
-			new File(output_file_def).renameTo(new File(output_file_def_final));
+			File file_output_def_file = new File(output_file_def);
+			file_output_def_file.renameTo(new File(output_file_def_final));
 
 		} catch (FileNotFoundException e) {
 			String msg = "Errore durante la lettura del file creato o del file di envelope: ";
@@ -153,7 +163,23 @@ public class JobListener_setup implements JobExecutionListener, StepExecutionLis
 		logger.error(msg, exception);
 		human_log.error("Applicazione terminata per errore: " + msg);
 
-		// TODO cleanup
+		// cleanup
+		String job_file_name = System.getProperty("job_file_name");
+		String xslt_file = System.getProperty("xslt_file");
+		String output_file = System.getProperty("output_file");
+		String envelope_file = System.getProperty("envelope_file");
+		
+		File file_output_file = new File(output_file);
+		if(file_output_file.exists()) file_output_file.delete();
+		
+		File file_envelope_file = new File(envelope_file);
+		if(file_envelope_file.exists()) file_envelope_file.delete();			
+		
+		File file_job_file = new File(job_file_name);
+		if(file_job_file.exists()) file_job_file.delete();
+		
+		File file_xslt_file = new File(xslt_file);
+		if(file_xslt_file.exists()) file_xslt_file.delete();
 
 		System.exit(1);
 	}

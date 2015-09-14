@@ -92,10 +92,9 @@ public class ConfigurationFilesDAO {
 
 	}
 
-	private DriverManagerDataSource getDataSource()
-			throws Exception {
+	private DriverManagerDataSource getDataSource() throws Exception {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		
+
 		if (isCloakWare) {
 			Class.forName(cloakWareDriverName).newInstance();
 			dataSource.setDriverClassName(driverName);
@@ -120,9 +119,13 @@ public class ConfigurationFilesDAO {
 		DataSourceTransactionManager dstm = new DataSourceTransactionManager(dataSource);
 
 		try {
-			BufferedWriter br = new BufferedWriter(new FileWriter(prefix + filename));
+			
 			List<Map<String, Object>> result = jdbc.queryForList(
 					"SELECT * FROM AS_APPPRD.XML_CONV_CONFIG WHERE FILE_NAME = ? ORDER BY FILE_ROW ASC", filename);
+			if (result == null || result.size() == 0) {
+				throw new Exception("File not found in database: " + filename);
+			}
+			BufferedWriter br = new BufferedWriter(new FileWriter(prefix + filename));
 			for (Map<String, Object> row : result) {
 
 				String line_content = (String) row.get("LINE_CONTENT");
