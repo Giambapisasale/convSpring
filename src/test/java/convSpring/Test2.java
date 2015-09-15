@@ -20,7 +20,7 @@ public class Test2 {
 		Properties prop = new Properties();
 		prop.load(new FileInputStream("application.properties"));
 
-		String filename = prop.getProperty("job_file_name");
+		String filename = prop.getProperty("xslt_file");
 
 		String url = prop.getProperty("dbProperties.url");
 		String driverName = prop.getProperty("dbProperties.driverName");
@@ -47,13 +47,13 @@ public class Test2 {
 		try {
 
 			// elimino il contenuto del file da database
-			jdbc.update("DELETE FROM CONFIGURATION_FILES WHERE FILE_NAME= ? ", filename);
+			jdbc.update("DELETE FROM AS_APPPRD.XML_CONV_CONFIG WHERE FILE_NAME= ? ", filename);
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 			String line;
 			int row = 0;
 			while ((line = br.readLine()) != null) {
 				System.out.println(line);
-				jdbc.update("INSERT INTO CONFIGURATION_FILES(FILE_NAME, FILE_ROW, LINE_CONTENT) VALUES(?,?,?)",
+				jdbc.update("INSERT INTO AS_APPPRD.XML_CONV_CONFIG(FILE_NAME, FILE_ROW, LINE_CONTENT) VALUES(?,?,?)",
 						filename, row, line);
 				row++;
 			}

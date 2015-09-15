@@ -24,13 +24,13 @@
 		</property>
 	</bean>
 
-	<!-- START job RH -->
+	<!-- START job EC -->
 	<bean id="job_step_listener" class="com.xmlconverter.utils.JobListener_setup" />
-	<job id="readMultiLineJobRH" xmlns="http://www.springframework.org/schema/batch">
+	<job id="readMultiLineJobEC" xmlns="http://www.springframework.org/schema/batch">
 
-		<step id="stepRH">
+		<step id="stepEC">
 			<tasklet>
-				<chunk reader="multiLineReader" writer="itemWriter" processor="RHProcessor2"
+				<chunk reader="multiLineReader" writer="itemWriter" processor="ECProcessor2"
 					commit-interval="1" />
 			</tasklet>
 			<listeners>
@@ -44,7 +44,7 @@
 	</job>
 
 
-	<bean id="RHProcessor2" class="com.xmlconverter.CBI_RH_Processor2">
+	<bean id="ECProcessor2" class="com.xmlconverter.CBI_RH_Processor2">
 		<property name="template" ref="template_xslt" />
 	</bean>
 	<bean id="template_xslt" class="com.xmlconverter.XSLT_Templates">
@@ -53,7 +53,7 @@
 
 
 	<bean id="multiLineReader" class="com.xmlconverter.CBI_RH_MultiLineItemReader2">
-		<property name="header" value="RH" />
+		<property name="header" value="EC" />
 		<property name="footer" value="EF" />
 		<property name="type_property" value="type" />
 		<property name="attribute_property" value="structure_flag" />
@@ -63,12 +63,10 @@
 
 		<property name="keyToPath">
 			<map>
-				<entry key="61" value="//RH" />
-				<entry key="62" value="//RH/x61[last()]" />
-				<entry key="63" value="//RH/x61[last()]/x62[last()]" />
-				<entry key="64" value="//RH/x61[last()]" />
-				<entry key="65" value="//RH/x61[last()]" />
-
+				<entry key="61" value="//EC" />
+				<entry key="62" value="//EC/x61[last()]" />
+				<entry key="63" value="//EC/x61[last()]/x62[last()]" />
+				<entry key="64" value="//EC/x61[last()]" />
 			</map>
 		</property>
 		<property name="delegate">
@@ -77,7 +75,7 @@
 				<property name="lineMapper">
 					<bean
 						class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
-						<property name="lineTokenizer" ref="RHFileTokenizer" />
+						<property name="lineTokenizer" ref="ECFileTokenizer" />
 						<property name="fieldSetMapper">
 							<bean
 								class="org.springframework.batch.item.file.mapping.PassThroughFieldSetMapper" />
@@ -88,12 +86,12 @@
 		</property>
 	</bean>
 
-	<bean id="RHFileTokenizer"
+	<bean id="ECFileTokenizer"
 		class="org.springframework.batch.item.file.transform.PatternMatchingCompositeLineTokenizer">
 		<property name="tokenizers">
 			<map>
-				<entry key=" RH*" value-ref="headerRHTokenizer" />
-				<entry key=" EF*" value-ref="footerRHTokenizer" />
+				<entry key=" EC*" value-ref="headerECTokenizer" />
+				<entry key=" EF*" value-ref="footerECTokenizer" />
 				<entry key=" 62*" value-ref="line62Tokenizer" />
 				<entry key=" 61*" value-ref="line61Tokenizer" />
 
@@ -108,18 +106,17 @@
 				<entry key=" 63*" value-ref="line63Tokenizer" />
 
 				<entry key=" 64*" value-ref="line64Tokenizer" />
-				<entry key=" 65*" value-ref="line65Tokenizer" />
 			</map>
 		</property>
 	</bean>
 
-	<bean id="headerRHTokenizer"
+	<bean id="headerECTokenizer"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
 		<property name="names"
 			value="type, sender, recipient, creation_date, support_name, filler, stmt_id" />
 		<property name="columns" value="2-3, 4-8, 9-13, 14-19, 20-39, 40-120, 2-39" />
 	</bean>
-	<bean id="footerRHTokenizer"
+	<bean id="footerECTokenizer"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
 		<property name="names" value="type, sender, recipient, creation_date, support_name, filler, statements_number, filler2, records_number, filler3, application_day" />
 		<property name="columns" value="2-3, 4-8, 9-13, 14-19, 20-39, 40-45, 46-52, 53-82, 83-89, 90-114, 115-120" />
@@ -214,18 +211,9 @@
 	<bean id="line64Tokenizer"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
 		<property name="names"
-			value="type, number, currency_code, accounting_date, accounts_balance_sign, accounts_balance, cash_balance_sign, cash_balance, filler1, filler2" />
+			value="type, number, currency_code, accounting_date, accounts_balance_sign, accounts_balance, filler1, filler2" />
 		<property name="columns"
-			value="2-3, 4-10, 11-13, 14-19, 20-20, 21-35, 36-36, 37-51, 52-105, 106-120" />
-	</bean>
-
-	<bean id="line65Tokenizer"
-		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
-		<property name="names"
-			value="type, number, first_cash_balance, first_cash_on_hand_date, first_cash_on_hand_sign, first_cash_on_hand_balance, second_cash_balance, second_cash_on_hand_date, second_cash_on_hand_sign, second_cash_on_hand_balance, third_cash_balance, third_cash_on_hand_date, third_cash_on_hand_sign, third_cash_on_hand_balance, fourth_cash_balance, fourth_cash_on_hand_date, fourth_cash_on_hand_sign, fourth_cash_on_hand_balance, 
-			fifth_cash_balance, fifth_cash_on_hand_date, fifth_cash_on_hand_sign, fifth_cash_on_hand_balance" />
-		<property name="columns"
-			value="2-3, 4-10, 11-32, 11-16, 17-17, 18-32, 33-54, 33-38, 39-39, 40-54, 55-76, 55-60, 61-61, 62-76, 77-98, 77-82, 83-83, 84-98, 99-120, 99-104, 105-105, 106-120" />
+			value="2-3, 4-10, 11-13, 14-19, 20-20, 21-35, 36-105, 106-120" />
 	</bean>
 
 </beans>
