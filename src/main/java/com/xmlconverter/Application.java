@@ -1,6 +1,8 @@
 package com.xmlconverter;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
@@ -61,6 +63,12 @@ public class Application {
 			// logico
 			String newenvelope_file = daoConf.downloadConfigurationFile(envelope_file, prefix);
 			System.setProperty("envelope_file", newenvelope_file);
+			
+			// controlla esistenza file input
+			String input_file = System.getProperty("input_file");
+			if (!(new File(input_file).exists())) {
+				throw new FileNotFoundException("input file non trovato");
+			}
 		} catch (Exception e) {
 			String msg = "Errore durante la configurazione iniziale dell'applicazione: ";
 			logger.error(msg, e);

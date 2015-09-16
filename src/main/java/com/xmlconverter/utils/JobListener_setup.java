@@ -59,8 +59,7 @@ public class JobListener_setup implements JobExecutionListener, StepExecutionLis
 					while ((line = br.readLine()) != null) {
 						bw.write(line);
 					}
-				}
-				if (env_line.trim().equals("{{NbOfLogMsg}}")) {
+				} else if (env_line.trim().equals("{{NbOfLogMsg}}")) {
 
 					bw.write("" + writeCount);
 
