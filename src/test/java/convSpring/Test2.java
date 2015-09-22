@@ -20,7 +20,7 @@ public class Test2 {
 		Properties prop = new Properties();
 		prop.load(new FileInputStream("application.properties"));
 
-		String filename = prop.getProperty("xslt_file");
+		String filename = "RH_transform.xslt";
 
 		String url = prop.getProperty("dbProperties.url");
 		String driverName = prop.getProperty("dbProperties.driverName");

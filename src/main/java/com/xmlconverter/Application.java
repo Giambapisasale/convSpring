@@ -3,6 +3,7 @@ package com.xmlconverter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
@@ -22,7 +23,7 @@ public class Application {
 
 		Logger logger = (Logger) LoggerFactory.getLogger(Application.class);
 		Logger human_log = (Logger) LoggerFactory.getLogger("human_log");
-		
+
 		try {
 			// job setup, scarica i file di configurazione
 			SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmssSS");
@@ -33,9 +34,10 @@ public class Application {
 			p.load(propFile);
 			System.setProperties(p);
 
-			String tmp_prefix = "_tmp_";
-			System.setProperty("tmp_prefix", tmp_prefix);
-
+//			String tmp_prefix = "_tmp_";
+//			System.setProperty("tmp_prefix", tmp_prefix);
+			String tmp_prefix = p.getProperty("tmp_prefix");
+			
 			String id_istanza = p.getProperty("id_istanza");
 			String prefix = tmp_prefix + id_istanza + df.format(new Date());
 
@@ -53,22 +55,30 @@ public class Application {
 			String newXSLTName = daoConf.downloadConfigurationFile(xslt_file, prefix);
 			System.setProperty("xslt_file", newXSLTName);
 
-			// salva il nome definitivo del file output e imposta il nome del file
+			// salva il nome definitivo del file output e imposta il nome del
+			// file
 			// output temporaneo
 			String output_file = p.getProperty("output_file");
-			System.setProperty("output_file_def", tmp_prefix + id_istanza + output_file);
+			System.setProperty("output_file_def", tmp_prefix + output_file);
 			System.setProperty("output_file", prefix + output_file);
 
 			// scarica il file con l'envelope fisico che contiene il messaggio
 			// logico
 			String newenvelope_file = daoConf.downloadConfigurationFile(envelope_file, prefix);
 			System.setProperty("envelope_file", newenvelope_file);
-			
+
 			// controlla esistenza file input
 			String input_file = System.getProperty("input_file");
-			if (!(new File(input_file).exists())) {
+			String input_file_path = System.getProperty("input_file_path");
+
+			if (!(new File(input_file_path + "/" + input_file).exists())) {
 				throw new FileNotFoundException("input file non trovato");
 			}
+
+			p.setProperty("input_file", input_file);
+			p.setProperty("input_file_path", input_file_path);
+
+
 		} catch (Exception e) {
 			String msg = "Errore durante la configurazione iniziale dell'applicazione: ";
 			logger.error(msg, e);

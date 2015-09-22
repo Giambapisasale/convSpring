@@ -28,6 +28,17 @@ public class JobListener_setup implements JobExecutionListener, StepExecutionLis
 
 	Logger logger = (Logger) LoggerFactory.getLogger(getClass());
 	Logger human_log = (Logger) LoggerFactory.getLogger("human_log");
+	
+	String output_file_path;
+	
+
+	public String getOutput_file_path() {
+		return output_file_path;
+	}
+
+	public void setOutput_file_path(String output_file_path) {
+		this.output_file_path = output_file_path;
+	}
 
 	@Override
 	public void beforeJob(JobExecution jobExecution) {
@@ -44,6 +55,7 @@ public class JobListener_setup implements JobExecutionListener, StepExecutionLis
 		// legge il file output temporaneo e ricopia nel file
 		// envelope salvando il file output definitivo
 		String output_file = System.getProperty("output_file");
+//		String output_file_path = System.getProperty("output_file_path");
 		String envelope_file = System.getProperty("envelope_file");
 		String output_file_def = System.getProperty("output_file_def");
 		String envelope_placeholder = System.getProperty("envelope_placeholder");

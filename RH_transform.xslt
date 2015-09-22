@@ -88,10 +88,10 @@
 									<xsl:value-of select="opening_balance" />
 								</Amt>
 								<CdtDbtInd>
-									<xsl:if test="sign = C or sign = c">
+									<xsl:if test="sign = 'C' or sign = 'c'">
 										CRDT
 									</xsl:if>
-									<xsl:if test="sign = D or sign = d">
+									<xsl:if test="sign = 'D' or sign = 'd'">
 										DBIT
 									</xsl:if>
 								</CdtDbtInd>
@@ -113,11 +113,11 @@
 									</Amt>
 									<CdtDbtInd>
 										<xsl:if
-											test="x64/accounts_balance_sign = C or x64/accounts_balance_sign = c">
+											test="x64/accounts_balance_sign = 'C' or x64/accounts_balance_sign = 'c'">
 											CRDT
 										</xsl:if>
 										<xsl:if
-											test="x64/accounts_balance_sign = D or x64/accounts_balance_sign = d">
+											test="x64/accounts_balance_sign = 'D' or x64/accounts_balance_sign = 'd'">
 											DBIT
 										</xsl:if>
 									</CdtDbtInd>
@@ -138,11 +138,11 @@
 									</Amt>
 									<CdtDbtInd>
 										<xsl:if
-											test="x64/cash_balance_sign = C or x64/cash_balance_sign = c">
+											test="x64/cash_balance_sign = 'C' or x64/cash_balance_sign = 'c'">
 											CRDT
 										</xsl:if>
 										<xsl:if
-											test="x64/cash_balance_sign = D or x64/cash_balance_sign = d">
+											test="x64/cash_balance_sign = 'D' or x64/cash_balance_sign = 'd'">
 											DBIT
 										</xsl:if>
 									</CdtDbtInd>
@@ -166,11 +166,11 @@
 									</Amt>
 									<CdtDbtInd>
 										<xsl:if
-											test="x65/first_cash_on_hand_sign = C or x65/first_cash_on_hand_sign = c">
+											test="x65/first_cash_on_hand_sign = 'C' or x65/first_cash_on_hand_sign = 'c'">
 											CRDT
 										</xsl:if>
 										<xsl:if
-											test="x65/first_cash_on_hand_sign = D or x65/first_cash_on_hand_sign = d">
+											test="x65/first_cash_on_hand_sign = 'D' or x65/first_cash_on_hand_sign = 'd'">
 											DBIT
 										</xsl:if>
 									</CdtDbtInd>
@@ -191,11 +191,11 @@
 									</Amt>
 									<CdtDbtInd>
 										<xsl:if
-											test="x65/second_cash_on_hand_sign = C or x65/second_cash_on_hand_sign = c">
+											test="x65/second_cash_on_hand_sign = 'C' or x65/second_cash_on_hand_sign = 'c'">
 											CRDT
 										</xsl:if>
 										<xsl:if
-											test="x65/second_cash_on_hand_sign = D or x65/second_cash_on_hand_sign = d">
+											test="x65/second_cash_on_hand_sign = 'D' or x65/second_cash_on_hand_sign = 'd'">
 											DBIT
 										</xsl:if>
 									</CdtDbtInd>
@@ -216,11 +216,11 @@
 									</Amt>
 									<CdtDbtInd>
 										<xsl:if
-											test="x65/third_cash_on_hand_sign = C or x65/third_cash_on_hand_sign = c">
+											test="x65/third_cash_on_hand_sign = 'C' or x65/third_cash_on_hand_sign = 'c'">
 											CRDT
 										</xsl:if>
 										<xsl:if
-											test="x65/third_cash_on_hand_sign = D or x65/third_cash_on_hand_sign = d">
+											test="x65/third_cash_on_hand_sign = 'D' or x65/third_cash_on_hand_sign = 'd'">
 											DBIT
 										</xsl:if>
 									</CdtDbtInd>
@@ -241,11 +241,11 @@
 									</Amt>
 									<CdtDbtInd>
 										<xsl:if
-											test="x65/fourth_cash_on_hand_sign = C or x65/fourth_cash_on_hand_sign = c">
+											test="x65/fourth_cash_on_hand_sign = 'C' or x65/fourth_cash_on_hand_sign = 'c'">
 											CRDT
 										</xsl:if>
 										<xsl:if
-											test="x65/fourth_cash_on_hand_sign = D or x65/fourth_cash_on_hand_sign = d">
+											test="x65/fourth_cash_on_hand_sign = 'D' or x65/fourth_cash_on_hand_sign = 'd'">
 											DBIT
 										</xsl:if>
 									</CdtDbtInd>
@@ -266,11 +266,11 @@
 									</Amt>
 									<CdtDbtInd>
 										<xsl:if
-											test="x65/fifth_cash_on_hand_sign = C or x65/fifth_cash_on_hand_sign = c">
+											test="x65/fifth_cash_on_hand_sign = 'C' or x65/fifth_cash_on_hand_sign = 'c'">
 											CRDT
 										</xsl:if>
 										<xsl:if
-											test="x65/fifth_cash_on_hand_sign = D or x65/fifth_cash_on_hand_sign = d">
+											test="x65/fifth_cash_on_hand_sign = 'D' or x65/fifth_cash_on_hand_sign = 'd'">
 											DBIT
 										</xsl:if>
 									</CdtDbtInd>
@@ -299,10 +299,10 @@
 										<xsl:value-of select="amount" />
 									</Amt>
 									<CdtDbtInd>
-										<xsl:if test="sign = C or sign = c">
+										<xsl:if test="sign = 'C' or sign = 'c'">
 											CRDT
 										</xsl:if>
-										<xsl:if test="sign = D or sign = d">
+										<xsl:if test="sign = 'D' or sign = 'd'">
 											DBIT
 										</xsl:if>
 									</CdtDbtInd>

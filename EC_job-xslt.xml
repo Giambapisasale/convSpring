@@ -71,7 +71,7 @@
 		</property>
 		<property name="delegate">
 			<bean class="org.springframework.batch.item.file.FlatFileItemReader">
-				<property name="resource" value="file:${input_file}" />
+				<property name="resource" value="file:${input_file_path}/${input_file}" />
 				<property name="lineMapper">
 					<bean
 						class="org.springframework.batch.item.file.mapping.DefaultLineMapper">

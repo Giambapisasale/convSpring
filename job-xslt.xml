@@ -12,8 +12,11 @@
 
 
 	<bean id="outputResource" class="org.springframework.core.io.FileSystemResource">
-		<!-- constructor-arg value="csv/outputs/domain.all._external3.xml" / -->
-		<constructor-arg value="${output_file}" />
+		<constructor-arg ref="outputFileName" />
+	</bean>
+
+	<bean id="outputFileName" class="java.lang.String">
+		<constructor-arg value="/home/giambattista/${output_file}" />
 	</bean>
 
 	<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter">
@@ -25,7 +28,9 @@
 	</bean>
 
 	<!-- START job RH -->
-	<bean id="job_step_listener" class="com.xmlconverter.utils.JobListener_setup" />
+	<bean id="job_step_listener" class="com.xmlconverter.utils.JobListener_setup" >
+		<property name="output_file_path" ref="outputFileName" />
+	</bean>
 	<job id="readMultiLineJobRH" xmlns="http://www.springframework.org/schema/batch">
 
 		<step id="stepRH">
@@ -73,7 +78,7 @@
 		</property>
 		<property name="delegate">
 			<bean class="org.springframework.batch.item.file.FlatFileItemReader">
-				<property name="resource" value="file:${input_file}" />
+				<property name="resource" value="file:${input_file_path}/${input_file}" />
 				<property name="lineMapper">
 					<bean
 						class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
@@ -121,8 +126,10 @@
 	</bean>
 	<bean id="footerRHTokenizer"
 		class="org.springframework.batch.item.file.transform.FixedLengthTokenizer">
-		<property name="names" value="type, sender, recipient, creation_date, support_name, filler, statements_number, filler2, records_number, filler3, application_day" />
-		<property name="columns" value="2-3, 4-8, 9-13, 14-19, 20-39, 40-45, 46-52, 53-82, 83-89, 90-114, 115-120" />
+		<property name="names"
+			value="type, sender, recipient, creation_date, support_name, filler, statements_number, filler2, records_number, filler3, application_day" />
+		<property name="columns"
+			value="2-3, 4-8, 9-13, 14-19, 20-39, 40-45, 46-52, 53-82, 83-89, 90-114, 115-120" />
 	</bean>
 	<bean id="line62Tokenizer" class="com.xmlconverter.utils.FixedLengthTokenizerAggregator">
 		<property name="names"
