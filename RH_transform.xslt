@@ -4,6 +4,12 @@
 
 	<xsl:output method="xml" />
 
+	<xsl:template name="convert_date">
+		<xsl:param name="datesrc" />
+		<xsl:value-of
+			select='concat("20",substring($datesrc,5,2), "-", substring($datesrc,3,2), "-", substring($datesrc,1,2))' />
+	</xsl:template>
+
 	<xsl:template match="/">
 		<xsl:apply-templates select="RH" />
 	</xsl:template>
@@ -17,7 +23,9 @@
 							<xsl:value-of select="support_name" />
 						</MsgId>
 						<CreDtTm>
-							<xsl:value-of select="creation_date" />
+							<xsl:call-template name="convert_date">
+								<xsl:with-param name="datesrc" select="creation_date" />
+							</xsl:call-template>
 						</CreDtTm>
 						<MsgRcpt>
 							<Id>
@@ -43,7 +51,9 @@
 								<xsl:value-of select="number" />
 							</ElctrncSeqNb>
 							<CreDtTm>
-								<xsl:value-of select="/RH/creation_date" />
+								<xsl:call-template name="convert_date">
+									<xsl:with-param name="datesrc" select="/RH/creation_date" />
+								</xsl:call-template>
 							</CreDtTm>
 							<CpyDplctInd>
 								<xsl:if test="reason = 93011">
@@ -97,7 +107,9 @@
 								</CdtDbtInd>
 								<Dt>
 									<Dt>
-										<xsl:value-of select="accounting_date" />
+										<xsl:call-template name="convert_date">
+											<xsl:with-param name="datesrc" select="accounting_date" />
+										</xsl:call-template>
 									</Dt>
 								</Dt>
 							</Bal>
@@ -123,7 +135,9 @@
 									</CdtDbtInd>
 									<Dt>
 										<Dt>
-											<xsl:value-of select="x64/accounting_date" />
+											<xsl:call-template name="convert_date">
+												<xsl:with-param name="datesrc" select="x64/accounting_date" />
+											</xsl:call-template>
 										</Dt>
 									</Dt>
 								</Bal>
@@ -148,7 +162,9 @@
 									</CdtDbtInd>
 									<Dt>
 										<Dt>
-											<xsl:value-of select="x64/accounting_date" />
+											<xsl:call-template name="convert_date">
+												<xsl:with-param name="datesrc" select="x64/accounting_date" />
+											</xsl:call-template>
 										</Dt>
 									</Dt>
 								</Bal>
@@ -176,7 +192,9 @@
 									</CdtDbtInd>
 									<Dt>
 										<Dt>
-											<xsl:value-of select="x65/first_cash_on_hand_date" />
+											<xsl:call-template name="convert_date">
+												<xsl:with-param name="datesrc" select="x65/first_cash_on_hand_date" />
+											</xsl:call-template>
 										</Dt>
 									</Dt>
 								</Bal>
@@ -201,7 +219,9 @@
 									</CdtDbtInd>
 									<Dt>
 										<Dt>
-											<xsl:value-of select="x65/second_cash_on_hand_date" />
+											<xsl:call-template name="convert_date">
+												<xsl:with-param name="datesrc" select="x65/second_cash_on_hand_date" />
+											</xsl:call-template>
 										</Dt>
 									</Dt>
 								</Bal>
@@ -226,7 +246,9 @@
 									</CdtDbtInd>
 									<Dt>
 										<Dt>
-											<xsl:value-of select="x65/third_cash_on_hand_date" />
+											<xsl:call-template name="convert_date">
+												<xsl:with-param name="datesrc" select="x65/third_cash_on_hand_date" />
+											</xsl:call-template>
 										</Dt>
 									</Dt>
 								</Bal>
@@ -251,7 +273,9 @@
 									</CdtDbtInd>
 									<Dt>
 										<Dt>
-											<xsl:value-of select="x65/fourth_cash_on_hand_date" />
+											<xsl:call-template name="convert_date">
+												<xsl:with-param name="datesrc" select="x65/fourth_cash_on_hand_date" />
+											</xsl:call-template>
 										</Dt>
 									</Dt>
 								</Bal>
@@ -275,8 +299,10 @@
 										</xsl:if>
 									</CdtDbtInd>
 									<Dt>
-										<Dt>
-											<xsl:value-of select="x65/fifth_cash_on_hand_date" />
+										<Dt>											
+											<xsl:call-template name="convert_date">
+												<xsl:with-param name="datesrc" select="x65/fifth_cash_on_hand_date" />
+											</xsl:call-template>
 										</Dt>
 									</Dt>
 								</Bal>
@@ -309,12 +335,16 @@
 									<Sts>BOOK</Sts>
 									<BookgDt>
 										<Dt>
-											<xsl:value-of select="account_date" />
+											<xsl:call-template name="convert_date">
+												<xsl:with-param name="datesrc" select="account_date" />
+											</xsl:call-template>
 										</Dt>
 									</BookgDt>
 									<ValDt>
 										<Dt>
-											<xsl:value-of select="date" />
+											<xsl:call-template name="convert_date">
+												<xsl:with-param name="datesrc" select="date" />
+											</xsl:call-template>
 										</Dt>
 									</ValDt>
 									<AcctSvcrRef>

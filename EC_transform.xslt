@@ -4,6 +4,12 @@
 
 	<xsl:output method="xml" />
 
+	<xsl:template name="convert_date">
+		<xsl:param name="datesrc" />
+		<xsl:value-of
+			select='concat("20",substring($datesrc,5,2), "-", substring($datesrc,3,2), "-", substring($datesrc,1,2))' />
+	</xsl:template>
+
 	<xsl:template match="/">
 		<xsl:apply-templates select="EC" />
 	</xsl:template>
@@ -17,7 +23,9 @@
 							<xsl:value-of select="support_name" />
 						</MsgId>
 						<CreDtTm>
-							<xsl:value-of select="creation_date" />
+							<xsl:call-template name="convert_date">
+								<xsl:with-param name="datesrc" select="creation_date" />
+							</xsl:call-template>
 						</CreDtTm>
 						<MsgRcpt>
 							<Id>
@@ -45,11 +53,21 @@
 								<xsl:value-of select="number" />
 							</ElctrncSeqNb>
 							<CreDtTm>
-								<xsl:value-of select="/EC/creation_date" />
+								<xsl:call-template name="convert_date">
+									<xsl:with-param name="datesrc" select="/EC/creation_date" />
+								</xsl:call-template>
 							</CreDtTm>
 							<FrToDt>
-								<FrDtTm><xsl:value-of select="accounting_date" /></FrDtTm>
-								<ToDtTm><xsl:value-of select="x64/accounting_date" /></ToDtTm>
+								<FrDtTm>
+									<xsl:call-template name="convert_date">
+										<xsl:with-param name="datesrc" select="accounting_date" />
+									</xsl:call-template>
+								</FrDtTm>
+								<ToDtTm>
+									<xsl:call-template name="convert_date">
+										<xsl:with-param name="datesrc" select="x64/accounting_date" />
+									</xsl:call-template>
+								</ToDtTm>
 							</FrToDt>
 
 							<CpyDplctInd>
@@ -95,16 +113,18 @@
 									<xsl:value-of select="opening_balance" />
 								</Amt>
 								<CdtDbtInd>
-									<xsl:if test="sign = C or sign = c">
+									<xsl:if test="sign = 'C' or sign = 'c'">
 										CRDT
 									</xsl:if>
-									<xsl:if test="sign = D or sign = d">
+									<xsl:if test="sign = 'D' or sign = 'd'">
 										DBIT
 									</xsl:if>
 								</CdtDbtInd>
 								<Dt>
 									<Dt>
-										<xsl:value-of select="accounting_date" />
+										<xsl:call-template name="convert_date">
+											<xsl:with-param name="datesrc" select="accounting_date" />
+										</xsl:call-template>
 									</Dt>
 								</Dt>
 							</Bal>
@@ -120,23 +140,25 @@
 									</Amt>
 									<CdtDbtInd>
 										<xsl:if
-											test="x64/accounts_balance_sign = C or x64/accounts_balance_sign = c">
+											test="x64/accounts_balance_sign = 'C' or x64/accounts_balance_sign = 'c'">
 											CRDT
 										</xsl:if>
 										<xsl:if
-											test="x64/accounts_balance_sign = D or x64/accounts_balance_sign = d">
+											test="x64/accounts_balance_sign = 'D' or x64/accounts_balance_sign = 'd'">
 											DBIT
 										</xsl:if>
 									</CdtDbtInd>
 									<Dt>
 										<Dt>
-											<xsl:value-of select="x64/accounting_date" />
+											<xsl:call-template name="convert_date">
+												<xsl:with-param name="datesrc" select="x64/accounting_date" />
+											</xsl:call-template>
 										</Dt>
 									</Dt>
 								</Bal>
 
 							</xsl:if>
-							
+
 							<TxsSummry>
 								<TtlNtries>
 									<NbOfNtries>
@@ -153,22 +175,26 @@
 										<xsl:value-of select="amount" />
 									</Amt>
 									<CdtDbtInd>
-										<xsl:if test="sign = C or sign = c">
+										<xsl:if test="sign = 'C' or sign = 'c'">
 											CRDT
 										</xsl:if>
-										<xsl:if test="sign = D or sign = d">
+										<xsl:if test="sign = 'D' or sign = 'd'">
 											DBIT
 										</xsl:if>
 									</CdtDbtInd>
 									<Sts>BOOK</Sts>
 									<BookgDt>
 										<Dt>
-											<xsl:value-of select="account_date" />
+											<xsl:call-template name="convert_date">
+												<xsl:with-param name="datesrc" select="account_date" />
+											</xsl:call-template>
 										</Dt>
 									</BookgDt>
 									<ValDt>
 										<Dt>
-											<xsl:value-of select="date" />
+											<xsl:call-template name="convert_date">
+												<xsl:with-param name="datesrc" select="date" />
+											</xsl:call-template>
 										</Dt>
 									</ValDt>
 									<AcctSvcrRef>

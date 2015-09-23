@@ -25,7 +25,7 @@
 
 	<!-- START job EC -->
 	<bean id="job_step_listener" class="com.xmlconverter.utils.JobListener_setup" >
-		<property name="output_file_path" value="/home/giambattista/"  />
+		<property name="output_file_path" value="/cbi_conv"  />
 	</bean>
 	
 	<job id="readMultiLineJobEC" xmlns="http://www.springframework.org/schema/batch">

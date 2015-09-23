@@ -27,7 +27,7 @@
 
 	<!-- START job RH -->
 	<bean id="job_step_listener" class="com.xmlconverter.utils.JobListener_setup" >
-		<property name="output_file_path" value="/home/giambattista"  />
+		<property name="output_file_path" value="/home/giambattista/Scaricati/"  />
 	</bean>
 	<job id="readMultiLineJobRH" xmlns="http://www.springframework.org/schema/batch">
 
