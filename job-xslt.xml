@@ -12,12 +12,10 @@
 
 
 	<bean id="outputResource" class="org.springframework.core.io.FileSystemResource">
-		<constructor-arg ref="outputFileName" />
+		<constructor-arg value="${output_file}" />
 	</bean>
 
-	<bean id="outputFileName" class="java.lang.String">
-		<constructor-arg value="/home/giambattista/${output_file}" />
-	</bean>
+	
 
 	<bean id="itemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter">
 		<property name="resource" ref="outputResource" />
@@ -29,7 +27,7 @@
 
 	<!-- START job RH -->
 	<bean id="job_step_listener" class="com.xmlconverter.utils.JobListener_setup" >
-		<property name="output_file_path" ref="outputFileName" />
+		<property name="output_file_path" value="/home/giambattista"  />
 	</bean>
 	<job id="readMultiLineJobRH" xmlns="http://www.springframework.org/schema/batch">
 

@@ -24,13 +24,12 @@ import org.springframework.batch.core.StepExecutionListener;
 import ch.qos.logback.classic.Logger;
 
 public class JobListener_setup implements JobExecutionListener, StepExecutionListener, ItemWriteListener<String>,
-		ItemProcessListener<Document, String>, ItemReadListener<Document>{
+		ItemProcessListener<Document, String>, ItemReadListener<Document> {
 
 	Logger logger = (Logger) LoggerFactory.getLogger(getClass());
 	Logger human_log = (Logger) LoggerFactory.getLogger("human_log");
-	
+
 	String output_file_path;
-	
 
 	public String getOutput_file_path() {
 		return output_file_path;
@@ -43,19 +42,17 @@ public class JobListener_setup implements JobExecutionListener, StepExecutionLis
 	@Override
 	public void beforeJob(JobExecution jobExecution) {
 		logger.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@Before Job ");
-		human_log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@Before Job");
 
 	}
 
 	@Override
 	public void afterJob(JobExecution jobExecution) {
 		logger.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@After Job");
-		human_log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@After Job");
-		
+
 		// legge il file output temporaneo e ricopia nel file
 		// envelope salvando il file output definitivo
 		String output_file = System.getProperty("output_file");
-//		String output_file_path = System.getProperty("output_file_path");
+		// String output_file_path = System.getProperty("output_file_path");
 		String envelope_file = System.getProperty("envelope_file");
 		String output_file_def = System.getProperty("output_file_def");
 		String envelope_placeholder = System.getProperty("envelope_placeholder");
@@ -63,7 +60,7 @@ public class JobListener_setup implements JobExecutionListener, StepExecutionLis
 
 			BufferedReader br = new BufferedReader(new FileReader(output_file));
 			BufferedReader brenv = new BufferedReader(new FileReader(envelope_file));
-			BufferedWriter bw = new BufferedWriter(new FileWriter(output_file_def));
+			BufferedWriter bw = new BufferedWriter(new FileWriter(output_file_path + "/" + output_file_def));
 			String env_line = null;
 			while ((env_line = brenv.readLine()) != null) {
 				if (env_line.trim().equals(envelope_placeholder)) {
@@ -86,29 +83,33 @@ public class JobListener_setup implements JobExecutionListener, StepExecutionLis
 			bw.close();
 
 			logger.info("@@@ totale righe scritte:" + writeCount);
-			human_log.info("@@@ totale righe scritte:" + writeCount);
-			
+
 			// clean file temporanei, TODO deve essere fatto anche in caso di
 			// errore
 			String job_file_name = System.getProperty("job_file_name");
 			String xslt_file = System.getProperty("xslt_file");
-			
+
 			File file_output_file = new File(output_file);
-			if(file_output_file.exists()) file_output_file.delete();
-			
+			if (file_output_file.exists())
+				file_output_file.delete();
+
 			File file_envelope_file = new File(envelope_file);
-			if(file_envelope_file.exists()) file_envelope_file.delete();			
-			
+			if (file_envelope_file.exists())
+				file_envelope_file.delete();
+
 			File file_job_file = new File(job_file_name);
-			if(file_job_file.exists()) file_job_file.delete();
-			
+			if (file_job_file.exists())
+				file_job_file.delete();
+
 			File file_xslt_file = new File(xslt_file);
-			if(file_xslt_file.exists()) file_xslt_file.delete();
+			if (file_xslt_file.exists())
+				file_xslt_file.delete();
 
 			String tmp_prefix = System.getProperty("tmp_prefix");
 			String output_file_def_final = output_file_def.substring(tmp_prefix.length(), output_file_def.length());
-			File file_output_def_file = new File(output_file_def);
-			file_output_def_file.renameTo(new File(output_file_def_final));
+			File file_output_def_file = new File(output_file_path + "/" + output_file_def);
+			file_output_def_file.renameTo(new File(output_file_path + "/" + output_file_def_final));
+			logger.debug("File saved to: " + output_file_def_final);
 
 		} catch (FileNotFoundException e) {
 			String msg = "Errore durante la lettura del file creato o del file di envelope: ";
@@ -179,18 +180,22 @@ public class JobListener_setup implements JobExecutionListener, StepExecutionLis
 		String xslt_file = System.getProperty("xslt_file");
 		String output_file = System.getProperty("output_file");
 		String envelope_file = System.getProperty("envelope_file");
-		
+
 		File file_output_file = new File(output_file);
-		if(file_output_file.exists()) file_output_file.delete();
-		
+		if (file_output_file.exists())
+			file_output_file.delete();
+
 		File file_envelope_file = new File(envelope_file);
-		if(file_envelope_file.exists()) file_envelope_file.delete();			
-		
+		if (file_envelope_file.exists())
+			file_envelope_file.delete();
+
 		File file_job_file = new File(job_file_name);
-		if(file_job_file.exists()) file_job_file.delete();
-		
+		if (file_job_file.exists())
+			file_job_file.delete();
+
 		File file_xslt_file = new File(xslt_file);
-		if(file_xslt_file.exists()) file_xslt_file.delete();
+		if (file_xslt_file.exists())
+			file_xslt_file.delete();
 
 		System.exit(1);
 	}
@@ -198,7 +203,7 @@ public class JobListener_setup implements JobExecutionListener, StepExecutionLis
 	@Override
 	public void beforeRead() {
 		logger.debug("Before read ");
-		
+
 	}
 
 	@Override

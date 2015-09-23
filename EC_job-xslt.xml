@@ -12,7 +12,6 @@
 
 
 	<bean id="outputResource" class="org.springframework.core.io.FileSystemResource">
-		<!-- constructor-arg value="csv/outputs/domain.all._external3.xml" / -->
 		<constructor-arg value="${output_file}" />
 	</bean>
 
@@ -25,7 +24,10 @@
 	</bean>
 
 	<!-- START job EC -->
-	<bean id="job_step_listener" class="com.xmlconverter.utils.JobListener_setup" />
+	<bean id="job_step_listener" class="com.xmlconverter.utils.JobListener_setup" >
+		<property name="output_file_path" value="/home/giambattista/"  />
+	</bean>
+	
 	<job id="readMultiLineJobEC" xmlns="http://www.springframework.org/schema/batch">
 
 		<step id="stepEC">

@@ -1,0 +1,10 @@
+-Dinput_file=testRH.csv 
+-Dinput_file_path="/cbi_conv/input_file_conv"
+-Djob_file_name=job-xslt.xml
+-Doutput_file=CbiPRDCRH.xml
+-Dxslt_file=RH_transform.xslt
+-Denvelope_file=envelope.xml
+-Denvelope_placeholder={{XMLmesg}}
+-Did_istanza=ID5
+-Dtmp_prefix=_tmp_
+-Dlog_path="/cbi_conv/logs"

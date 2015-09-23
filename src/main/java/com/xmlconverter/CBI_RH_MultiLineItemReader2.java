@@ -130,7 +130,7 @@ public class CBI_RH_MultiLineItemReader2<T> implements ItemReader<Document>, Ite
 
 			for (FieldSet line = null; (line = this.delegate.read()) != null;) {
 				String rowType = line.readString(type_property);
-				human_log.debug("Lettura della riga " + rowType);
+				logger.debug("Lettura della riga " + rowType);
 
 				// "costruzione" di un Document a partire dalla struttura dati
 				// che rappresenta l'input
